@@ -1,0 +1,14 @@
+package com.hlp;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@MapperScan(basePackages = "com.hlp.mapper")
+@SpringBootApplication
+public class WuliuxmApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WuliuxmApplication.class, args);
+    }
+
+}
