@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hlp.mapper.BasShuttlebusMapper">
+  <resultMap id="BaseResultMap" type="com.hlp.model.BasShuttlebus">
+    <id column="ID" jdbcType="NUMERIC" property="id" />
+    <result column="LINETYPE" jdbcType="NUMERIC" property="linetype" />
+    <result column="LINEID" jdbcType="NUMERIC" property="lineid" />
+    <result column="LICENSEPLATEINT" jdbcType="VARCHAR" property="licenseplateint" />
+    <result column="CARRIER" jdbcType="VARCHAR" property="carrier" />
+    <result column="MODELS" jdbcType="VARCHAR" property="models" />
+    <result column="DRIVER" jdbcType="VARCHAR" property="driver" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="TON" jdbcType="NUMERIC" property="ton" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="OPERATORID" jdbcType="NUMERIC" property="operatorid" />
+    <result column="OPERATIONUNITID" jdbcType="NUMERIC" property="operationunitid" />
+    <result column="OPERATIONTIME" jdbcType="TIMESTAMP" property="operationtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, LINETYPE, LINEID, LICENSEPLATEINT, CARRIER, MODELS, DRIVER, TELEPHONE, TON, REMARKS, 
+    OPERATORID, OPERATIONUNITID, OPERATIONTIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BAS_SHUTTLEBUS
+    where ID = #{id,jdbcType=NUMERIC}
+  </select>
+
+  <select id="selectBasShuttlebus" resultType="BasShuttlebus">
+    select
+    <include refid="Base_Column_List"/>
+    from BAS_SHUTTLEBUS
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from BAS_SHUTTLEBUS
+    where ID = #{id,jdbcType=NUMERIC}
+  </delete>
+  <insert id="insert" parameterType="com.hlp.model.BasShuttlebus">
+    insert into BAS_SHUTTLEBUS (ID, LINETYPE, LINEID, 
+      LICENSEPLATEINT, CARRIER, MODELS, 
+      DRIVER, TELEPHONE, TON, 
+      REMARKS, OPERATORID, OPERATIONUNITID, 
+      OPERATIONTIME)
+    values (#{id,jdbcType=NUMERIC}, #{linetype,jdbcType=NUMERIC}, #{lineid,jdbcType=NUMERIC}, 
+      #{licenseplateint,jdbcType=VARCHAR}, #{carrier,jdbcType=VARCHAR}, #{models,jdbcType=VARCHAR}, 
+      #{driver,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{ton,jdbcType=NUMERIC}, 
+      #{remarks,jdbcType=VARCHAR}, #{operatorid,jdbcType=NUMERIC}, #{operationunitid,jdbcType=NUMERIC}, 
+      #{operationtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hlp.model.BasShuttlebus">
+    insert into BAS_SHUTTLEBUS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="linetype != null">
+        LINETYPE,
+      </if>
+      <if test="lineid != null">
+        LINEID,
+      </if>
+      <if test="licenseplateint != null">
+        LICENSEPLATEINT,
+      </if>
+      <if test="carrier != null">
+        CARRIER,
+      </if>
+      <if test="models != null">
+        MODELS,
+      </if>
+      <if test="driver != null">
+        DRIVER,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="ton != null">
+        TON,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+      <if test="operatorid != null">
+        OPERATORID,
+      </if>
+      <if test="operationunitid != null">
+        OPERATIONUNITID,
+      </if>
+      <if test="operationtime != null">
+        OPERATIONTIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=NUMERIC},
+      </if>
+      <if test="linetype != null">
+        #{linetype,jdbcType=NUMERIC},
+      </if>
+      <if test="lineid != null">
+        #{lineid,jdbcType=NUMERIC},
+      </if>
+      <if test="licenseplateint != null">
+        #{licenseplateint,jdbcType=VARCHAR},
+      </if>
+      <if test="carrier != null">
+        #{carrier,jdbcType=VARCHAR},
+      </if>
+      <if test="models != null">
+        #{models,jdbcType=VARCHAR},
+      </if>
+      <if test="driver != null">
+        #{driver,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="ton != null">
+        #{ton,jdbcType=NUMERIC},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorid != null">
+        #{operatorid,jdbcType=NUMERIC},
+      </if>
+      <if test="operationunitid != null">
+        #{operationunitid,jdbcType=NUMERIC},
+      </if>
+      <if test="operationtime != null">
+        #{operationtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hlp.model.BasShuttlebus">
+    update BAS_SHUTTLEBUS
+    <set>
+      <if test="linetype != null">
+        LINETYPE = #{linetype,jdbcType=NUMERIC},
+      </if>
+      <if test="lineid != null">
+        LINEID = #{lineid,jdbcType=NUMERIC},
+      </if>
+      <if test="licenseplateint != null">
+        LICENSEPLATEINT = #{licenseplateint,jdbcType=VARCHAR},
+      </if>
+      <if test="carrier != null">
+        CARRIER = #{carrier,jdbcType=VARCHAR},
+      </if>
+      <if test="models != null">
+        MODELS = #{models,jdbcType=VARCHAR},
+      </if>
+      <if test="driver != null">
+        DRIVER = #{driver,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="ton != null">
+        TON = #{ton,jdbcType=NUMERIC},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorid != null">
+        OPERATORID = #{operatorid,jdbcType=NUMERIC},
+      </if>
+      <if test="operationunitid != null">
+        OPERATIONUNITID = #{operationunitid,jdbcType=NUMERIC},
+      </if>
+      <if test="operationtime != null">
+        OPERATIONTIME = #{operationtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=NUMERIC}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hlp.model.BasShuttlebus">
+    update BAS_SHUTTLEBUS
+    set LINETYPE = #{linetype,jdbcType=NUMERIC},
+      LINEID = #{lineid,jdbcType=NUMERIC},
+      LICENSEPLATEINT = #{licenseplateint,jdbcType=VARCHAR},
+      CARRIER = #{carrier,jdbcType=VARCHAR},
+      MODELS = #{models,jdbcType=VARCHAR},
+      DRIVER = #{driver,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      TON = #{ton,jdbcType=NUMERIC},
+      REMARKS = #{remarks,jdbcType=VARCHAR},
+      OPERATORID = #{operatorid,jdbcType=NUMERIC},
+      OPERATIONUNITID = #{operationunitid,jdbcType=NUMERIC},
+      OPERATIONTIME = #{operationtime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=NUMERIC}
+  </update>
+</mapper>

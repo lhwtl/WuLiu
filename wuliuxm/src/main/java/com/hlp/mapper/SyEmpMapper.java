@@ -11,7 +11,7 @@ public interface SyEmpMapper {
     int insert(SyEmp record);
 
     int insertSelective(SyEmp record);
-
+    @Select("select * from sy_emp where id=#{id}")
     SyEmp selectByPrimaryKey(Short id);
 
     int updateByPrimaryKeySelective(SyEmp record);
