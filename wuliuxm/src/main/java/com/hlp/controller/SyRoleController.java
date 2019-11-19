@@ -15,19 +15,17 @@ public class SyRoleController {
 
     /*查询全部角色*/
     @RequestMapping("FillAllSyRole")
-    public String FillAllSyRole(){
+    public List<SyRole> FillAllSyRole(){
         List<SyRole> syRoles = syRoleService.FillAllSyRole();
-        System.out.println(syRoles);
-
-        return "";
+        System.out.println("角色"+syRoles);
+        return syRoles;
     }
 
    /*根据id查询角色*/
-    @RequestMapping("OneSyRole")
-    public String OneSyRole(){
-        SyRole syRoles = syRoleService.OneSyRoleByid(2);
-        System.out.println(syRoles);
-
-        return "";
-    }
+   // @RequestMapping("OneSyRole")
+   /* public syRoles OneSyRole(){
+        SyRole syRoles = syRoleService.OneSyRoleByid(1);
+        System.out.println("角色"+syRoles);
+        return syRoles;
+    }*/
 }
