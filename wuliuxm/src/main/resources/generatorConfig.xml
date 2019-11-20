@@ -38,25 +38,30 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="com.hlp.model"
+        <!--<sqlMapGenerator targetPackage="com.hlp.model"
                          targetProject="src/main/java">
-            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            &lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
-         <!--targetPackage：mapper接口生成的位置 -->
+         &lt;!&ndash;targetPackage：mapper接口生成的位置 &ndash;&gt;
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.hlp.mapper"
                              targetProject="src/main/java">
-           <!-- &lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;-->
+           &lt;!&ndash; &lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;&ndash;&gt;
             <property name="enableSubPackages" value="false" />
-        </javaClientGenerator>
+        </javaClientGenerator>-->
 
         <!-- 指定数据库表 -->
         <!-- <table tableName="sy_emp" schema="" enableCountByExample="false"-->
-        <table tableName="BAS_ShuttleBus" schema="" enableCountByExample="false"
+        <table tableName="SY_RolesMenus" schema="" enableCountByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
+        <table tableName="BAS_BasicArchivesEntry" schema="" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
 
 
         <!-- 有些表的字段需要指定java类型
