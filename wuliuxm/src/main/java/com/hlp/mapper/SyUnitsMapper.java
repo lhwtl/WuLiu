@@ -19,4 +19,8 @@ public interface SyUnitsMapper {
     int updateByPrimaryKeySelective(SyUnits record);
 
     int updateByPrimaryKey(SyUnits record);
+
+    //查询所有业务通知单同时查询工单，员工以及单位||查台转单
+    @Select("select * from sy_units where id=#{id}")
+    public SyUnits selectSyUnitsByProcessingUnit(short id);
 }

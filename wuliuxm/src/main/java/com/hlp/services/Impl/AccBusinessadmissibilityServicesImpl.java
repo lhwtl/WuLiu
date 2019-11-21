@@ -13,16 +13,15 @@ public class AccBusinessadmissibilityServicesImpl implements AccBusinessadmissib
     @Autowired
     private AccBusinessadmissibilityMapper accBusinessadmissibilityMapper;
 
+
     @Override
-    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibility() {
-        return accBusinessadmissibilityMapper.selectHlpAccBusinessadmissibility();
+    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibility(int pages,int size,String telphone,String businessnoticeno) {
+        return accBusinessadmissibilityMapper.selectHlpAccBusinessadmissibility(pages,size,telphone,businessnoticeno);
     }
 
     @Override
-    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityByteleAndbusi(AccBusinessadmissibility accBusinessadmissibility) {
-        return accBusinessadmissibilityMapper.selectHlpAccBusinessadmissibilityByteleAndbusi(accBusinessadmissibility);
+    public int selectCountHlp() {
+        return accBusinessadmissibilityMapper.selectCountHlp();
     }
-
-
 }
 */

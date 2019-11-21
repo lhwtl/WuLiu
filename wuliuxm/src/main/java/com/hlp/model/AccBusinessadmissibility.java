@@ -1,6 +1,7 @@
 package com.hlp.model;
 
 import java.util.Date;
+import java.util.EmptyStackException;
 import java.util.List;
 
 public class AccBusinessadmissibility {
@@ -50,14 +51,32 @@ public class AccBusinessadmissibility {
 
     private Short actualpacking;
 
-    private List<AccWorkorder> accWorkorders;
+    private AccWorkorder accWorkorder;
+    private SyEmp syEmp;
+    private SyUnits syUnits;
 
-    public void setAccWorkorders(List<AccWorkorder> accWorkorders) {
-        this.accWorkorders = accWorkorders;
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
     }
 
-    public List<AccWorkorder> getAccWorkorders() {
-        return accWorkorders;
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
+    public void setAccWorkorder(AccWorkorder accWorkorder) {
+        this.accWorkorder = accWorkorder;
+    }
+
+    public AccWorkorder getAccWorkorder() {
+        return accWorkorder;
     }
 
     public Short getId() {
@@ -299,7 +318,9 @@ public class AccBusinessadmissibility {
                 ", billingweight=" + billingweight +
                 ", packingfee=" + packingfee +
                 ", actualpacking=" + actualpacking +
-                ", accWorkorders=" + accWorkorders +
+                ", accWorkorder=" + accWorkorder +
+                ", syEmp=" + syEmp +
+                ", syUnits=" + syUnits +
                 '}';
     }
 }

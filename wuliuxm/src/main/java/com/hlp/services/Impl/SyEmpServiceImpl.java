@@ -15,4 +15,11 @@ public class SyEmpServiceImpl implements SyEmpService {
     public SyEmp LoginSyEmp(SyEmp syEmp) {
         return sm.LoginSyEmp(syEmp);
     }
+
+
+
+    @Override
+    public SyEmp selectSysEmpByPickerInfo(short id) {
+        return sm.selectSysEmpByPickerInfo(id);
+    }
 }

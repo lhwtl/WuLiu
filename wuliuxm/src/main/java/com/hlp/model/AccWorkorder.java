@@ -5,6 +5,8 @@ import java.util.Date;
 public class AccWorkorder {
     private Short id;
 
+    private String businessnoticeno;
+
     private String jobno;
 
     private Short jobtype;
@@ -14,6 +16,7 @@ public class AccWorkorder {
     private Short shortmessageint;
 
     private Date workgenerationtime;
+    private String workgenerationtimes;
 
     private Short aftersinglenum;
 
@@ -25,14 +28,20 @@ public class AccWorkorder {
 
     private String sortingcode;
 
-    private AccBusinessadmissibility accBusinessadmissibility;
-
-    public void setAccBusinessadmissibility(AccBusinessadmissibility accBusinessadmissibility) {
-        this.accBusinessadmissibility = accBusinessadmissibility;
+    public void setBusinessnoticeno(String businessnoticeno) {
+        this.businessnoticeno = businessnoticeno;
     }
 
-    public AccBusinessadmissibility getAccBusinessadmissibility() {
-        return accBusinessadmissibility;
+    public String getBusinessnoticeno() {
+        return businessnoticeno;
+    }
+
+    public void setWorkgenerationtimes(String workgenerationtimes) {
+        this.workgenerationtimes = workgenerationtimes;
+    }
+
+    public String getWorkgenerationtimes() {
+        return workgenerationtimes;
     }
 
     public Short getId() {
@@ -154,7 +163,6 @@ public class AccWorkorder {
                 ", pickupunit=" + pickupunit +
                 ", pickuptime=" + pickuptime +
                 ", sortingcode='" + sortingcode + '\'' +
-                ", accBusinessadmissibility=" + accBusinessadmissibility +
                 '}';
     }
 }
