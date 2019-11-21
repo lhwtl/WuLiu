@@ -17,5 +17,7 @@ public interface SyEmpService {
     public int updateSyEmpLx(SyEmp syEmp);
     /*删除*/
     public int deleteSyEmpLx(int id);
+    /*用户id查*/
+    public SyEmp FillSyEmpByidLx(int id);
 
 }

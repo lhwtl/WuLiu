@@ -52,4 +52,9 @@ public class SyEmpServiceImpl implements SyEmpService {
     public int deleteSyEmpLx(int id) {
         return sm.deleteSyEmpLx(id);
     }
+
+    @Override
+    public SyEmp FillSyEmpByidLx(int id) {
+        return sm.FillSyEmpByidLx(id);
+    }
 }

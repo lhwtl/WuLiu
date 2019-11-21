@@ -13,6 +13,46 @@ public class SyUnits {
 
     private Date operationtime;
 
+    private SyEmp syEmp;//与用户一对一
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    private BasDeliverystandard basDeliverystandards;//与收派表一对一
+
+    private BasBasicarchives basBasicarchivess;//与基础档案表一对一
+
+    private BasShuttlebus basShuttlebus;//班车设置表一对一
+
+    public BasShuttlebus getBasShuttlebus() {
+        return basShuttlebus;
+    }
+
+    public void setBasShuttlebus(BasShuttlebus basShuttlebus) {
+        this.basShuttlebus = basShuttlebus;
+    }
+
+    public BasBasicarchives getBasBasicarchivess() {
+        return basBasicarchivess;
+    }
+
+    public void setBasBasicarchivess(BasBasicarchives basBasicarchivess) {
+        this.basBasicarchivess = basBasicarchivess;
+    }
+
+    public BasDeliverystandard getBasDeliverystandards() {
+        return basDeliverystandards;
+    }
+
+    public void setBasDeliverystandards(BasDeliverystandard basDeliverystandards) {
+        this.basDeliverystandards = basDeliverystandards;
+    }
+
     public Short getId() {
         return id;
     }
@@ -71,6 +111,10 @@ public class SyUnits {
                 ", remarks='" + remarks + '\'' +
                 ", operatorid=" + operatorid +
                 ", operationtime=" + operationtime +
+                ", syEmp=" + syEmp +
+                ", basDeliverystandards=" + basDeliverystandards +
+                ", basBasicarchivess=" + basBasicarchivess +
+                ", basShuttlebus=" + basShuttlebus +
                 '}';
     }
 }

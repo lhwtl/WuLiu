@@ -11,6 +11,13 @@ import java.util.List;
 
 @Service
 public interface SyEmpMapper {
+
+
+    /*编号查询信息*/
+    @Select("select * from sy_emp where id=#{id}")
+    public SyEmp FillSyEmpByidLx(int id);
+
+
     /*登录lx*/
     @Select("select * from sy_emp where empno=#{empno} and pwd=#{pwd}")
     public SyEmp LoginSyEmp(SyEmp syEmp);

@@ -21,6 +21,36 @@ public class SyEmp {
 
     private SyRole syRole;/*与角色一对一*/
 
+    private BasDeliverystandard basDeliverystandards;//与收派表一对一
+
+    private BasShuttlebus basShuttlebus;//班车设置表一对一
+
+    public BasShuttlebus getBasShuttlebus() {
+        return basShuttlebus;
+    }
+
+    public void setBasShuttlebus(BasShuttlebus basShuttlebus) {
+        this.basShuttlebus = basShuttlebus;
+    }
+
+    public BasBasicarchives getBasBasicarchivess() {
+        return basBasicarchivess;
+    }
+
+    public void setBasBasicarchivess(BasBasicarchives basBasicarchivess) {
+        this.basBasicarchivess = basBasicarchivess;
+    }
+
+    private BasBasicarchives basBasicarchivess;//与基础档案表一对一
+
+    public BasDeliverystandard getBasDeliverystandards() {
+        return basDeliverystandards;
+    }
+
+    public void setBasDeliverystandards(BasDeliverystandard basDeliverystandards) {
+        this.basDeliverystandards = basDeliverystandards;
+    }
+
     public SyRole getSyRole() {
         return syRole;
     }
