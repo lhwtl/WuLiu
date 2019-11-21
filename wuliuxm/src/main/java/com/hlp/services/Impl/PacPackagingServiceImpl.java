@@ -36,4 +36,9 @@ public class PacPackagingServiceImpl implements PacPackagingService {
     public int updatePacPackaging(PacPackaging record) {
         return mapper.updatePacPackaging(record);
     }
+
+    @Override
+    public List<PacPackaging> selectPacPackagingname() {
+        return mapper.selectPacPackagingname();
+    }
 }

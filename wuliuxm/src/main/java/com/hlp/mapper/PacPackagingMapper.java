@@ -10,20 +10,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public interface PacPackagingMapper {
-    @Select("select * from PacPackaging")
+    @Select("select * from pac_packaging")
     List<PacPackaging> selectPacPackaging();
-    @Delete("delete from PacPackaging where id=#{id}")
+    @Delete("delete from pac_packaging where id=#{id}")
     int deletePacPackaging(Short id);
-    @Insert("insert into PacPackaging values(null,#{itemcode},#{itemname}," +
+    @Insert("insert into pac_packaging values(null,#{itemcode},#{itemname}," +
             "#{plannedprice},#{specifications},#{type},#{measurementunit},#{status})")
     int insertPacPackaging(PacPackaging record);
-    @Select("select * from PacPackaging where id=#{id}")
+    @Select("select * from pac_packaging where id=#{id}")
     PacPackaging selectPacPackagingid(Short id);
-    @Update("update PacPackaging set itemcode=#{itemcode},itemname=#{itemname}," +
+    @Update("update pac_packaging set itemcode=#{itemcode},itemname=#{itemname}," +
             " plannedprice=#{plannedprice},specifications=#{specifications}," +
             "type=#{type},measurementunit=#{measurementunit},status=#{status} where id=#{id}")
     int updatePacPackaging(PacPackaging record);
 
-    @Select("select * from PacPackaging where n")
+    @Select("select * from pac_packaging where itemcode=#{itemcode} or itemname=#{itemname}")
     List<PacPackaging> selectPacPackagingname();
 }

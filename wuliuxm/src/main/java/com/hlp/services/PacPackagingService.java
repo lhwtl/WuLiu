@@ -17,4 +17,6 @@ public interface PacPackagingService {
     PacPackaging selectPacPackagingid(Short id);
 
     int updatePacPackaging(PacPackaging record);
+
+    List<PacPackaging> selectPacPackagingname();
 }
