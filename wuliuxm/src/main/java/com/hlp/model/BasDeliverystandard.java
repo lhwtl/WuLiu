@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 //收派标准表
@@ -16,7 +18,18 @@ public class BasDeliverystandard {
 
     private Short operationunitid;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date operationtime;
+
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     private SyEmp syEmps;//员工表一对一
 

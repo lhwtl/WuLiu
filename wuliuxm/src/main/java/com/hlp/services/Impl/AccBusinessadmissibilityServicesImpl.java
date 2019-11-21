@@ -1,3 +1,4 @@
+/*
 package com.hlp.services.Impl;
 import com.hlp.mapper.AccBusinessadmissibilityMapper;
 import com.hlp.model.AccBusinessadmissibility;
@@ -23,3 +24,4 @@ public class AccBusinessadmissibilityServicesImpl implements AccBusinessadmissib
         return accBusinessadmissibilityMapper.selectCountHlp();
     }
 }
+*/
