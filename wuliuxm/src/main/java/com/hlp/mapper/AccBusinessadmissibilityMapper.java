@@ -11,9 +11,9 @@ import java.util.List;
 @Service
 public interface AccBusinessadmissibilityMapper {
     //调度里面的查台转单表格查询
-    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibility();
+  //  public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibility();
     //调度里面的查台转单表格模糊查询
-    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityByteleAndbusi(AccBusinessadmissibility accBusinessadmissibility );
+   // public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityByteleAndbusi(AccBusinessadmissibility accBusinessadmissibility );
 
 
 }
