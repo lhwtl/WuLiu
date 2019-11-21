@@ -20,4 +20,6 @@ public interface SyEmpService {
     /*用户id查*/
     public SyEmp FillSyEmpByidLx(int id);
 
+    //查询所有业务通知单同时查询工单，员工以及单位||查台转单
+    public SyEmp selectSysEmpByPickerInfo(short id);
 }

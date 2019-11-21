@@ -14,8 +14,8 @@ public class AccWorkorderServicesImpl implements AccWorkorderServices {
     private AccWorkorderMapper accWorkorderMapper;
 
 
-   /* @Override
-    public List<AccWorkorder> selectHlpAccWorkorderByBusinessNoticeNo(String businessnoticeno) {
-        return accWorkorderMapper.selectHlpAccWorkorderByBusinessNoticeNo(businessnoticeno);
-    }*/
+    @Override
+    public AccWorkorder selectAccWorkorderBybusinessnoticeno(String businessnoticeno) {
+        return accWorkorderMapper.selectAccWorkorderBybusinessnoticeno(businessnoticeno);
+    }
 }

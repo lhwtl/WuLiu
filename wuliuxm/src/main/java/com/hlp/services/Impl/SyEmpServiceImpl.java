@@ -56,5 +56,10 @@ public class SyEmpServiceImpl implements SyEmpService {
     @Override
     public SyEmp FillSyEmpByidLx(int id) {
         return sm.FillSyEmpByidLx(id);
+
+    }
+    @Override
+    public SyEmp selectSysEmpByPickerInfo(short id) {
+        return sm.selectSysEmpByPickerInfo(id);
     }
 }

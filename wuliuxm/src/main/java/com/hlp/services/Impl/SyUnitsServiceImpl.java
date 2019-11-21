@@ -38,4 +38,8 @@ public class SyUnitsServiceImpl implements SyUnitsService {
     public int deleteSyUnitsLx(int id) {
         return sum.deleteSyUnitsLx(id);
     }
+    @Override
+    public SyUnits selectSyUnitsByProcessingUnit(short id) {
+        return sum.selectSyUnitsByProcessingUnit(id);
+    }
 }

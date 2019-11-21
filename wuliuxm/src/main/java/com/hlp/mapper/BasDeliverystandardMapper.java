@@ -12,8 +12,11 @@ public interface BasDeliverystandardMapper {
     //查询收派标准表
     @Select("select * from BAS_DELIVERYSTANDARD")
     @Results({
-            @Result(property = "syEmps", column = "id", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectByPrimaryKey")),
-            @Result(property = "syUnitss", column = "id", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectByPrimaryKey"))
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "operatorid",column = "operatorid"),
+            @Result(property = "operationunitid",column = "operationunitid"),
+            @Result(property = "syEmps", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectByPrimaryKey")),
+            @Result(property = "syUnitss", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectByPrimaryKey"))
     })
     public List<BasDeliverystandard> selectBasDeliverystandard();
 

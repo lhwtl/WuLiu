@@ -44,4 +44,9 @@ public interface SyEmpMapper {
     @Delete("delete from SyEmp where id=#{id}")
     public int deleteSyEmpLx(int id);
 
+
+    //查询所有业务通知单同时查询工单，员工以及单位||查台转单
+    @Select("select * from sy_emp where id=#{id}")
+    public SyEmp selectSysEmpByPickerInfo(short id);
+
 }

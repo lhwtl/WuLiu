@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,9 @@ public class BasBasicarchivesController {
     public List<BasBasicarchives> select_BasBasicarchives(){
         List<BasBasicarchives> list = basBasicarchivesService.selectBasBasicarchive();
         for(BasBasicarchives bb:list){
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String format = sdf.format(bb.getOperationtime());
+            bb.setTime(format);
             System.out.println(bb.getName() + bb.getRemarks()+bb.getSyEmp().getEmpname());
         }
         return list;
