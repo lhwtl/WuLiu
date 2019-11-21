@@ -13,6 +13,16 @@ public class SyUnits {
 
     private Date operationtime;
 
+    private SyEmp syEmp;//与用户一对一
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
     private BasDeliverystandard basDeliverystandards;//与收派表一对一
 
     private BasBasicarchives basBasicarchivess;//与基础档案表一对一
@@ -42,8 +52,6 @@ public class SyUnits {
     public void setBasDeliverystandards(BasDeliverystandard basDeliverystandards) {
         this.basDeliverystandards = basDeliverystandards;
     }
-
-
 
     public Short getId() {
         return id;
@@ -83,5 +91,30 @@ public class SyUnits {
 
     public void setOperationtime(Date operationtime) {
         this.operationtime = operationtime;
+    }
+
+    public SyUnits(String name, String remarks, Short operatorid, Date operationtime) {
+        this.name = name;
+        this.remarks = remarks;
+        this.operatorid = operatorid;
+        this.operationtime = operationtime;
+    }
+
+    public SyUnits() {
+    }
+
+    @Override
+    public String toString() {
+        return "SyUnits{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", remarks='" + remarks + '\'' +
+                ", operatorid=" + operatorid +
+                ", operationtime=" + operationtime +
+                ", syEmp=" + syEmp +
+                ", basDeliverystandards=" + basDeliverystandards +
+                ", basBasicarchivess=" + basBasicarchivess +
+                ", basShuttlebus=" + basShuttlebus +
+                '}';
     }
 }

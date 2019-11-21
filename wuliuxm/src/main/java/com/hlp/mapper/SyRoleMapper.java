@@ -11,17 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public interface SyRoleMapper {
-    int deleteByPrimaryKey(Short id);
-
-    int insert(SyEmp record);
-
-    int insertSelective(SyEmp record);
-
-    SyEmp selectByPrimaryKey(Short id);
-
-    int updateByPrimaryKeySelective(SyEmp record);
-
-    int updateByPrimaryKey(SyEmp record);
 
 
     /*查询全部角色*/
