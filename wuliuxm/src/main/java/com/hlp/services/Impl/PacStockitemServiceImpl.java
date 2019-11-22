@@ -23,8 +23,8 @@ public class PacStockitemServiceImpl implements PacStockitemService {
     }
 
     @Override
-    public int insertPacPackaging(Short id) {
-        return mapper.insertPacPackaging(id);
+    public int insertPacPackaging(PacStockitem pacStockitem) {
+        return mapper.insertPacPackaging(pacStockitem);
     }
 
     @Override
