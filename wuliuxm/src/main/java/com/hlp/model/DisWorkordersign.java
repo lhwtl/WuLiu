@@ -35,6 +35,43 @@ public class DisWorkordersign {
 
     private Date inputtime;
 
+    private SyEmp syEmp;//与员工表一对一
+    private SyUnits syUnits;//与单位表一对一
+    private Worktype worktype;//与工作单类型一对一
+    private QsType qsType;//与签收类型一对一
+
+    public void setQsType(QsType qsType) {
+        this.qsType = qsType;
+    }
+
+    public QsType getQsType() {
+        return qsType;
+    }
+
+    public void setWorktype(Worktype worktype) {
+        this.worktype = worktype;
+    }
+
+    public Worktype getWorktype() {
+        return worktype;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
     public Short getId() {
         return id;
     }
@@ -162,4 +199,52 @@ public class DisWorkordersign {
     public void setInputtime(Date inputtime) {
         this.inputtime = inputtime;
     }
+
+    public DisWorkordersign(Short workorderid, String worksheetno, Short workordertype, Short signtype, Short courierint, String couriername, String recipient, Short signunit, Date signtime, Short invalidatemark, String abnormalmark, Short inputpersoncode, Short inputpersonid, Short inputid, Date inputtime) {
+        this.workorderid = workorderid;
+        this.worksheetno = worksheetno;
+        this.workordertype = workordertype;
+        this.signtype = signtype;
+        this.courierint = courierint;
+        this.couriername = couriername;
+        this.recipient = recipient;
+        this.signunit = signunit;
+        this.signtime = signtime;
+        this.invalidatemark = invalidatemark;
+        this.abnormalmark = abnormalmark;
+        this.inputpersoncode = inputpersoncode;
+        this.inputpersonid = inputpersonid;
+        this.inputid = inputid;
+        this.inputtime = inputtime;
+    }
+
+    public DisWorkordersign() {
+    }
+
+    @Override
+    public String toString() {
+        return "DisWorkordersign{" +
+                "id=" + id +
+                ", workorderid=" + workorderid +
+                ", worksheetno='" + worksheetno + '\'' +
+                ", workordertype=" + workordertype +
+                ", signtype=" + signtype +
+                ", courierint=" + courierint +
+                ", couriername='" + couriername + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", signunit=" + signunit +
+                ", signtime=" + signtime +
+                ", invalidatemark=" + invalidatemark +
+                ", abnormalmark='" + abnormalmark + '\'' +
+                ", inputpersoncode=" + inputpersoncode +
+                ", inputpersonid=" + inputpersonid +
+                ", inputid=" + inputid +
+                ", inputtime=" + inputtime +
+                ", syEmp=" + syEmp +
+                ", syUnits=" + syUnits +
+                ", worktype=" + worktype +
+                ", qsType=" + qsType +
+                '}';
+
+}
 }

@@ -10,6 +10,7 @@ public class AccBusinessadmissibility {
     private String businessnoticeno;
 
     private Date reservationtime;
+    private String reservationtimes;
 
     private String customname;
 
@@ -62,6 +63,14 @@ public class AccBusinessadmissibility {
 
     public DisDispatchhistory getDisDispatchhistory() {
         return disDispatchhistory;
+    }
+
+    public void setReservationtimes(String reservationtimes) {
+        this.reservationtimes = reservationtimes;
+    }
+
+    public String getReservationtimes() {
+        return reservationtimes;
     }
 
     public void setSyUnits(SyUnits syUnits) {
