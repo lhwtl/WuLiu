@@ -53,4 +53,9 @@ public interface SyEmpMapper {
     @Select("select * from sy_emp where id=#{id}")
     public SyEmp selectSysEmpByPickerInfo(short id);
 
+    //根据工号查询
+    @Select("select * from sy_emp where empno=#{empno}")
+    public SyEmp FillAllSyEmpEmpToLx(String empno);
+
+
 }
