@@ -92,4 +92,19 @@ public class PacStock {
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
     }
+
+    @Override
+    public String toString() {
+        return "PacStock{" +
+                "id=" + id +
+                ", warehouseno='" + warehouseno + '\'' +
+                ", reservoirtype=" + reservoirtype +
+                ", transport='" + transport + '\'' +
+                ", subordinateunit='" + subordinateunit + '\'' +
+                ", drawerno=" + drawerno +
+                ", drawername='" + drawername + '\'' +
+                ", drawertime=" + drawertime +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }

@@ -42,4 +42,10 @@ public class SyUnitsServiceImpl implements SyUnitsService {
     public SyUnits selectSyUnitsByProcessingUnit(short id) {
         return sum.selectSyUnitsByProcessingUnit(id);
     }
+
+    @Override
+    public List<SyUnits> selectSyUnitsHlp() {
+        return sum.selectSyUnitsHlp();
+    }
+
 }

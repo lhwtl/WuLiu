@@ -70,7 +70,11 @@ public class SyUnitsController {
         return  i;
     }
 
-
+    @RequestMapping("selectSyUnitsHlp")
+    public List<SyUnits> selectSyUnitsHlp(){
+        List<SyUnits> list=syUnitsService.selectSyUnitsHlp();
+        return list;
+    }
 
 
 }

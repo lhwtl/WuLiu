@@ -132,4 +132,23 @@ public class PacPackaging {
     public void setInvalidatetime(Date invalidatetime) {
         this.invalidatetime = invalidatetime;
     }
+
+    @Override
+    public String toString() {
+        return "PacPackaging{" +
+                "id=" + id +
+                ", itemcode='" + itemcode + '\'' +
+                ", itemname='" + itemname + '\'' +
+                ", plannedprice=" + plannedprice +
+                ", specifications='" + specifications + '\'' +
+                ", type=" + type +
+                ", measurementunit='" + measurementunit + '\'' +
+                ", status=" + status +
+                ", operatorid=" + operatorid +
+                ", operationtime=" + operationtime +
+                ", invalidatejobint=" + invalidatejobint +
+                ", invalidatename=" + invalidatename +
+                ", invalidatetime=" + invalidatetime +
+                '}';
+    }
 }

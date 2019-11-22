@@ -58,4 +58,9 @@ public interface SyUnitsMapper {
     @Select("select * from sy_units where id=#{id}")
     public SyUnits selectSyUnitsByProcessingUnit(short id);
 
+    //查询单位表用于人工调度
+    @Select("select * from sy_units")
+    public List<SyUnits> selectSyUnitsHlp();
+
+
 }
