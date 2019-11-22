@@ -25,6 +25,16 @@ public class BasSubstitute {
 
     private Short subordinateunit;
 
+    private SyUnits syUnits;/*单位表一对一*/
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
     public Short getId() {
         return id;
     }

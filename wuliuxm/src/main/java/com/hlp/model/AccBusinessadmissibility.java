@@ -51,6 +51,26 @@ public class AccBusinessadmissibility {
 
     private Short actualpacking;
 
+    private BasZonecustominfo basZonecustominfo;/* 定区客户信息表一对一*/
+
+    private AccWorkorder accWorkorders;/*工单表一对一*/
+
+    public AccWorkorder getAccWorkorders() {
+        return accWorkorders;
+    }
+
+    public void setAccWorkorders(AccWorkorder accWorkorders) {
+        this.accWorkorders = accWorkorders;
+    }
+
+    public BasZonecustominfo getBasZonecustominfo() {
+        return basZonecustominfo;
+    }
+
+    public void setBasZonecustominfo(BasZonecustominfo basZonecustominfo) {
+        this.basZonecustominfo = basZonecustominfo;
+    }
+
     private AccWorkorder accWorkorder;
     private SyEmp syEmp;
     private SyUnits syUnits;

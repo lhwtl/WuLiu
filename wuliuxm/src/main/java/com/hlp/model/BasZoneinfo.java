@@ -17,6 +17,26 @@ public class BasZoneinfo {
 
     private SyUnits syUnits;//单位表一对一
 
+    private BasPartition basPartition;//分区表一对一
+
+    private BasZonecustominfo basZonecustominfo;//定区客户信息表一对一
+
+    public BasZonecustominfo getBasZonecustominfo() {
+        return basZonecustominfo;
+    }
+
+    public void setBasZonecustominfo(BasZonecustominfo basZonecustominfo) {
+        this.basZonecustominfo = basZonecustominfo;
+    }
+
+    public BasPartition getBasPartition() {
+        return basPartition;
+    }
+
+    public void setBasPartition(BasPartition basPartition) {
+        this.basPartition = basPartition;
+    }
+
     public SyEmp getSyEmp() {
         return syEmp;
     }

@@ -20,4 +20,13 @@ public interface BasZoneinfoMapper {
             @Result(property = "syUnits", column = "subordinateunit", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
     })
     public List<BasZoneinfo> selectBasZoneinfo();
+
+    /*根据定区编码查询定区信息表*/
+    @Select("select * from BAS_ZoneInfo where zonecode =#{zonecode}")
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "id",column = "id"),
+            @Result(property = "basZonecustominfo", column = "id", one = @One(select = "com.hlp.mapper.BasZonecustominfoMapper.selectBasZonecustominfoZoneinfoidts"))
+    })
+    public BasZoneinfo selectBasZoneinfoZonecodets(String zonecode);
 }

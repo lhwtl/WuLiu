@@ -57,7 +57,14 @@ public interface AccBusinessadmissibilityMapper {
     public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityRgddfy(int pages,int rows);
 
 
-
+    /* 根据客户姓名查询*/
+    @Select("select * from acc_businessadmissibility where customname =#{customname}")
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "businessnoticeno",column = "businessnoticeno"),
+            @Result(property = "accWorkorders",column ="businessnoticeno",one=@One(select = "com.hlp.mapper.AccWorkorderMapper.selectAccWorkorderBusinessnoticenots")),
+    })
+    public AccBusinessadmissibility selectAccBusinessadmissibilityCustomnamets(String customname);
 
 
 }

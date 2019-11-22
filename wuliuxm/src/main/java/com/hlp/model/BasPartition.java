@@ -19,6 +19,16 @@ public class BasPartition {
 
     private Short sdint;
 
+    private BasZoneinfo basZoneinfo;/*定区信息表一对一*/
+
+    public BasZoneinfo getBasZoneinfo() {
+        return basZoneinfo;
+    }
+
+    public void setBasZoneinfo(BasZoneinfo basZoneinfo) {
+        this.basZoneinfo = basZoneinfo;
+    }
+
     public Short getId() {
         return id;
     }

@@ -41,7 +41,7 @@ public interface SyUnitsMapper {
     @Select("select * from Sy_Units where id=#{id}")
     public SyUnits selectSyUnitsIdts(Short id);
 
-    /*根据查询*/
+    /*根据operatorid查询负责人*/
     @Select("select * from Sy_Units where operatorid=#{operatorid}")
     @Results({
             @Result(property = "operatorid",column = "operatorid",id=true),

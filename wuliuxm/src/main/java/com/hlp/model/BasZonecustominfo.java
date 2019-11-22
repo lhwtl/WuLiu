@@ -13,6 +13,26 @@ public class BasZonecustominfo {
 
     private Short zoneinfoid;
 
+    private BasZoneinfo basZoneinfo;//定区信息表一对一
+
+    private AccBusinessadmissibility accBusinessadmissibility;/*业务受理表一对一*/
+
+    public AccBusinessadmissibility getAccBusinessadmissibility() {
+        return accBusinessadmissibility;
+    }
+
+    public void setAccBusinessadmissibility(AccBusinessadmissibility accBusinessadmissibility) {
+        this.accBusinessadmissibility = accBusinessadmissibility;
+    }
+
+    public BasZoneinfo getBasZoneinfo() {
+        return basZoneinfo;
+    }
+
+    public void setBasZoneinfo(BasZoneinfo basZoneinfo) {
+        this.basZoneinfo = basZoneinfo;
+    }
+
     public Short getCustomcode() {
         return customcode;
     }
