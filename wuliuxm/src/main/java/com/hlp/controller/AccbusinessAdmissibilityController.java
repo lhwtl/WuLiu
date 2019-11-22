@@ -18,10 +18,11 @@ public class AccbusinessAdmissibilityController {
     private AccBusinessadmissibilityServices accBusinessadmissibilityServices;
     //查台转单
     @RequestMapping("selectHlpAccBusinessadmissibility")
+
     public Map<String,Object> selectHlpAccBusinessadmissibility(int pages, int rows, String telphone, String businessnoticeno){
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         Map<String,Object> map=new HashMap<>();
-        List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibility(pages,rows,telphone,businessnoticeno);
+        List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibility(pages, rows,telphone,businessnoticeno);
         for (AccBusinessadmissibility accBusinessadmissibility : list) {
            String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
            accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
@@ -43,8 +44,8 @@ public class AccbusinessAdmissibilityController {
     public Map<String,Object> selectHlpAccBusinessadmissibilityRgdd(int pages, int rows,short processingunit,String businessnoticeno){
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         Map<String,Object> map=new HashMap<>();
-        List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibilityRgdd(pages, rows,processingunit,businessnoticeno)
-;        for (AccBusinessadmissibility accBusinessadmissibility : list) {
+        List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibilityRgdd(pages, rows,processingunit,businessnoticeno);
+        for (AccBusinessadmissibility accBusinessadmissibility : list) {
             String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
             accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
         }
@@ -64,12 +65,13 @@ public class AccbusinessAdmissibilityController {
     public Map<String,Object> selectHlpAccBusinessadmissibilityRgddfy(int pages, int rows){
        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         Map<String,Object> map=new HashMap<>();
-        System.out.println(pages+" 00  "+rows);
         List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibilityRgddfy(pages, rows);
-/*        for (AccBusinessadmissibility accBusinessadmissibility : list) {
+       for (AccBusinessadmissibility accBusinessadmissibility : list) {
             String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
+            String times=sdf.format(accBusinessadmissibility.getReservationtime());
             accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
-        }*/
+            accBusinessadmissibility.setReservationtimes(times);
+        }
         System.out.println(list);
 
         int max=accBusinessadmissibilityServices.selectCountHlp();

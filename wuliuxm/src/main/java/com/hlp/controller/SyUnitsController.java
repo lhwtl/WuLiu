@@ -70,6 +70,7 @@ public class SyUnitsController {
         return  i;
     }
 
+    //查询所有单位
     @RequestMapping("selectSyUnitsHlp")
     public List<SyUnits> selectSyUnitsHlp(){
         List<SyUnits> list=syUnitsService.selectSyUnitsHlp();

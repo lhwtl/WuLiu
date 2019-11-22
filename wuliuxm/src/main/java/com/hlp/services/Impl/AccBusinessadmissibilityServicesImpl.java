@@ -15,8 +15,10 @@ public class AccBusinessadmissibilityServicesImpl implements AccBusinessadmissib
     private AccBusinessadmissibilityMapper accBusinessadmissibilityMapper;
 
 
+    //int pages, int size, String telphone, String businessnoticeno
     @Override
-    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibility(int pages, int size, String telphone, String businessnoticeno) {
+    public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibility(int pages,int size,String telphone,String businessnoticeno) {
+       //pages, size, telphone, businessnoticeno
         return accBusinessadmissibilityMapper.selectHlpAccBusinessadmissibility(pages, size, telphone, businessnoticeno);
     }
 
