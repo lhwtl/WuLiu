@@ -29,5 +29,7 @@ public interface SyMenusService {
     /*max3*/
     public int  MaxMenusLikeNameLX(String name);
 
+    public List<SyMenus> FillAllSyMenusByIdLx(int id);
+
 
 }
