@@ -54,6 +54,15 @@ public class AccBusinessadmissibility {
     private AccWorkorder accWorkorder;
     private SyEmp syEmp;
     private SyUnits syUnits;
+    private DisDispatchhistory disDispatchhistory;
+
+    public void setDisDispatchhistory(DisDispatchhistory disDispatchhistory) {
+        this.disDispatchhistory = disDispatchhistory;
+    }
+
+    public DisDispatchhistory getDisDispatchhistory() {
+        return disDispatchhistory;
+    }
 
     public void setSyUnits(SyUnits syUnits) {
         this.syUnits = syUnits;
@@ -321,6 +330,7 @@ public class AccBusinessadmissibility {
                 ", accWorkorder=" + accWorkorder +
                 ", syEmp=" + syEmp +
                 ", syUnits=" + syUnits +
+                ", disDispatchhistory=" + disDispatchhistory +
                 '}';
     }
 }

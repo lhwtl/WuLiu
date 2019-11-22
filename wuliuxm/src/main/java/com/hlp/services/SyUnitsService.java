@@ -16,6 +16,11 @@ public interface SyUnitsService {
     /*删除*/
     public int deleteSyUnitsLx(int id);
 
-    //查询所有业务通知单同时查询工单，员工以及单位||查台转单
+    //查询所有业务通知单同时查询工单，员工以及单位||查台转单||人工调入关联
     public SyUnits selectSyUnitsByProcessingUnit(short id);
+    //人工调度查询所有单位
+    public List<SyUnits> selectSyUnitsHlp();
+
+
+
 }

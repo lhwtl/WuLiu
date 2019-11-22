@@ -1,5 +1,6 @@
 package com.hlp.controller;
 
+import com.hlp.model.SyEmp;
 import com.hlp.model.SyUnits;
 import com.hlp.services.SyUnitsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,11 @@ public class SyUnitsController {
         return  i;
     }
 
-
+    @RequestMapping("selectSyUnitsHlp")
+    public List<SyUnits> selectSyUnitsHlp(){
+        List<SyUnits> list=syUnitsService.selectSyUnitsHlp();
+        return list;
+    }
 
 
 }

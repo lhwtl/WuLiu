@@ -49,4 +49,7 @@ public interface SyEmpMapper {
     @Select("select * from sy_emp where id=#{id}")
     public SyEmp selectSysEmpByPickerInfo(short id);
 
+
+
+
 }
