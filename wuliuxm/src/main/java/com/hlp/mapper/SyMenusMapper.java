@@ -67,5 +67,11 @@ public interface SyMenusMapper {
     /*id查询*/
     @Select("select * from sy_menus  where id=#{id}")
     public SyMenus FillSyMenusByIdLx(int id);
+    /*id查集合*/
+    @Select("select * from sy_menus  where parentid=#{id}")
+    public List<SyMenus> FillAllSyMenusByIdLx(int id);
+
+    /*查询全部菜单*/
+
 
 }

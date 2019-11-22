@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Service;
 
+import javax.print.DocFlavor;
 import java.util.List;
 
 @Service
@@ -20,6 +21,7 @@ public interface SyEmpMapper {
     /*编号查询信息*/
     @Select("select * from sy_emp where id=#{id}")
     public SyEmp FillSyEmpByidLx(int id);
+
 
 
     /*登录lx*/
@@ -52,5 +54,9 @@ public interface SyEmpMapper {
     //查询所有业务通知单同时查询工单，员工以及单位||查台转单
     @Select("select * from sy_emp where id=#{id}")
     public SyEmp selectSysEmpByPickerInfo(short id);
+
+    //根据工号查询
+    @Select("select * from sy_emp where empno=#{empno}")
+    public SyEmp FillAllSyEmpEmpToLx(String empno);
 
 }

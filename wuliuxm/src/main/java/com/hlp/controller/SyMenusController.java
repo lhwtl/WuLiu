@@ -124,4 +124,27 @@ public class SyMenusController {
         System.out.println("max2:"+i);
         return i;
     }
+
+
+
+        /*查询全部权限一二级*/
+    @RequestMapping("FillAllOneTwoColumnSyMenus")
+    public List<SyMenus> FillAllOneTwoColumnSyMenus(){
+        List<SyMenus> syMenus = syMenusService.FillAllOneColumnSyMenus("-1");
+        for (SyMenus syMenu : syMenus) {
+            System.out.println("A:"+syMenu.getText());
+            /*查询权限里面的二级列表*/
+            List<SyMenus> syMenus1 = syMenusService.FillAllSyMenusByIdLx(syMenu.getId());
+            for (SyMenus menus : syMenus1) {
+                System.out.println("B:"+menus.getText());
+            }
+            /*把二级列表放入一级列表下面*/
+            syMenu.setSymbols(syMenus1);
+        }
+        System.out.println(syMenus);
+
+
+        return syMenus;
+    }
+
 }
