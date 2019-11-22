@@ -1,6 +1,6 @@
 package com.hlp.services.Impl;
 
-import com.hlp.mapper.BasDeliverystandardMapper;
+import com.hlp.mapper.BasShuttlebusMapper;
 import com.hlp.model.BasDeliverystandard;
 import com.hlp.services.BasDeliverystandardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class BasDeliverystandardServiceImpl implements BasDeliverystandardService {
     @Autowired
-    private BasDeliverystandardMapper basDeliverystandardMapper;
+    private BasShuttlebusMapper.BasDeliverystandardMapper basDeliverystandardMapper;
     @Override
     public List<BasDeliverystandard> selectBasDeliverystandard() {
         return basDeliverystandardMapper.selectBasDeliverystandard();

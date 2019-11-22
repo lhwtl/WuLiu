@@ -7,7 +7,7 @@ import java.util.List;
 public interface PacStockitemService {
     List<PacStockitem> selectPacStockitem();
 
-    int insertPacPackaging(Short id);
+    int insertPacPackaging(PacStockitem pacStockitem);
 
     int updatePacStockitem(PacStockitem pacStockitem);
 }

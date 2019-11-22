@@ -14,7 +14,7 @@ public interface PacPackagingMapper {
     List<PacPackaging> selectPacPackaging();
     @Delete("delete from pac_packaging where id=#{id}")
     int deletePacPackaging(Short id);
-    @Insert("insert into pac_packaging values(1,#{itemcode},#{itemname}," +
+    @Insert("insert into pac_packaging values(pac_packaging_id.nextval,#{itemcode},#{itemname}," +
             "#{plannedprice},#{specifications},#{type},1" +
             ",#{status},1,sysdate,sysdate,1,sysdate)")
     int insertPacPackaging(PacPackaging record);
