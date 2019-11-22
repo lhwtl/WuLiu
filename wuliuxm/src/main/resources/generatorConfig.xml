@@ -16,9 +16,9 @@
                         password="123456">
         </jdbcConnection>-->
          <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-            connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+            connectionURL="jdbc:oracle:thin:@192.168.43.176:1521:orcl"
             userId="xx"
-            password="xx">
+            password="123">
              <!-- 针对oracle数据库 -->
              <property name="remarksReporting" value="true"></property>
         </jdbcConnection>
@@ -53,7 +53,11 @@
 
         <!-- 指定数据库表 -->
         <!-- <table tableName="sy_emp" schema="" enableCountByExample="false"-->
+<<<<<<< Updated upstream
         <table tableName="sy_menus" schema="" enableCountByExample="false"
+=======
+        <table tableName="pac_stockitem" schema="" enableCountByExample="false"
+>>>>>>> Stashed changes
                enableDeleteByExample="false" enableUpdateByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
