@@ -8,11 +8,12 @@ import java.util.List;
 
 @Service
 public interface SyUnitsMapper {
-/*查询全部lx 与syemp一对一*/
+/*查询全部lx 与syemp一对多*/
     @Select("select b.* from (select t.*,rownum rn from sy_units t where name like '%'||#{name}||'%' )b where  b.rn> (#{pag}-1)*#{size} and b.rn <=#{pag}*#{size} ")
     @Results({
             @Result(property = "id",column = "id",id=true),
-            @Result(property = "syEmp",column = "id",one=@One(select="com.hlp.mapper.SyEmpMapper.FillSyEmpByidLx"))
+            @Result(property = "operatorid",column = "operatorid"),
+            @Result(property = "syEmp",column = "operatorid",one=@One(select="com.hlp.mapper.SyEmpMapper.FillSyEmpByidLx"))
     })
     public List<SyUnits> FillAllSyUnitsLx(String name,int pag,int size);
     /*条件查询最大值Max*/

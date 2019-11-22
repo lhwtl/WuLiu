@@ -14,34 +14,6 @@ public class SyUnits {
     private Date operationtime;
 
     private SyEmp syEmp;//与用户一对一
-    private AccBusinessadmissibility accBusinessadmissibility;//与业务通知单一对一
-    private AccWorkorder accWorkorder;//与工单一对一
-    private DisDispatchhistory disDispatchhistory;//与调度历史一对一
-
-    public void setAccWorkorder(AccWorkorder accWorkorder) {
-        this.accWorkorder = accWorkorder;
-    }
-
-    public AccWorkorder getAccWorkorder() {
-        return accWorkorder;
-    }
-
-    public void setAccBusinessadmissibility(AccBusinessadmissibility accBusinessadmissibility) {
-        this.accBusinessadmissibility = accBusinessadmissibility;
-    }
-
-    public AccBusinessadmissibility getAccBusinessadmissibility() {
-        return accBusinessadmissibility;
-    }
-
-    public void setDisDispatchhistory(DisDispatchhistory disDispatchhistory) {
-        this.disDispatchhistory = disDispatchhistory;
-    }
-
-    public DisDispatchhistory getDisDispatchhistory() {
-        return disDispatchhistory;
-    }
-
 
     public SyEmp getSyEmp() {
         return syEmp;
@@ -140,9 +112,6 @@ public class SyUnits {
                 ", operatorid=" + operatorid +
                 ", operationtime=" + operationtime +
                 ", syEmp=" + syEmp +
-                ", accBusinessadmissibility=" + accBusinessadmissibility +
-                ", accWorkorder=" + accWorkorder +
-                ", disDispatchhistory=" + disDispatchhistory +
                 ", basDeliverystandards=" + basDeliverystandards +
                 ", basBasicarchivess=" + basBasicarchivess +
                 ", basShuttlebus=" + basShuttlebus +

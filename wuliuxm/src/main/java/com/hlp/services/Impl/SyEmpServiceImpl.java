@@ -62,6 +62,4 @@ public class SyEmpServiceImpl implements SyEmpService {
     public SyEmp selectSysEmpByPickerInfo(short id) {
         return sm.selectSysEmpByPickerInfo(id);
     }
-
-
 }

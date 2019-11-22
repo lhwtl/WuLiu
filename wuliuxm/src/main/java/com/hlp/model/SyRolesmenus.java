@@ -30,4 +30,21 @@ public class SyRolesmenus {
     public void setMenuid(Short menuid) {
         this.menuid = menuid;
     }
+
+    public SyRolesmenus(Short roleid, Short menuid) {
+        this.roleid = roleid;
+        this.menuid = menuid;
+    }
+
+    public SyRolesmenus() {
+    }
+
+    @Override
+    public String toString() {
+        return "SyRolesmenus{" +
+                "id=" + id +
+                ", roleid=" + roleid +
+                ", menuid=" + menuid +
+                '}';
+    }
 }
