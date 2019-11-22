@@ -14,16 +14,17 @@ public interface PacPackagingMapper {
     List<PacPackaging> selectPacPackaging();
     @Delete("delete from pac_packaging where id=#{id}")
     int deletePacPackaging(Short id);
-    @Insert("insert into pac_packaging values(null,#{itemcode},#{itemname}," +
-            "#{plannedprice},#{specifications},#{type},#{measurementunit},#{status})")
+    @Insert("insert into pac_packaging values(1,#{itemcode},#{itemname}," +
+            "#{plannedprice},#{specifications},#{type},1" +
+            ",#{status},1,sysdate,sysdate,1,sysdate)")
     int insertPacPackaging(PacPackaging record);
     @Select("select * from pac_packaging where id=#{id}")
     PacPackaging selectPacPackagingid(Short id);
     @Update("update pac_packaging set itemcode=#{itemcode},itemname=#{itemname}," +
             " plannedprice=#{plannedprice},specifications=#{specifications}," +
-            "type=#{type},measurementunit=#{measurementunit},status=#{status} where id=#{id}")
+            "type=#{type},status=#{status} where id=#{id}")
     int updatePacPackaging(PacPackaging record);
 
-    @Select("select * from pac_packaging where itemcode=#{itemcode} or itemname=#{itemname}")
+    @Select("select * from pac_packaging where itemcode=#{itemcode} and itemname=#{itemname}")
     List<PacPackaging> selectPacPackagingname();
 }

@@ -1,6 +1,7 @@
 package com.hlp.services.Impl;
 
 import com.hlp.mapper.PacStockMapper;
+import com.hlp.model.PacPackaging;
 import com.hlp.model.PacStock;
 import com.hlp.services.PacStockService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,11 @@ public class PacStockServiceImpl implements PacStockService {
     private PacStockMapper mapper;
     @Override
     public List<PacStock> selectPacStock() {
-        return mapper.selectPacStock();
+        List<PacStock> list=mapper.selectPacStock();
+        for (PacStock stock : list) {
+            System.out.println(stock);
+        }
+        return list;
     }
 
     @Override
@@ -34,5 +39,10 @@ public class PacStockServiceImpl implements PacStockService {
     @Override
     public int updatePacStock(PacStock record) {
         return mapper.updatePacStock(record);
+    }
+
+    @Override
+    public List<PacStock> selectPacStockname(PacStock record) {
+        return mapper.selectPacPacStockname(record);
     }
 }

@@ -100,4 +100,21 @@ public class PacStockitem {
     public void setStatus(Short status) {
         this.status = status;
     }
+
+
+    @Override
+    public String toString() {
+        return "PacStockitem{" +
+                "id=" + id +
+                ", warehouseno='" + warehouseno + '\'' +
+                ", goodscode='" + goodscode + '\'' +
+                ", goodsname='" + goodsname + '\'' +
+                ", storagenum=" + storagenum +
+                ", actualnum=" + actualnum +
+                ", plannedprice=" + plannedprice +
+                ", specifications='" + specifications + '\'' +
+                ", type=" + type +
+                ", status=" + status +
+                '}';
+    }
 }

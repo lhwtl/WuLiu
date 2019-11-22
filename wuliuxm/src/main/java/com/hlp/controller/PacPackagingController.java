@@ -33,6 +33,7 @@ public class PacPackagingController {
     }
     @RequestMapping("updatePacPackaging")
     public int updatePacPackaging(PacPackaging record){
+        System.out.println(record);
         System.out.println("修改");
         return pacPackagingService.updatePacPackaging(record);
     }
@@ -41,5 +42,7 @@ public class PacPackagingController {
         return pacPackagingService.selectPacPackagingid(id);
     }
     @RequestMapping("selectPacPackagingname")
-    public List<PacPackaging> selectPacPackagingname(){return pacPackagingService.selectPacPackagingname();}
+    public List<PacPackaging> selectPacPackagingname(){
+        return pacPackagingService.selectPacPackagingname();
+    }
 }

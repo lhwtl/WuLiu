@@ -14,7 +14,11 @@ public class PacPackagingServiceImpl implements PacPackagingService {
   private PacPackagingMapper mapper;
     @Override
     public List<PacPackaging> selectPacPackaging() {
-        return mapper.selectPacPackaging();
+        List<PacPackaging> list=mapper.selectPacPackaging();
+        for (PacPackaging packaging : list) {
+            System.out.println(packaging);
+        }
+        return list;
     }
 
     @Override
@@ -34,6 +38,7 @@ public class PacPackagingServiceImpl implements PacPackagingService {
 
     @Override
     public int updatePacPackaging(PacPackaging record) {
+
         return mapper.updatePacPackaging(record);
     }
 
