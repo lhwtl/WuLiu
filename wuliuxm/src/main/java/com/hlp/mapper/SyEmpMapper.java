@@ -12,6 +12,10 @@ import java.util.List;
 @Service
 public interface SyEmpMapper {
 
+    /*根据id查询*/
+    @Select("select * from sy_emp where id=#{id}")
+    public SyEmp selectSyEmpIdts(Short id);
+
 
     /*编号查询信息*/
     @Select("select * from sy_emp where id=#{id}")

@@ -36,9 +36,18 @@ public interface SyUnitsMapper {
     int insert(SyUnits record);
 
     int insertSelective(SyUnits record);
-
+    /* 根据id查询*/
     @Select("select * from Sy_Units where id=#{id}")
-    SyUnits selectByPrimaryKey(Short id);
+    public SyUnits selectSyUnitsIdts(Short id);
+
+    /*根据查询*/
+    @Select("select * from Sy_Units where operatorid=#{operatorid}")
+    @Results({
+            @Result(property = "operatorid",column = "operatorid",id=true),
+            @Result(property = "operatorid",column = "operatorid"),
+            @Result(property =  "syEmp",column = "operatorid",one = @One(select ="com.hlp.mapper.SyEmpMapper.selectSyEmpIdts"))
+    })
+    public SyUnits selectSyUnitsOperatoridts(Short operatorid);
 
     int updateByPrimaryKeySelective(SyUnits record);
 

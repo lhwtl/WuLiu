@@ -23,6 +23,17 @@ public class BasArea {
 
     private Short thearea;
 
+    private SyUnits syUnits;//单位表
+
+    public SyUnits getSyUnits() {
+
+        return syUnits;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
     public Short getId() {
         return id;
     }

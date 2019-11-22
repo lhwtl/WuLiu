@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,9 @@ public class BasShuttlebusController  {
     public List<BasShuttlebus> select_BasShuttlebus(){
         List<BasShuttlebus> list=basShuttlebusService.selectBasShuttlebus();
         for (BasShuttlebus bb:list){
+            SimpleDateFormat sdf = new SimpleDateFormat();
+            String format = sdf.format(bb.getOperationtime());
+            bb.setTime(format);
             System.out.println(bb.getId());
         }
         return list;

@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class BasShuttlebus {
@@ -26,8 +28,18 @@ public class BasShuttlebus {
     private Short operatorid;
 
     private Short operationunitid;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date operationtime;
+
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     private SyEmp syEmp;//员工表
 

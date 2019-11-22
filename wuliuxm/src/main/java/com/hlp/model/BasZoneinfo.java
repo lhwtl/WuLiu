@@ -13,6 +13,26 @@ public class BasZoneinfo {
 
     private Short subordinateunit;
 
+    private SyEmp syEmp;//员工表一对一
+
+    private SyUnits syUnits;//单位表一对一
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
     public Short getId() {
         return id;
     }

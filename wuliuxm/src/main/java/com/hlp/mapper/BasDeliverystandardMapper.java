@@ -15,8 +15,8 @@ public interface BasDeliverystandardMapper {
             @Result(property = "id",column = "id",id=true),
             @Result(property = "operatorid",column = "operatorid"),
             @Result(property = "operationunitid",column = "operationunitid"),
-            @Result(property = "syEmps", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectByPrimaryKey")),
-            @Result(property = "syUnitss", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectByPrimaryKey"))
+            @Result(property = "syEmps", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectSyEmpIdts")),
+            @Result(property = "syUnitss", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
     })
     public List<BasDeliverystandard> selectBasDeliverystandard();
 

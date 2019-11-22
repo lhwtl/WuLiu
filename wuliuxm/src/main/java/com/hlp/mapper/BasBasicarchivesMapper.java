@@ -14,8 +14,11 @@ public interface BasBasicarchivesMapper {
 
     @Select("select * from Bas_Basicarchives")
     @Results({
-            @Result(property = "syEmp", column = "operatorid", one =@One(select = "com.hlp.mapper.SyEmpMapper.selectByPrimaryKey")),
-           @Result(property =  "syUnits",column = "operationunitid",one = @One(select ="com.hlp.mapper.SyUnitsMapper.selectByPrimaryKey"))
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "operatorid",column = "operatorid"),
+            @Result(property = "operationunitid",column = "operationunitid"),
+            @Result(property = "syEmp", column = "operatorid", one =@One(select = "com.hlp.mapper.SyEmpMapper.selectSyEmpIdts")),
+           @Result(property =  "syUnits",column = "operationunitid",one = @One(select ="com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
     })
 
     public List<BasBasicarchives>selectBasBasicarchive();

@@ -17,8 +17,8 @@ public interface BasShuttlebusMapper {
         @Result(property = "id",column = "id",id=true),
         @Result(property = "operatorid",column = "operatorid"),
         @Result(property = "operationunitid",column = "operationunitid"),
-        @Result(property = "syEmp", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectByPrimaryKey")),
-        @Result(property = "syUnitsv", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectByPrimaryKey"))
+        @Result(property = "syEmp", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectSyEmpIdts")),
+        @Result(property = "syUnits", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
 })
 public List<BasShuttlebus> selectBasShuttlebus();
 
