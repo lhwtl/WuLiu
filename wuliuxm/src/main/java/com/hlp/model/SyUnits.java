@@ -1,6 +1,9 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
+import java.util.List;
 
 public class SyUnits {
     private Short id;
@@ -11,9 +14,10 @@ public class SyUnits {
 
     private Short operatorid;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date operationtime;
 
-    private SyEmp syEmp;//与用户一对一
+    private SyEmp syEmp;//与用户一对1
 
     public SyEmp getSyEmp() {
         return syEmp;

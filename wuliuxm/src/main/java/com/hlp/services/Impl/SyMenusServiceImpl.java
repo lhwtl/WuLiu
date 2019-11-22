@@ -84,4 +84,9 @@ public class SyMenusServiceImpl implements SyMenusService {
     public int MaxMenusLikeNameLX(String name) {
         return smm.MaxMenusLikeNameLX(name);
     }
+
+    @Override
+    public List<SyMenus> FillAllSyMenusByIdLx(int id) {
+        return smm.FillAllSyMenusByIdLx(id);
+    }
 }
