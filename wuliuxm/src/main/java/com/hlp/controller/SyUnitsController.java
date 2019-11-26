@@ -38,7 +38,7 @@ public class SyUnitsController {
         return  i;
     }
     /*新增*/
-   @RequestMapping("insertSyUnitsLx")
+    @RequestMapping("insertSyUnitsLx")
     public int insertSyUnitsLx(SyUnits syUnits,String toemp){
         System.out.println("    "+toemp);
         SyEmp syEmp = syEmpService.FillAllSyEmpEmpToLx(toemp);

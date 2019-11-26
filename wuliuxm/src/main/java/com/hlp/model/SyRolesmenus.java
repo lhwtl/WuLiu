@@ -1,11 +1,23 @@
 package com.hlp.model;
 
+import java.util.Arrays;
+
 public class SyRolesmenus {
     private Short id;
 
     private Short roleid;
 
     private Short menuid;
+
+    private int [] qxlistid;
+
+    public int[] getQxlistid() {
+        return qxlistid;
+    }
+
+    public void setQxlistid(int[] qxlistid) {
+        this.qxlistid = qxlistid;
+    }
 
     public Short getId() {
         return id;
@@ -45,6 +57,7 @@ public class SyRolesmenus {
                 "id=" + id +
                 ", roleid=" + roleid +
                 ", menuid=" + menuid +
+                ", qxlistid=" + Arrays.toString(qxlistid) +
                 '}';
     }
 }

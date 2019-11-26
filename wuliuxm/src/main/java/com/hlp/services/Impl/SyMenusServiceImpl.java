@@ -89,4 +89,9 @@ public class SyMenusServiceImpl implements SyMenusService {
     public List<SyMenus> FillAllSyMenusByIdLx(int id) {
         return smm.FillAllSyMenusByIdLx(id);
     }
+
+    @Override
+    public int updateSyMenusTwoLx(String parentid,int id) {
+        return smm.updateSyMenusTwoLx(parentid,id);
+    }
 }
