@@ -73,5 +73,8 @@ public interface SyMenusMapper {
 
     /*查询全部菜单*/
 
+    /*修改*/
+    @Update("update sy_menus set parentid=#{parentid} where id=#{id}")
+    public int updateSyMenusTwoLx(String parentid,int id);
 
 }

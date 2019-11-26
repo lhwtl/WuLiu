@@ -147,4 +147,16 @@ public class SyMenusController {
         return syMenus;
     }
 
+
+    /*二级栏目修改*/
+    @RequestMapping("updateSyMenusTwoLx")
+    public int updateSyMenusTwoLx(String parentid,int id){
+        System.out.println("cba:"+parentid+"  "+id);
+        /*根据传过来的id编号查一遍parentid 的值 替换当前parentid的值   此时parentid的值是一级栏目或者是二级栏目*/
+        int i = syMenusService.updateSyMenusTwoLx(parentid,id);
+        System.out.println("修改"+i);
+
+        return 1;
+
+    }
 }

@@ -63,4 +63,10 @@ public interface SyUnitsMapper {
     public List<SyUnits> selectSyUnitsHlp();
 
 
+    @Select("select * from sy_units where id=#{id}")
+    public SyUnits FillSyUnitsByidLx(int id);
+
+
+
+
 }
