@@ -21,6 +21,7 @@ public interface SyUnitsService {
     //人工调度查询所有单位
     public List<SyUnits> selectSyUnitsHlp();
 
+    public SyUnits FillSyUnitsByidLx(int id);
 
 
 }

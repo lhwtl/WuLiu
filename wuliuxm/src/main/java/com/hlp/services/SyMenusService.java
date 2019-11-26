@@ -31,5 +31,7 @@ public interface SyMenusService {
 
     public List<SyMenus> FillAllSyMenusByIdLx(int id);
 
+    public int updateSyMenusTwoLx(String parentid, int id);
+
 
 }

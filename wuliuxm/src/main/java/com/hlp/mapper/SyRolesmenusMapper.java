@@ -10,11 +10,11 @@ import java.util.List;
 @Service
 public interface SyRolesmenusMapper {
     /*删除角色的权限*/
-    @Delete("delect from Sy_Rolesmenus where roleid=#{roleid}")
+    @Delete("delete from Sy_Rolesmenus where roleid=#{roleid}")
     public int deleteSyRolesmenusRoleidLx(int roleid);
 
     /*新增角色权限*/
-    @Insert("insert into sy_rolesmenus values(sy_rolesmenus_id.nextval,roleid=#{roleid},menuid=#{menuid})")
+    @Insert("insert into sy_rolesmenus values(sy_rolesmenus_id.nextval,#{roleid},#{menuid})")
     public int insertyRolesmenusLx(SyRolesmenus syRolesmenus);
 
     /*根据角色id查对应的权限*/

@@ -23,11 +23,22 @@ public class SyRolesmenusController {
     }
     /*新增*/
     @RequestMapping("insertyRolesmenusLx")
-    public int insertyRolesmenusLx(SyRolesmenus syRolesmenus){
-        System.out.println("新增:"+syRolesmenus);
-        int i = syRolesmenusService.insertyRolesmenusLx(syRolesmenus);
-        System.out.println("新增:"+i);
-        return i;
+    public int insertyRolesmenusLx(SyRolesmenus syRolesmenus,Short []  qxlistid,int roleid){
+        System.out.println("xxx");
+        System.out.println(roleid+":  id");
+        int s=0;
+        for (int i : syRolesmenus.getQxlistid()) {
+            syRolesmenus.setMenuid((short)i);
+            syRolesmenus.setRoleid((short) roleid);
+            System.out.println(i+"   :   "+syRolesmenus);
+             s = syRolesmenusService.insertyRolesmenusLx(syRolesmenus);
+            /*复选框id选择添加数据*/
+
+        }
+
+       // int i = syRolesmenusService.insertyRolesmenusLx(syRolesmenus);
+        System.out.println("新增:");
+        return s;
     }
     /*角色查*/
     @RequestMapping("FillAllSyRolesmenusRoleByidLx")
