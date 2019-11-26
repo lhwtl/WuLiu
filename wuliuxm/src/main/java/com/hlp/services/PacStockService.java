@@ -12,4 +12,5 @@ public interface PacStockService {
     PacStock selectPacStockid(Short id);
     int updatePacStock(PacStock record);
     List<PacStock> selectPacStockname(PacStock record);
+    PacStock selectPacStockwarehouseno(String warehouseno);
 }

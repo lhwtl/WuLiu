@@ -1,6 +1,7 @@
 package com.hlp.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class PacStock {
     private Short id;
@@ -20,6 +21,16 @@ public class PacStock {
     private Date drawertime;
 
     private String remark;
+
+   private PacStockitem pacStockitem;
+
+    public PacStockitem getPacStockitem() {
+        return pacStockitem;
+    }
+
+    public void setPacStockitem(PacStockitem pacStockitem) {
+        this.pacStockitem = pacStockitem;
+    }
 
     public Short getId() {
         return id;

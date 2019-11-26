@@ -41,8 +41,9 @@ public class PacPackagingController {
     public PacPackaging selectPacPackagingid(Short id){
         return pacPackagingService.selectPacPackagingid(id);
     }
+
     @RequestMapping("selectPacPackagingname")
-    public List<PacPackaging> selectPacPackagingname(){
-        return pacPackagingService.selectPacPackagingname();
+    public List<PacPackaging> selectPacPackagingname(PacPackaging record){
+        return pacPackagingService.selectPacPackagingname(record);
     }
 }

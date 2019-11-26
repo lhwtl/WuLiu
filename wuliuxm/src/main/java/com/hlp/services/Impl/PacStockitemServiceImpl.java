@@ -23,12 +23,17 @@ public class PacStockitemServiceImpl implements PacStockitemService {
     }
 
     @Override
-    public int insertPacPackaging(PacStockitem pacStockitem) {
-        return mapper.insertPacPackaging(pacStockitem);
+    public int insertPacStockitem(PacStockitem pacStockitem) {
+        return mapper.insertPacStockitem(pacStockitem);
     }
 
     @Override
     public int updatePacStockitem(PacStockitem pacStockitem) {
         return mapper.updatePacStockitem(pacStockitem);
+    }
+
+    @Override
+    public List<PacStockitem> selectPacStockitemkc() {
+        return mapper.selectPacStockitemkc();
     }
 }

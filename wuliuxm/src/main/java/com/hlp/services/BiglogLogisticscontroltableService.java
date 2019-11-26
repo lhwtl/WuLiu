@@ -12,4 +12,6 @@ public interface BiglogLogisticscontroltableService {
     int updateBiglogLogisticscontroltable(BiglogLogisticscontroltable b);
 
     int deleteBiglogLogisticscontroltable(Short id);
+
+    List<BiglogLogisticscontroltable> selectBiglogLogisticscontroltablemh(BiglogLogisticscontroltable b);
 }

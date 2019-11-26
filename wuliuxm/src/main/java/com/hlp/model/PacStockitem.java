@@ -21,6 +21,16 @@ public class PacStockitem {
 
     private Short status;
 
+    private PacStock pacStock;
+
+    public PacStock getPacStock() {
+        return pacStock;
+    }
+
+    public void setPacStock(PacStock pacStock) {
+        this.pacStock = pacStock;
+    }
+
     public Short getId() {
         return id;
     }
