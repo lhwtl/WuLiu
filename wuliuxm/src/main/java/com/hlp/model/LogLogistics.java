@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import java.util.List;
+
 public class LogLogistics {
     private Short id;
 
@@ -22,6 +24,33 @@ public class LogLogistics {
     private String logisticsstate;
 
     private Short iscancel;
+
+    private LogTrack logTrack;//与跟踪记录表一对一
+    private LogLogisticsdetails logLogisticsdetails;//与跟踪详情表一对一
+    private IaeLineresource iaeLineresource;
+
+    public void setIaeLineresource(IaeLineresource iaeLineresource) {
+        this.iaeLineresource = iaeLineresource;
+    }
+
+    public IaeLineresource getIaeLineresource() {
+        return iaeLineresource;
+    }
+
+    public void setLogLogisticsdetails(LogLogisticsdetails logLogisticsdetails) {
+        this.logLogisticsdetails = logLogisticsdetails;
+    }
+    public void setLogTrack(LogTrack logTrack) {
+        this.logTrack = logTrack;
+    }
+
+    public LogLogisticsdetails getLogLogisticsdetails() {
+        return logLogisticsdetails;
+    }
+
+    public LogTrack getLogTrack() {
+        return logTrack;
+    }
 
     public Short getId() {
         return id;

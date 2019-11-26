@@ -28,6 +28,8 @@ public class AccWorkorder {
 
     private String sortingcode;
 
+
+
     private AccBusinessadmissibility accBusinessadmissibility;/*业务受理表一对一*/
 
     public void setBusinessnoticeno(String businessnoticeno) {

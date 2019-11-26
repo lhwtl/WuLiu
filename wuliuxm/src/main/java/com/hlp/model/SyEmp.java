@@ -24,6 +24,15 @@ public class SyEmp {
     private BasDeliverystandard basDeliverystandards;//与收派表一对一
 
     private BasShuttlebus basShuttlebus;//班车设置表一对一
+    private SyUnits syUnits;
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
 
     public BasShuttlebus getBasShuttlebus() {
         return basShuttlebus;

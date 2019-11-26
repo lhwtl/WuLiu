@@ -1,6 +1,9 @@
 package com.hlp.mapper;
 
 import com.hlp.model.AccWorkorder;
+import org.apache.ibatis.annotations.One;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +23,8 @@ public interface AccWorkorderMapper {
     /*根据businessnoticeno(业务通知单号) 查询工单表*/
     @Select("select * from acc_workorder where businessnoticeno=#{businessnoticeno}")
     public AccWorkorder selectAccWorkorderBusinessnoticenots(String businessnoticeno);
+
+
 
 
 

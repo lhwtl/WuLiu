@@ -66,5 +66,4 @@ public interface AccBusinessadmissibilityMapper {
     })
     public AccBusinessadmissibility selectAccBusinessadmissibilityCustomnamets(String customname);
 
-
 }
