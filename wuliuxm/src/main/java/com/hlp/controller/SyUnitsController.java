@@ -38,7 +38,7 @@ public class SyUnitsController {
         return  i;
     }
     /*新增*/
-   @RequestMapping("insertSyUnitsLx")
+    @RequestMapping("insertSyUnitsLx")
     public int insertSyUnitsLx(SyUnits syUnits,String toemp){
         System.out.println("    "+toemp);
         SyEmp syEmp = syEmpService.FillAllSyEmpEmpToLx(toemp);
@@ -70,6 +70,7 @@ public class SyUnitsController {
         return  i;
     }
 
+    //查询所有单位
     @RequestMapping("selectSyUnitsHlp")
     public List<SyUnits> selectSyUnitsHlp(){
         List<SyUnits> list=syUnitsService.selectSyUnitsHlp();
