@@ -18,17 +18,12 @@ public interface BasDeliverystandardMapper {
             @Result(property = "syEmps", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectSyEmpIdts")),
             @Result(property = "syUnitss", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
     })
-    public List<BasDeliverystandard> selectBasDeliverystandard();
+    public List<BasDeliverystandard> selectBasDeliverystandardts();
+    //添加收派标准表
+    @Insert("insert into Bas_Deliverystandard values(Bas_Deliverystandard_id.nextval,#{name},#{minweight},#{maxweight},#{operatorid},#{operationunitid},#{operationtime},#{cancel}) ")
 
-    int deleteByPrimaryKey(Short id);
+    public int insertBasDeliverystandardts(BasDeliverystandard bd);
 
-    int insert(BasDeliverystandard record);
-
-    int insertSelective(BasDeliverystandard record);
-
-    BasDeliverystandard selectByPrimaryKey(Short id);
-
-    int updateByPrimaryKeySelective(BasDeliverystandard record);
-
-    int updateByPrimaryKey(BasDeliverystandard record);
+    @Delete("delete from Bas_Deliverystandard where id=#{id}")
+    public int deleteBasDeliverystandardts(short id);
 }

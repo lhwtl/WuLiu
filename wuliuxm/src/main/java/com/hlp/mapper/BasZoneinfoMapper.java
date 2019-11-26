@@ -25,7 +25,9 @@ public interface BasZoneinfoMapper {
     @Select("select * from BAS_ZoneInfo where zonecode =#{zonecode}")
     @Results({
             @Result(property = "id",column = "id",id=true),
+            @Result(property = "subordinateunit",column = "subordinateunit"),
             @Result(property = "id",column = "id"),
+            @Result(property = "syUnits", column = "subordinateunit", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsOperatoridts")),
             @Result(property = "basZonecustominfo", column = "id", one = @One(select = "com.hlp.mapper.BasZonecustominfoMapper.selectBasZonecustominfoZoneinfoidts"))
     })
     public BasZoneinfo selectBasZoneinfoZonecodets(String zonecode);

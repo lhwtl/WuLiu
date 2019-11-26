@@ -17,4 +17,9 @@ private BasBasicarchivesMapper basBasicarchivesMapper;
     public List<BasBasicarchives> selectBasBasicarchive() {
         return basBasicarchivesMapper.selectBasBasicarchive();
     }
+
+    @Override
+    public int deleteBasBasicarchivesIdts(Short id) {
+        return basBasicarchivesMapper.deleteBasBasicarchivesIdts(id);
+    }
 }

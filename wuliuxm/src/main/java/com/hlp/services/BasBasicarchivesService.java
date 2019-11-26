@@ -8,4 +8,6 @@ public interface BasBasicarchivesService {
 
     public List<BasBasicarchives>selectBasBasicarchive();
 
+    public int deleteBasBasicarchivesIdts(Short id);
+
 }

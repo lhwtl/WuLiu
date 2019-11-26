@@ -27,6 +27,16 @@ public class BasSubstitute {
 
     private SyUnits syUnits;/*单位表一对一*/
 
+    private BasBasicarchives basBasicarchives;/*基础数据表*/
+
+    public BasBasicarchives getBasBasicarchives() {
+        return basBasicarchives;
+    }
+
+    public void setBasBasicarchives(BasBasicarchives basBasicarchives) {
+        this.basBasicarchives = basBasicarchives;
+    }
+
     public SyUnits getSyUnits() {
         return syUnits;
     }

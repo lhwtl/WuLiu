@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.BasBasicarchives;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,15 +20,9 @@ public interface BasBasicarchivesMapper {
 
     public List<BasBasicarchives>selectBasBasicarchive();
 
-    int deleteByPrimaryKey(Short id);
+    @Select("select * from Bas_Basicarchives where id=#{id}")
+    public BasBasicarchives selectBasBasicarchivesIdts(Short id);
 
-    int insert(BasBasicarchives record);
-
-    int insertSelective(BasBasicarchives record);
-
-    BasBasicarchives selectByPrimaryKey(Short id);
-
-    int updateByPrimaryKeySelective(BasBasicarchives record);
-
-    int updateByPrimaryKey(BasBasicarchives record);
+    @Delete("delete from Bas_Basicarchives where id=#{id}")
+    public int deleteBasBasicarchivesIdts(Short id);
 }

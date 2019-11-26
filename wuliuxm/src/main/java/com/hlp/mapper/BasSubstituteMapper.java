@@ -15,20 +15,11 @@ public interface BasSubstituteMapper {
     @Select("select * from Bas_Substitute")
     @Results({
             @Result(property = "id",column = "id",id=true),
+            @Result(property = "type",column = "type"),
             @Result(property = "subordinateunit",column = "subordinateunit"),
+            @Result(property =  "basBasicarchives",column = "type",one = @One(select ="com.hlp.mapper.BasBasicarchivesMapper.selectBasBasicarchivesIdts")),
             @Result(property =  "syUnits",column = "subordinateunit",one = @One(select ="com.hlp.mapper.SyUnitsMapper.selectSyUnitsOperatoridts"))
     })
     public List<BasSubstitute> selectBasSubstitute();
 
-    int deleteByPrimaryKey(Short id);
-
-    int insert(BasSubstitute record);
-
-    int insertSelective(BasSubstitute record);
-
-    BasSubstitute selectByPrimaryKey(Short id);
-
-    int updateByPrimaryKeySelective(BasSubstitute record);
-
-    int updateByPrimaryKey(BasSubstitute record);
 }

@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface BasShuttlebusService {
     public List<BasShuttlebus> selectBasShuttlebus();
+    public int deleteBasShuttlebusts(short id);
 
 }

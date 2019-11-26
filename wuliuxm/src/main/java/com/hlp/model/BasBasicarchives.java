@@ -7,6 +7,16 @@ import java.util.Date;
 public class BasBasicarchives {
     private Short id;
 
+    private String nameid;
+
+    public String getNameid() {
+        return nameid;
+    }
+
+    public void setNameid(String nameid) {
+        this.nameid = nameid;
+    }
+
     private String name;
 
     private Short grade;

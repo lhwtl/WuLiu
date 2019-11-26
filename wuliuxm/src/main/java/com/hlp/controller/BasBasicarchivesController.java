@@ -17,11 +17,19 @@ public class BasBasicarchivesController {
     public List<BasBasicarchives> select_BasBasicarchives(){
         List<BasBasicarchives> list = basBasicarchivesService.selectBasBasicarchive();
         for(BasBasicarchives bb:list){
+            String aa="JC00"+bb.getId();
+            bb.setNameid(aa);
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String format = sdf.format(bb.getOperationtime());
+
             bb.setTime(format);
             System.out.println(bb.getName() + bb.getRemarks()+bb.getSyEmp().getEmpname());
         }
         return list;
+    }
+
+    @RequestMapping("delete_BasBasicarchives")
+    public int delete_BasBasicarchives(Short id){
+        return basBasicarchivesService.deleteBasBasicarchivesIdts(id);
     }
 }

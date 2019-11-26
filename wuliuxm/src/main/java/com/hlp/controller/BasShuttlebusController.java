@@ -24,4 +24,9 @@ public class BasShuttlebusController  {
         }
         return list;
     }
+
+    @RequestMapping("delete_BasShuttlebus")
+    public int delete_BasShuttlebus(Short id){
+        return basShuttlebusService.deleteBasShuttlebusts(id);
+    }
 }

@@ -1,5 +1,6 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -14,14 +15,26 @@ public class BasDeliverystandard {
 
     private Short maxweight;
 
-    private Short operatorid;
+    private Short operatorid;//操作人员
 
-    private Short operationunitid;
+    private Short operationunitid;//操作单位
 
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private Date operationtime;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date operationtime;//操作时间
 
     private String time;
+
+    private Short cancel;//作废
+
+    public Short getCancel() {
+        return cancel;
+    }
+
+    public void setCancel(Short cancel) {
+        this.cancel = cancel;
+    }
 
     public String getTime() {
         return time;
@@ -105,5 +118,38 @@ public class BasDeliverystandard {
 
     public void setOperationtime(Date operationtime) {
         this.operationtime = operationtime;
+    }
+
+    @Override
+    public String toString() {
+        return "BasDeliverystandard{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", minweight=" + minweight +
+                ", maxweight=" + maxweight +
+                ", operatorid=" + operatorid +
+                ", operationunitid=" + operationunitid +
+                ", operationtime=" + operationtime +
+                ", time='" + time + '\'' +
+                ", cancel=" + cancel +
+                ", syEmps=" + syEmps +
+                ", syUnitss=" + syUnitss +
+                '}';
+    }
+
+    public BasDeliverystandard() {
+    }
+
+    public BasDeliverystandard(String name, Short minweight, Short maxweight, Short operatorid, Short operationunitid, Date operationtime, String time, Short cancel, SyEmp syEmps, SyUnits syUnitss) {
+        this.name = name;
+        this.minweight = minweight;
+        this.maxweight = maxweight;
+        this.operatorid = operatorid;
+        this.operationunitid = operationunitid;
+        this.operationtime = operationtime;
+        this.time = time;
+        this.cancel = cancel;
+        this.syEmps = syEmps;
+        this.syUnitss = syUnitss;
     }
 }

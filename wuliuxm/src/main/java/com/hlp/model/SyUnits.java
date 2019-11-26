@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class SyUnits {
@@ -10,8 +12,17 @@ public class SyUnits {
     private String remarks;
 
     private Short operatorid;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date operationtime;
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     private SyEmp syEmp;//与用户一对一
 
