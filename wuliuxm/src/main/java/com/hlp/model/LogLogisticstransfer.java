@@ -16,6 +16,15 @@ public class LogLogisticstransfer {
     private String driver;
 
     private Short deliveryperson;
+    private SyEmp syEmp;
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
 
     private Date deliverydate;
 

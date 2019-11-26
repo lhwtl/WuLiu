@@ -25,6 +25,7 @@ public class AccBusinessadmissibilityServicesImpl implements AccBusinessadmissib
         return accBusinessadmissibilityMapper.selectCountHlp();
     }
 
+
     @Override
     public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityRgdd(int pages,int rows,short processingunit,String businessnoticeno) {
         return accBusinessadmissibilityMapper.selectHlpAccBusinessadmissibilityRgdd(pages, rows,processingunit,businessnoticeno);

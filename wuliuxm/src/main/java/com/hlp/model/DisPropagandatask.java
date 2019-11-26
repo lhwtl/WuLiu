@@ -8,12 +8,30 @@ public class DisPropagandatask {
     private String outline;
 
     private Date releasetime;
+    private String releasetimes;
 
     private Date failuretime;
+    private String failuretimes;
 
     private Short status;
 
     private String content;
+
+    public void setReleasetimes(String releasetimes) {
+        this.releasetimes = releasetimes;
+    }
+
+    public String getFailuretimes() {
+        return failuretimes;
+    }
+
+    public void setFailuretimes(String failuretimes) {
+        this.failuretimes = failuretimes;
+    }
+
+    public String getReleasetimes() {
+        return releasetimes;
+    }
 
     public Short getId() {
         return id;
@@ -61,5 +79,19 @@ public class DisPropagandatask {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "DisPropagandatask{" +
+                "id=" + id +
+                ", outline='" + outline + '\'' +
+                ", releasetime=" + releasetime +
+                ", releasetimes='" + releasetimes + '\'' +
+                ", failuretime=" + failuretime +
+                ", failuretimes='" + failuretimes + '\'' +
+                ", status=" + status +
+                ", content='" + content + '\'' +
+                '}';
     }
 }

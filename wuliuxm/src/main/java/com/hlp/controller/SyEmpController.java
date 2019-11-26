@@ -31,6 +31,7 @@ public class SyEmpController {
     public SyRole LoginSyEmp(SyEmp syEmp){
         /*登入的账号*/
         SyEmp syEmp1 = syEmpService.LoginSyEmp(syEmp);
+        System.out.println(syEmp1);
 
         /*根据登入的账号获取管理员id的角色  根据多对多  角色里面的权限查出对应的权限列表一级*/
         SyRole syRole = syRoleService.OneSyRoleByid(syEmp1.getId());
