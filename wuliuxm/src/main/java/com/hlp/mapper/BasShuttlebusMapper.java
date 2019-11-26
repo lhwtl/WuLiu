@@ -23,43 +23,26 @@ public interface BasShuttlebusMapper {
 })
 public List<BasShuttlebus> selectBasShuttlebus();
 
-    int deleteByPrimaryKey(Short id);
+//跟踪表登记根据班车跟踪 一对多
+    @Select("select b.* from(select t.*,rownum rn from bas_shuttlebus t )b where b.rn>(#{pages}-1)*#{rows} and b.rn <=#{pages}*#{rows}")
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "operatorid",column = "operatorid"),
+            @Result(property = "operationunitid",column = "operationunitid"),
+            @Result(property = "licenseplateint",column = "licenseplateint"),
+            @Result(property = "syEmp", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectSyEmpIdts")),
+            @Result(property = "syUnits", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts")),
+            @Result(property = "logTracks", column = "licenseplateint", one = @One(select = "com.hlp.mapper.LogTrackMapper.selectLogTrackByCarInt"))
+    })
+    public List<BasShuttlebus> selectBasShuttlebusHLP(int pages,int rows);
 
-    int insert(BasShuttlebus record);
+    //跟踪登记  总行数
+    @Select("select count(*) from bas_shuttlebus")
+    public  int selectBasShuttlebusByMax();
 
-    int insertSelective(BasShuttlebus record);
 
-    BasShuttlebus selectByPrimaryKey(Short id);
+    @Select("select * from bas_shuttlebus where licenseplateint=#{licenseplateint}")
+    public BasShuttlebus selectBasShuttlebusBylicenseplateintHlp(String licenseplateint);
 
-    int updateByPrimaryKeySelective(BasShuttlebus record);
 
-    int updateByPrimaryKey(BasShuttlebus record);
-
-    //收派标准表
-    @Service
-    interface BasDeliverystandardMapper {
-
-        //查询收派标准表
-        @Select("select * from BAS_DELIVERYSTANDARD")
-        @Results({
-                @Result(property = "id",column = "id",id=true),
-                @Result(property = "operatorid",column = "operatorid"),
-                @Result(property = "operationunitid",column = "operationunitid"),
-                @Result(property = "syEmps", column = "operatorid", one = @One(select = "com.hlp.mapper.SyEmpMapper.selectByPrimaryKey")),
-                @Result(property = "syUnitss", column = "operationunitid", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectByPrimaryKey"))
-        })
-        public List<BasDeliverystandard> selectBasDeliverystandard();
-
-        int deleteByPrimaryKey(Short id);
-
-        int insert(BasDeliverystandard record);
-
-        int insertSelective(BasDeliverystandard record);
-
-        BasDeliverystandard selectByPrimaryKey(Short id);
-
-        int updateByPrimaryKeySelective(BasDeliverystandard record);
-
-        int updateByPrimaryKey(BasDeliverystandard record);
-    }
 }

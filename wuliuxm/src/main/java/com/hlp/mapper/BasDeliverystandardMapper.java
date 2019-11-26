@@ -20,15 +20,4 @@ public interface BasDeliverystandardMapper {
     })
     public List<BasDeliverystandard> selectBasDeliverystandard();
 
-    int deleteByPrimaryKey(Short id);
-
-    int insert(BasDeliverystandard record);
-
-    int insertSelective(BasDeliverystandard record);
-
-    BasDeliverystandard selectByPrimaryKey(Short id);
-
-    int updateByPrimaryKeySelective(BasDeliverystandard record);
-
-    int updateByPrimaryKey(BasDeliverystandard record);
 }

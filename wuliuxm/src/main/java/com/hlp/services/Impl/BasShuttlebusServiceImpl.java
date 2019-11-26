@@ -15,4 +15,14 @@ public class BasShuttlebusServiceImpl implements BasShuttlebusService {
     public List<BasShuttlebus> selectBasShuttlebus() {
         return basShuttlebusMapper.selectBasShuttlebus();
     }
+
+    @Override
+    public List<BasShuttlebus> selectBasShuttlebusHLP(int pages,int rows) {
+        return basShuttlebusMapper.selectBasShuttlebusHLP(pages, rows);
+    }
+
+    @Override
+    public int selectBasShuttlebusByMax() {
+        return basShuttlebusMapper.selectBasShuttlebusByMax();
+    }
 }

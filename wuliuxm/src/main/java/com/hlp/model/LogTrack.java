@@ -24,6 +24,15 @@ public class LogTrack {
     private String nextnodeload;
 
     private String describe;
+    private BasShuttlebus basShuttlebus;
+
+    public void setBasShuttlebus(BasShuttlebus basShuttlebus) {
+        this.basShuttlebus = basShuttlebus;
+    }
+
+    public BasShuttlebus getBasShuttlebus() {
+        return basShuttlebus;
+    }
 
     public Short getId() {
         return id;
