@@ -16,6 +16,7 @@ public class RetReturnlist {
     private Short aploss;
 
     private Date entrytime;
+    private String entrytimes;
 
     private Short receivegunit;
 
@@ -24,12 +25,14 @@ public class RetReturnlist {
     private Short returnunit;
 
     private Date recordingtime;
+    private String  recordingtimes;
 
     private Short entryunit;
 
     private String personname;
 
     private Date confirmationtime;
+    private String  confirmationtimes;
 
     private Short confirmationunit;
 
@@ -44,6 +47,59 @@ public class RetReturnlist {
     private String handlingopinions;
 
     private String denialtype;
+
+    private DisWorkordersign disWorkordersign;
+    private SyUnits syUnits;
+    private IaeLineresource iaeLineresource;
+
+    public void setIaeLineresource(IaeLineresource iaeLineresource) {
+        this.iaeLineresource = iaeLineresource;
+    }
+
+    public IaeLineresource getIaeLineresource() {
+        return iaeLineresource;
+    }
+
+    public void setEntrytimes(String entrytimes) {
+        this.entrytimes = entrytimes;
+    }
+
+    public String getEntrytimes() {
+        return entrytimes;
+    }
+
+    public void setRecordingtimes(String recordingtimes) {
+        this.recordingtimes = recordingtimes;
+    }
+
+    public String getConfirmationtimes() {
+        return confirmationtimes;
+    }
+
+    public void setConfirmationtimes(String confirmationtimes) {
+        this.confirmationtimes = confirmationtimes;
+    }
+
+    public String getRecordingtimes() {
+        return recordingtimes;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
+    public void setDisWorkordersign(DisWorkordersign disWorkordersign) {
+        this.disWorkordersign = disWorkordersign;
+    }
+
+    public DisWorkordersign getDisWorkordersign() {
+        return disWorkordersign;
+    }
+
 
     public Short getId() {
         return id;
@@ -211,5 +267,38 @@ public class RetReturnlist {
 
     public void setDenialtype(String denialtype) {
         this.denialtype = denialtype == null ? null : denialtype.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "RetReturnlist{" +
+                "id=" + id +
+                ", applicationno='" + applicationno + '\'' +
+                ", worksheetno='" + worksheetno + '\'' +
+                ", returntype=" + returntype +
+                ", apremark='" + apremark + '\'' +
+                ", aploss=" + aploss +
+                ", entrytime=" + entrytime +
+                ", entrytimes='" + entrytimes + '\'' +
+                ", receivegunit=" + receivegunit +
+                ", invalidatesign=" + invalidatesign +
+                ", returnunit=" + returnunit +
+                ", recordingtime=" + recordingtime +
+                ", recordingtimes='" + recordingtimes + '\'' +
+                ", entryunit=" + entryunit +
+                ", personname='" + personname + '\'' +
+                ", confirmationtime=" + confirmationtime +
+                ", confirmationtimes='" + confirmationtimes + '\'' +
+                ", confirmationunit=" + confirmationunit +
+                ", confirmationpersonname='" + confirmationpersonname + '\'' +
+                ", treatmentstate=" + treatmentstate +
+                ", apreturnstatus=" + apreturnstatus +
+                ", identificationsign=" + identificationsign +
+                ", handlingopinions='" + handlingopinions + '\'' +
+                ", denialtype='" + denialtype + '\'' +
+                ", disWorkordersign=" + disWorkordersign +
+                ", syUnits=" + syUnits +
+
+                '}';
     }
 }

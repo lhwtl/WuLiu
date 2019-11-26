@@ -29,21 +29,17 @@ public class SyEmpController {
     /*登录  sssssss查询权限下拉*/
     @RequestMapping("LoginSyEmp")
     public SyRole LoginSyEmp(SyEmp syEmp){
-        //System.out.println("账户:"+syEmp.getEmpno());
-       // System.out.println("密码："+syEmp.getPwd());
         /*登入的账号*/
         SyEmp syEmp1 = syEmpService.LoginSyEmp(syEmp);
-        System.out.println("登入的账号信息："+syEmp1);
+
         /*根据登入的账号获取管理员id的角色  根据多对多  角色里面的权限查出对应的权限列表一级*/
-        SyRole syRole = syRoleService.OneSyRoleByid(syEmp1.getRoleid());
-        System.out.println("当前的角色信息："+syRole);
+        SyRole syRole = syRoleService.OneSyRoleByid(syEmp1.getId());
         for (SyMenus syMenu : syRole.getSyMenus()) {
             /*查询权限里面的二级列表*/
                 List<SyMenus> syMenus = syMenusService.FillAllSyZJMenusByid(syRole.getId(),syMenu.getId());
 
               /*把二级列表放入一级列表下面*/
                 syMenu.setSymbols(syMenus);
-            System.out.println(syMenu);
         }
         return syRole;
     }

@@ -35,6 +35,52 @@ public class DisWorkordersign {
 
     private Date inputtime;
 
+    private SyUnits syUnits;//与单位一对一
+    private SyEmp syEmp;//与用户一对一
+    private Worktype worktype;//与工作单类型一对一
+    private QsType qsType;//与签收类型一对一
+    private RetReturnlist retReturnlist;
+
+    public void setRetReturnlist(RetReturnlist retReturnlist) {
+        this.retReturnlist = retReturnlist;
+    }
+
+    public RetReturnlist getRetReturnlist() {
+        return retReturnlist;
+    }
+
+    public void setWorktype(Worktype worktype) {
+        this.worktype = worktype;
+    }
+
+    public Worktype getWorktype() {
+        return worktype;
+    }
+
+    public void setQsType(QsType qsType) {
+        this.qsType = qsType;
+    }
+
+    public QsType getQsType() {
+        return qsType;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
     public Short getId() {
         return id;
     }
@@ -161,5 +207,32 @@ public class DisWorkordersign {
 
     public void setInputtime(Date inputtime) {
         this.inputtime = inputtime;
+    }
+
+    @Override
+    public String toString() {
+        return "DisWorkordersign{" +
+                "id=" + id +
+                ", workorderid=" + workorderid +
+                ", worksheetno='" + worksheetno + '\'' +
+                ", workordertype=" + workordertype +
+                ", signtype=" + signtype +
+                ", courierint=" + courierint +
+                ", couriername='" + couriername + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", signunit=" + signunit +
+                ", signtime=" + signtime +
+                ", invalidatemark=" + invalidatemark +
+                ", abnormalmark='" + abnormalmark + '\'' +
+                ", inputpersoncode=" + inputpersoncode +
+                ", inputpersonid=" + inputpersonid +
+                ", inputid=" + inputid +
+                ", inputtime=" + inputtime +
+                ", syUnits=" + syUnits +
+                ", syEmp=" + syEmp +
+                ", worktype=" + worktype +
+                ", qsType=" + qsType +
+                ", retReturnlist=" + retReturnlist +
+                '}';
     }
 }

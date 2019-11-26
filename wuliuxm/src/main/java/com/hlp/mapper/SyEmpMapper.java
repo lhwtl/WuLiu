@@ -27,6 +27,11 @@ public interface SyEmpMapper {
 
     /*登录lx*/
     @Select("select * from sy_emp where empno=#{empno} and pwd=#{pwd}")
+    /*@Results({
+            @Result(property = "id",column = "id",id = true),
+            @Result(property = "empunit",column = "empunit"),
+            @Result(property = "syUnits",column = "empunit",one=@One(select = "com.hlp.SyUnitsMapper.selectSyUnitsByProcessingUnit"))
+    })*/
     public SyEmp LoginSyEmp(SyEmp syEmp);
     /*查询全部lx*/
     @Select("select * from Sy_Emp")
@@ -75,6 +80,14 @@ public interface SyEmpMapper {
     //根据工号查询
     @Select("select * from sy_emp where empno=#{empno}")
     public SyEmp FillAllSyEmpEmpToLx(String empno);
+
+    @Select("select * from sy_emp where empname=#{empname}")
+  /*  @Results({
+            @Result(property = "id",column = "id",id = true),
+            @Result(property = "empunit",column = "empunit"),
+            @Result(property = "syUnits",column = "empunit",one=@One(select = "com.hlp.SyUnitsMapper.selectSyUnitsByProcessingUnit"))
+    })*/
+    public SyEmp SelectSyEmpByempnameHlp(String empname);
 
 
 }

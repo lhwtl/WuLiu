@@ -3,6 +3,7 @@ package com.hlp.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class BasShuttlebus {
     private Short id;
@@ -32,6 +33,15 @@ public class BasShuttlebus {
     private Date operationtime;
 
     private String time;
+    private List<LogTrack> logTracks;
+
+    public void setLogTracks(List<LogTrack> logTracks) {
+        this.logTracks = logTracks;
+    }
+
+    public List<LogTrack> getLogTracks() {
+        return logTracks;
+    }
 
     public String getTime() {
         return time;

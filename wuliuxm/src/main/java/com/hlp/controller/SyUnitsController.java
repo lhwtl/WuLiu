@@ -30,7 +30,6 @@ public class SyUnitsController {
         return syUnits;
     }
     /*name条件最大max*/
-
     @RequestMapping("MaxSyUnitsLx")
     public int MaxSyUnitsLx(String name){
         System.out.println("值："+name);
@@ -77,11 +76,5 @@ public class SyUnitsController {
         return list;
     }
 
-    /*id查询*/
-    @RequestMapping("FillSyUnitsByidLx")
-    public SyUnits FillSyUnitsByidLx(int unid){
-        SyUnits syUnits = syUnitsService.FillSyUnitsByidLx(unid);
-        System.out.println(" 公司 :"+syUnits);
-        return syUnits;
-    }
+
 }

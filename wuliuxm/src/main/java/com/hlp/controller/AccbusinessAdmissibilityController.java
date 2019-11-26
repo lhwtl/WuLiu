@@ -26,8 +26,6 @@ public class AccbusinessAdmissibilityController {
            String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
            accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
         }
-
-
         int max=accBusinessadmissibilityServices.selectCountHlp();
         map.put("total",max);
         map.put("rows",list);
@@ -46,10 +44,10 @@ public class AccbusinessAdmissibilityController {
         List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibilityRgdd(pages, rows,processingunit,businessnoticeno)
 ;        for (AccBusinessadmissibility accBusinessadmissibility : list) {
             String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
+            String times= sdf.format(accBusinessadmissibility.getReservationtime());
             accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
+            accBusinessadmissibility.setReservationtimes(times);
         }
-
-
         int max=accBusinessadmissibilityServices.selectCountHlp();
         map.put("total",max);
         map.put("rows",list);
@@ -59,26 +57,24 @@ public class AccbusinessAdmissibilityController {
         }
         return map;
     }
-
+     //人工调度分页查询
     @RequestMapping("selectHlpAccBusinessadmissibilityRgddfy")
     public Map<String,Object> selectHlpAccBusinessadmissibilityRgddfy(int pages, int rows){
        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         Map<String,Object> map=new HashMap<>();
         System.out.println(pages+" 00  "+rows);
         List<AccBusinessadmissibility> list= accBusinessadmissibilityServices.selectHlpAccBusinessadmissibilityRgddfy(pages, rows);
-/*        for (AccBusinessadmissibility accBusinessadmissibility : list) {
+       for (AccBusinessadmissibility accBusinessadmissibility : list) {
             String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
             accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
-        }*/
+           String times= sdf.format(accBusinessadmissibility.getReservationtime());
+           accBusinessadmissibility.setReservationtimes(times);
+        }
         System.out.println(list);
 
         int max=accBusinessadmissibilityServices.selectCountHlp();
         map.put("total",max);
         map.put("rows",list);
-
-        for (AccBusinessadmissibility accBusinessadmissibility : list) {
-            System.out.println(accBusinessadmissibility);
-        }
         return map;
     }
 

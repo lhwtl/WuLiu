@@ -1,5 +1,6 @@
 package com.hlp.services.Impl;
 
+import com.hlp.mapper.BasDeliverystandardMapper;
 import com.hlp.mapper.BasShuttlebusMapper;
 import com.hlp.model.BasDeliverystandard;
 import com.hlp.services.BasDeliverystandardService;
@@ -11,7 +12,9 @@ import java.util.List;
 @Service
 public class BasDeliverystandardServiceImpl implements BasDeliverystandardService {
     @Autowired
-    private BasShuttlebusMapper.BasDeliverystandardMapper basDeliverystandardMapper;
+    private BasDeliverystandardMapper basDeliverystandardMapper;
+
+
     @Override
     public List<BasDeliverystandard> selectBasDeliverystandard() {
         return basDeliverystandardMapper.selectBasDeliverystandard();
