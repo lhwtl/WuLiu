@@ -25,6 +25,6 @@ public interface PacPackagingMapper {
             "type=#{type},status=#{status} where id=#{id}")
     int updatePacPackaging(PacPackaging record);
 
-    @Select("select * from pac_packaging where itemcode=#{itemcode} and itemname=#{itemname}")
-    List<PacPackaging> selectPacPackagingname();
+    @Select("select * from pac_packaging where itemcode like '%'|| #{itemcode}||'%' and itemname like '%'|| #{itemname}||'%'")
+    List<PacPackaging> selectPacPackagingname(PacPackaging record);
 }

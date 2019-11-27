@@ -15,7 +15,7 @@ public interface PacStockMapper {
     List<PacStock> selectPacStock();
     @Delete("delete from pac_stock where id=#{id}")
     int deletePacStock(Short id);
-    @Insert("insert into pac_stock values(100,#{warehouseno}," +
+    @Insert("insert into pac_stock values(pac_stock_id.nextval,RW1001," +
             "#{reservoirtype},#{transport},#{subordinateunit}," +
             "#{drawerno},#{drawername},sysdate,#{remark})")
     int insertPacStock(PacStock record);
@@ -27,6 +27,9 @@ public interface PacStockMapper {
             "drawerno=#{drawerno},drawername=#{drawername}," +
             "remark=#{remark} where id=#{id}")
     int updatePacStock(PacStock record);
-    @Select("select * from pac_stock where warehouseno=#{warehouseno} and reservoirtype=#{reservoirtype}")
+    @Select("select * from pac_stock where warehouseno like '%'|| #{warehouseno}||'%' and reservoirtype like '%'|| #{reservoirtype} || '%'")
     List<PacStock> selectPacPacStockname(PacStock record);
+
+    @Select("select * from pac_stock where warehouseno=#{warehouseno}")
+    PacStock selectPacStockwarehouseno(String warehouseno);
 }

@@ -33,4 +33,9 @@ public class BiglogLogisticscontroltableController {
         System.out.println("删除");
         return service.deleteBiglogLogisticscontroltable(id);
     }
+    @RequestMapping("selectBiglogLogisticscontroltablemh")
+    public List<BiglogLogisticscontroltable> selectBiglogLogisticscontroltablemh(BiglogLogisticscontroltable b){
+        System.out.println(b);
+        return service.selectBiglogLogisticscontroltablemh(b);
+    }
 }

@@ -15,12 +15,12 @@ private SorStoragedetailsMapper ssm;
 
 
     @Override
-    public List<SorStoragedetails> FillSorStoragedetailsByidLx(int id) {
+    public List<SorStoragedetails> FillSorStoragedetailsByidLx(String id) {
         return ssm.FillSorStoragedetailsByidLx(id);
     }
 
     @Override
-    public int deleteSorStoragedetailsByidLx(int id) {
+    public int deleteSorStoragedetailsByidLx(String id) {
         return ssm.deleteSorStoragedetailsByidLx(id);
     }
 

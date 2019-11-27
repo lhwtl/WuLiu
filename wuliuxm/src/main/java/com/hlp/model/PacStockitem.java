@@ -21,6 +21,16 @@ public class PacStockitem {
 
     private Short status;
 
+    private PacStock pacStock;/*一对一*/
+
+    public PacStock getPacStock() {
+        return pacStock;
+    }
+
+    public void setPacStock(PacStock pacStock) {
+        this.pacStock = pacStock;
+    }
+
     public Short getId() {
         return id;
     }
@@ -115,6 +125,7 @@ public class PacStockitem {
                 ", specifications='" + specifications + '\'' +
                 ", type=" + type +
                 ", status=" + status +
+                ", pacStock=" + pacStock +
                 '}';
     }
 }

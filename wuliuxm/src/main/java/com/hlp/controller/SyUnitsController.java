@@ -70,10 +70,20 @@ public class SyUnitsController {
         return  i;
     }
 
+    //查询所有单位
     @RequestMapping("selectSyUnitsHlp")
     public List<SyUnits> selectSyUnitsHlp(){
         List<SyUnits> list=syUnitsService.selectSyUnitsHlp();
         return list;
+    }
+
+
+    /*id查询*/
+    @RequestMapping("FillSyUnitsByidLx")
+    public SyUnits FillSyUnitsByidLx(int unid){
+        SyUnits syUnits = syUnitsService.FillSyUnitsByidLx(unid);
+        System.out.println(" 公司 :"+syUnits);
+        return syUnits;
     }
 
 

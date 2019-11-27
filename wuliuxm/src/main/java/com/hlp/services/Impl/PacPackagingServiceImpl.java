@@ -43,7 +43,7 @@ public class PacPackagingServiceImpl implements PacPackagingService {
     }
 
     @Override
-    public List<PacPackaging> selectPacPackagingname() {
-        return mapper.selectPacPackagingname();
+    public List<PacPackaging> selectPacPackagingname(PacPackaging record) {
+        return mapper.selectPacPackagingname(record);
     }
 }

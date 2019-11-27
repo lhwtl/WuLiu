@@ -36,5 +36,10 @@ public class BiglogLogisticscontroltableServiceImpl implements BiglogLogisticsco
         return logisticscontroltable.deleteBiglogLogisticscontroltable(id);
     }
 
+    @Override
+    public List<BiglogLogisticscontroltable> selectBiglogLogisticscontroltablemh(BiglogLogisticscontroltable b) {
+        return logisticscontroltable.selectBiglogLogisticscontroltablemh(b);
+    }
+
 
 }

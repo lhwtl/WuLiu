@@ -14,7 +14,7 @@ public interface BiglogLogisticscontroltableMapper {
     @Select("select * from biglog_logisticscontroltable")
     List<BiglogLogisticscontroltable> selectBiglogLogisticscontroltable();
 
-    @Insert("insert into biglog_logisticscontroltable values(2,#{worksheetno},#{ctype}" +
+    @Insert("insert into biglog_logisticscontroltable values(BiglogLogisticscontroltable_id.nextval,#{worksheetno},#{ctype}" +
             ",#{corporation},#{waybillid},#{remarks},1,sysdate,1)")
     int insertBiglogLogisticscontroltable(BiglogLogisticscontroltable b);
     @Update("update biglog_logisticscontroltable set worksheetno=#{worksheetno}," +
@@ -23,4 +23,7 @@ public interface BiglogLogisticscontroltableMapper {
     int updateBiglogLogisticscontroltable(BiglogLogisticscontroltable b);
     @Delete("delete from biglog_logisticscontroltable where id=#{id}")
     int deleteBiglogLogisticscontroltable(Short id);
+
+    @Select("select * from biglog_logisticscontroltable  where worksheetno like '%'|| #{worksheetno}||'%' and corporation like '%'|| #{corporation}||'%'")
+    List<BiglogLogisticscontroltable> selectBiglogLogisticscontroltablemh(BiglogLogisticscontroltable b);
 }
