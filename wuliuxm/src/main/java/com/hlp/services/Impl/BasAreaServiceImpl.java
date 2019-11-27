@@ -15,4 +15,9 @@ public class BasAreaServiceImpl implements BasAreaService {
     public List<BasArea> selectBasArea() {
         return basAreaMapper.selectBasArea();
     }
+
+    @Override
+    public int deleteBasAreats(Short id) {
+        return basAreaMapper.deleteBasAreats(id);
+    }
 }

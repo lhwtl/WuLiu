@@ -36,4 +36,9 @@ public class AccBusinessadmissibilityServicesImpl implements AccBusinessadmissib
         return accBusinessadmissibilityMapper.selectHlpAccBusinessadmissibilityRgddfy(pages, rows);
     }
 
+    @Override
+    public List<AccBusinessadmissibility> selectAccBusinessadmissibilityts() {
+        return accBusinessadmissibilityMapper.selectAccBusinessadmissibilityts();
+    }
+
 }

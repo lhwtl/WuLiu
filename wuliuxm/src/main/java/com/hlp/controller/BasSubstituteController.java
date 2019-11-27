@@ -24,7 +24,10 @@ public class BasSubstituteController {
             System.out.println(format);
         }
         return list;
+    }
 
-
+    @RequestMapping("delete_BasSubstitute")
+    public int delete_BasSubstitute(Short id){
+      return basSubstituteService.deleteBasSubstitutets(id);
     }
 }

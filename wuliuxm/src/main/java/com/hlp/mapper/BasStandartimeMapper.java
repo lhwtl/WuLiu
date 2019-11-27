@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.BasStandartime;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,4 +16,7 @@ public interface BasStandartimeMapper {
             @Result(property = "syUnits", column = "subordinateunit", one = @One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
     })
     public List<BasStandartime> selectBasStandartime();
+    //删除
+    @Delete("delete from bas_standartime where id =#{id}")
+    public int deleteBasStandartimets(Short id);
 }

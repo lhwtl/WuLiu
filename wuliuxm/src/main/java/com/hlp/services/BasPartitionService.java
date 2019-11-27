@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BasPartitionService {
     public List<BasPartition> selectBasPartition();
+    public int deleteBasPartitionts(Short id);
 }

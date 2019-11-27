@@ -7,4 +7,5 @@ import java.util.List;
 public interface BasStandartimeService {
 
     public List<BasStandartime> selectBasStandartime();
+    public int deleteBasStandartimets(Short id);
 }

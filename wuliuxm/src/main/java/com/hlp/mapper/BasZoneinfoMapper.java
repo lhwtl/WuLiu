@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.BasZoneinfo;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,4 +28,7 @@ public interface BasZoneinfoMapper {
             @Result(property = "basZonecustominfo", column = "id", one = @One(select = "com.hlp.mapper.BasZonecustominfoMapper.selectBasZonecustominfoZoneinfoidts"))
     })
     public BasZoneinfo selectBasZoneinfoZonecodets(String zonecode);
+    //删除
+    @Delete("delete from BAS_ZoneInfo where id=#{id}")
+    public int deleteBasZoneinfoZonecodets(short id);
 }

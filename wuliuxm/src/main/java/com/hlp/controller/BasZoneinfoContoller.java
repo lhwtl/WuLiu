@@ -21,4 +21,8 @@ public class BasZoneinfoContoller {
         }
         return list;
     }
+    @RequestMapping("delete_BasZoneinfo")
+    public int delete_BasZoneinfo(short id){
+        return basZoneinfoService.deleteBasZoneinfoZonecodets(id);
+    }
 }

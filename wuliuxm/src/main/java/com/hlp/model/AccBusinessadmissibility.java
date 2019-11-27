@@ -9,14 +9,14 @@ public class AccBusinessadmissibility {
 
     private String businessnoticeno;
 
-    private Date reservationtime;
+    private Date reservationtime;//预约收件时间
     private String reservationtimes;
 
-    private String customname;
+    private String customname;//客户姓名
 
     private String pickupaddress;
 
-    private String customcode;
+    private String customcode;//客户编号
 
     private String linkman;
 

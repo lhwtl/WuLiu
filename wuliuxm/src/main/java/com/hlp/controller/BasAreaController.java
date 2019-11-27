@@ -25,4 +25,9 @@ public class BasAreaController {
         }
         return list;
     }
+
+    @RequestMapping("delete_BasArea")
+    public int delete_BasArea(Short id){
+        return basAreaService.deleteBasAreats(id);
+    }
 }

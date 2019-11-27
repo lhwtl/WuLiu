@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BasAreaService {
     public List<BasArea> selectBasArea();
+    public int deleteBasAreats(Short id);
 }

@@ -25,4 +25,8 @@ public class BasPartitionController {
         }
         return list;
     }
+    @RequestMapping("delete_BasPartition")
+    public int delete_BasPartition(Short id){
+        return basPartitionService.deleteBasPartitionts(id);
+    }
 }

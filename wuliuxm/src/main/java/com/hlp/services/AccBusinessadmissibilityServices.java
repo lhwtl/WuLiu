@@ -14,4 +14,6 @@ public interface AccBusinessadmissibilityServices {
     //人工调度
     public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityRgdd(int pages,int rows,short processingunit,String businessnoticeno);
     public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityRgddfy(int pages,int rows);
+
+    public List<AccBusinessadmissibility> selectAccBusinessadmissibilityts();
 }

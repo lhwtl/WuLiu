@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.BasPartition;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,4 +16,8 @@ public interface BasPartitionMapper {
             @Result(property =  "basZoneinfo",column = "zonecode",one = @One(select ="com.hlp.mapper.BasZoneinfoMapper.selectBasZoneinfoZonecodets"))
     })
     public List<BasPartition> selectBasPartition();
+
+    //删除
+    @Delete("delete from Bas_Partition where id=#{id}")
+    public int deleteBasPartitionts(Short id);
 }

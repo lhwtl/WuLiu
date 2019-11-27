@@ -16,4 +16,9 @@ public class BasPartitionServiceImpl implements BasPartitionService {
     public List<BasPartition> selectBasPartition() {
         return basPartitionMapper.selectBasPartition();
     }
+
+    @Override
+    public int deleteBasPartitionts(Short id) {
+        return basPartitionMapper.deleteBasPartitionts(id);
+    }
 }

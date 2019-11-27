@@ -16,4 +16,9 @@ public class BasZoneinfoServiceImpl implements BasZoneinfoService {
     public List<BasZoneinfo> selectBasZoneinfo() {
         return basZoneinfoMapper.selectBasZoneinfo();
     }
+
+    @Override
+    public int deleteBasZoneinfoZonecodets(short id) {
+        return basZoneinfoMapper.deleteBasZoneinfoZonecodets(id);
+    }
 }

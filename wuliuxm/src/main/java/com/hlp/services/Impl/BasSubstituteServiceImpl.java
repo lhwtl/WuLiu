@@ -15,4 +15,9 @@ public class BasSubstituteServiceImpl implements BasSubstituteService {
     public List<BasSubstitute> selectBasSubstitute() {
         return basSubstituteMapper.selectBasSubstitute();
     }
+
+    @Override
+    public int deleteBasSubstitutets(short id) {
+        return basSubstituteMapper.deleteBasSubstitutets(id);
+    }
 }

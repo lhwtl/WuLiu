@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.BasSubstitute;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,5 +18,9 @@ public interface BasSubstituteMapper {
             @Result(property =  "syUnits",column = "subordinateunit",one = @One(select ="com.hlp.mapper.SyUnitsMapper.selectSyUnitsOperatoridts"))
     })
     public List<BasSubstitute> selectBasSubstitute();
+
+    //删除
+    @Delete("delete from Bas_Substitute where id =#{id}")
+    public int deleteBasSubstitutets(short id);
 
 }

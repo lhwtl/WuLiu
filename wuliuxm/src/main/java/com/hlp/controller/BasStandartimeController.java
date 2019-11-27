@@ -44,4 +44,9 @@ public class BasStandartimeController {
         return list;
     }
 
+    @RequestMapping("delete_BasStandartime")
+    public int delete_BasStandartime(short id){
+        return basStandartimeService.deleteBasStandartimets(id);
+    }
+
 }

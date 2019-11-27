@@ -14,9 +14,18 @@ public class BasDeliverystandardServiceImpl implements BasDeliverystandardServic
     @Autowired
     private BasDeliverystandardMapper basDeliverystandardMapper;
 
+    @Override
+    public List<BasDeliverystandard> selectBasDeliverystandardts() {
+        return basDeliverystandardMapper.selectBasDeliverystandard();
+    }
 
     @Override
-    public List<BasDeliverystandard> selectBasDeliverystandard() {
-        return basDeliverystandardMapper.selectBasDeliverystandard();
+    public int insertBasDeliverystandardts(BasDeliverystandard bd) {
+        return basDeliverystandardMapper.insertBasDeliverystandardts(bd);
+    }
+
+    @Override
+    public int deleteBasDeliverystandardts(short id) {
+        return basDeliverystandardMapper.deleteBasDeliverystandardts(id);
     }
 }

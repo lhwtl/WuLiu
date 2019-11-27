@@ -78,7 +78,19 @@ public class AccbusinessAdmissibilityController {
         return map;
     }
 
-
+    //查询业务受理
+    @RequestMapping("select_AccBusinessadmissibility")
+    public List<AccBusinessadmissibility> select_AccBusinessadmissibility(){
+        List<AccBusinessadmissibility> list = accBusinessadmissibilityServices.selectAccBusinessadmissibilityts();
+        for (AccBusinessadmissibility aa:list){
+            SimpleDateFormat adf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String format = adf.format(aa.getReservationtime());
+            aa.setReservationtimes(format);
+            System.out.println(format);
+            System.out.println(aa.getReservationtime());
+        }
+        return list;
+    }
 
 
 

@@ -18,4 +18,10 @@ public class AccWorkorderController {
        List<AccWorkorder> list= accWorkorderServices.selectAllAccWorkorderHlp();
        return list;
     }
+    @RequestMapping("select_AccWorkorder")
+    public List<AccWorkorder> select_AccWorkorder(){
+        List<AccWorkorder> list=accWorkorderServices.selectAccWorkorderts();
+        return list;
+
+    }
 }

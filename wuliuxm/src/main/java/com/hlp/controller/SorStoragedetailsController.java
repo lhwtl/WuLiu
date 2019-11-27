@@ -1,5 +1,6 @@
 package com.hlp.controller;
 
+
 import com.alibaba.fastjson.JSONObject;
 import com.hlp.model.SorStorage;
 import com.hlp.model.SorStoragedetails;
@@ -43,6 +44,7 @@ public class SorStoragedetailsController {
         List<SorStoragedetails> list = new ArrayList<>();
         // contantUser 需要转的字符串，DoVendorCon   tantEntity.class 需要转换成的实体类对象
         list =  JSONObject.parseArray(sorStorage.getList(), SorStoragedetails.class);
+
         //调用添加入库的方法
         int i1 = sorStorageService.insertSorStorageLx(sorStorage);
         //单号

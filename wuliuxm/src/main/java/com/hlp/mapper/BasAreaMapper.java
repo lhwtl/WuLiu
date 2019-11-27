@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.BasArea;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,5 +15,7 @@ public interface BasAreaMapper {
             @Result(property =  "syUnits",column = "entryunitid",one = @One(select ="com.hlp.mapper.SyUnitsMapper.selectSyUnitsOperatoridts"))
     })
     public List<BasArea> selectBasArea();
+    @Delete("delete from BAS_Area where id=#{id}")
+    public int deleteBasAreats(Short id);
 
 }

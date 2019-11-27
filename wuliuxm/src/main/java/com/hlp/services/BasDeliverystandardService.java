@@ -5,7 +5,8 @@ import com.hlp.model.BasDeliverystandard;
 import java.util.List;
 //收派标准表
 public interface BasDeliverystandardService {
-   //查询
+
+    //查询
    public List<BasDeliverystandard> selectBasDeliverystandardts();
    //添加
    public int insertBasDeliverystandardts(BasDeliverystandard bd);

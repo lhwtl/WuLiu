@@ -66,4 +66,17 @@ public interface AccBusinessadmissibilityMapper {
     })
     public AccBusinessadmissibility selectAccBusinessadmissibilityCustomnamets(String customname);
 
+    //查询
+    @Select("select * from acc_businessadmissibility")
+    public List<AccBusinessadmissibility> selectAccBusinessadmissibilityts();
+
+    //根据业务通知单查询
+    @Select("select * from acc_businessadmissibility where businessnoticeno=#{businessnoticeno}")
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "pickerinfo",column = "pickerinfo"),
+            @Result(property = "syEmp",column ="pickerinfo",one=@One(select = "com.hlp.mapper.SyEmpMapper.FillSyEmpByidLx")),
+    })
+    public AccBusinessadmissibility selectAccBusinessadmissibilityBusinessnoticenots(String businessnoticeno);
+
 }
