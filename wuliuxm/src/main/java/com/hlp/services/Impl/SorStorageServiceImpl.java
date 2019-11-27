@@ -31,4 +31,9 @@ public class SorStorageServiceImpl implements SorStorageService {
     public int updateSorStorageLx(SorStorage sorStorage) {
         return stm.updateSorStorageLx(sorStorage);
     }
+
+    @Override
+    public List<SorStorage> FillSorStorageByidLX(int id) {
+        return stm.FillSorStorageByidLX(id);
+    }
 }

@@ -19,7 +19,8 @@ public class SorStorage {
     private String deliverycompany;
 
     private SyEmp syEmp;/*与员工一对一*/
-
+    /*两个员工*/
+    private SyEmp syEmps;/*与员工一对一*/
     //定义一个string类型的
     private String list;
 
@@ -29,6 +30,14 @@ public class SorStorage {
 
     public void setList(String list) {
         this.list = list;
+    }
+
+    public SyEmp getSyEmps() {
+        return syEmps;
+    }
+
+    public void setSyEmps(SyEmp syEmps) {
+        this.syEmps = syEmps;
     }
 
     public SyEmp getSyEmp() {
@@ -99,6 +108,18 @@ public class SorStorage {
     public SorStorage() {
     }
 
+    public SorStorage(int id, Date acceptdate, Short acceptperson, String acceptcompany, Short deliveryperson, String deliverycompany, SyEmp syEmp, SyEmp syEmps, String list) {
+        this.id = id;
+        this.acceptdate = acceptdate;
+        this.acceptperson = acceptperson;
+        this.acceptcompany = acceptcompany;
+        this.deliveryperson = deliveryperson;
+        this.deliverycompany = deliverycompany;
+        this.syEmp = syEmp;
+        this.syEmps = syEmps;
+        this.list = list;
+    }
+
     @Override
     public String toString() {
         return "SorStorage{" +
@@ -109,7 +130,8 @@ public class SorStorage {
                 ", deliveryperson=" + deliveryperson +
                 ", deliverycompany='" + deliverycompany + '\'' +
                 ", syEmp=" + syEmp +
+                ", syEmps=" + syEmps +
+                ", list='" + list + '\'' +
                 '}';
     }
-
 }

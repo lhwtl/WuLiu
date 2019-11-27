@@ -23,26 +23,18 @@ public class SyEmp {
 
     private SyUnits syUnits;/*与单位一对一*/
 
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
+
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
     private BasDeliverystandard basDeliverystandards;//与收派表一对一
 
     private BasShuttlebus basShuttlebus;//班车设置表一对一
-    private SyUnits syUnits;
-
-    public void setSyUnits(SyUnits syUnits) {
-        this.syUnits = syUnits;
-    }
-
-    public SyUnits getSyUnits() {
-        return syUnits;
-    }
-
-    public SyUnits getSyUnits() {
-        return syUnits;
-    }
-
-    public void setSyUnits(SyUnits syUnits) {
-        this.syUnits = syUnits;
-    }
 
     public BasShuttlebus getBasShuttlebus() {
         return basShuttlebus;

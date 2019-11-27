@@ -78,4 +78,13 @@ public class SyUnitsController {
     }
 
 
+    /*id查询*/
+    @RequestMapping("FillSyUnitsByidLx")
+    public SyUnits FillSyUnitsByidLx(int unid){
+        SyUnits syUnits = syUnitsService.FillSyUnitsByidLx(unid);
+        System.out.println(" 公司 :"+syUnits);
+        return syUnits;
+    }
+
+
 }
