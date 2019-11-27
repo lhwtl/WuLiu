@@ -16,10 +16,10 @@ public class SorStorageController {
     @RequestMapping("FillAllSorStorageLx")
     public List<SorStorage> FillAllSorStorageLx(){
         List<SorStorage> sorStorages = sorStorageService.FillAllSorStorageLx();
-        //for (SorStorage sorStorage : sorStorages) {
-            //System.out.println(sorStorage.getSyEmp().getSyUnits());
-            //System.out.println("入库:"+sorStorage);
-        //}
+        for (SorStorage sorStorage : sorStorages) {
+            System.out.println(sorStorage.getSyEmp().getSyUnits());
+            System.out.println("入库:"+sorStorage);
+        }
         return sorStorages;
     }
 }

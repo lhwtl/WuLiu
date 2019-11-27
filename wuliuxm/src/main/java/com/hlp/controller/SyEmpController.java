@@ -104,6 +104,11 @@ public class SyEmpController {
         return i;
     }
 
-
+    /*根据工号查询*/
+    @RequestMapping("FillAllSyEmpEmpToLx")
+    public SyEmp FillAllSyEmpEmpToLx(String empno){
+        SyEmp syEmp = syEmpService.FillAllSyEmpEmpToLx(empno);
+        return syEmp;
+    }
 
 }

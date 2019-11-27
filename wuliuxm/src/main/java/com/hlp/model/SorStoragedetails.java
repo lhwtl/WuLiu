@@ -73,6 +73,14 @@ public class SorStoragedetails {
     public SorStoragedetails() {
     }
 
+    public SorStoragedetails(Short id, String packageid, Short weight, String outboundid, Short state) {
+        this.id = id;
+        this.packageid = packageid;
+        this.weight = weight;
+        this.outboundid = outboundid;
+        this.state = state;
+    }
+
     @Override
     public String toString() {
         return "SorStoragedetails{" +
