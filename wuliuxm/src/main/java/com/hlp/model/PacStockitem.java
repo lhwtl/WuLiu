@@ -21,7 +21,7 @@ public class PacStockitem {
 
     private Short status;
 
-    private PacStock pacStock;
+    private PacStock pacStock;/*一对一*/
 
     public PacStock getPacStock() {
         return pacStock;
@@ -125,6 +125,7 @@ public class PacStockitem {
                 ", specifications='" + specifications + '\'' +
                 ", type=" + type +
                 ", status=" + status +
+                ", pacStock=" + pacStock +
                 '}';
     }
 }
