@@ -1,5 +1,8 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class IaeLineresource {
@@ -18,9 +21,9 @@ public class IaeLineresource {
     private Short waybillid;
 
     private String carrier;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date expectarrivaldate;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date expectdeparturedate;
 
     private Short ticket;
@@ -32,17 +35,17 @@ public class IaeLineresource {
     private Short volume;
 
     private String handleperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date handledate;
 
     private Short enterperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date enterdate;
 
     private String entercompany;
 
     private Short acceptperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date acceptdate;
 
     private String acceptcompany;
@@ -58,7 +61,7 @@ public class IaeLineresource {
     private String warename;
 
     private Short actualvolume;
-
+   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date timelimit;
 
     private String ask;
@@ -75,6 +78,7 @@ public class IaeLineresource {
 
     private String importanthints;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date surplustime;
 
     public String getId() {

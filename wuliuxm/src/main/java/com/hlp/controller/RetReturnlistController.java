@@ -54,4 +54,10 @@ public class RetReturnlistController {
         map.put("rows",list);
         return map;
     }
+
+    //删除
+    @RequestMapping("deleteRetReturnlistByIdHlp")
+    public void deleteRetReturnlistByIdHlp(int id){
+         retReturnlistService.deleteRetReturnlistByIdHlp(id);
+    }
 }

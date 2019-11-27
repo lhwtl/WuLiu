@@ -14,6 +14,7 @@ import java.util.Map;
 public class LogTrackController {
     @Autowired
     private LogTrackService logTrackService;
+    //查询跟踪表
     @RequestMapping ("selectLogTrackHLP")
     public Map<String,Object> selectLogTrackHLP(int pages, int rows,String linename,String logisticscar){
         Map<String,Object> map=new HashMap<>();
@@ -22,6 +23,12 @@ public class LogTrackController {
        map.put("total",max);
        map.put("rows",list);
        return map;
+    }
+
+    //根据id 删除跟踪表
+    @RequestMapping("delectLogTrackByidHlp")
+    public void delectLogTrackByidHlp(int id){
+        logTrackService.delectLogTrackByidHlp(id);
     }
 
 }

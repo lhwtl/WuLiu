@@ -1,5 +1,8 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class IaeTimeinput {
@@ -15,12 +18,16 @@ public class IaeTimeinput {
 
     private String waybillid;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date expectarrivaldate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date expectdeparturedate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date actualarrivaldate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date actualdeparturedate;
 
     private String start;
@@ -31,6 +38,7 @@ public class IaeTimeinput {
 
     private Short inputperson;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date inputdate;
 
     public Short getId() {

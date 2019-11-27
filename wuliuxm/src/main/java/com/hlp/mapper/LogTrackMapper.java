@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.LogTrack;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,5 +30,10 @@ public interface LogTrackMapper {
     //跟踪表查询 一对一
     @Select("select * from log_track where linename=#{linename}")
     public LogTrack selectLogTrackBylinenameHLP(String linename);
+
+    //删除跟踪表中的相关数据
+    @Delete("delete from log_track where id=#{id}")
+    public void delectLogTrackByidHlp(int id);
+
 }
 

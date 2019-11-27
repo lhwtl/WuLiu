@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.RetReturnlist;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,5 +38,9 @@ public interface RetReturnlistMapper {
             @Result(property = "iaeLineresource",column = "worksheetno",one=@One(select = "com.hlp.mapper.IaeLineresourceMapper.selectIaeLineresourceById"))
     })
     public List<RetReturnlist> selectRetReturnlistScfhdHlp(int pages, int rows,String worksheetno);
+
+    //删除申请返货
+    @Delete("delete from ret_returnlist where id=#{id}")
+    public void deleteRetReturnlistByIdHlp(int id);
 
 }
