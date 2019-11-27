@@ -11,8 +11,8 @@ import java.util.List;
 public interface PacStockitemMapper {
     @Select("select * from pac_stockitem")
     List<PacStockitem> selectPacStockitem();
-    @Insert("insert into pac_stockitem values(pac_stockitem_id.nextval,RW1001,#{goodscode},#{goodsname}" +
-            ",#{storagenum},#{actualnum},#{plannedprice},#{specifications}," +
+    @Insert("insert into pac_stockitem values(pac_stockitem_id.nextval,#{warehouseno},#{goodscode},#{goodsname}," +
+            "#{storagenum},#{actualnum},#{plannedprice},#{specifications}," +
             "#{type},#{status})")
     int insertPacStockitem(PacStockitem pacStockitem);
     @Update("update pac_stockitem set goodscode=#{goodscode},goodsname=#{goodsname}," +

@@ -69,7 +69,7 @@ public interface SyEmpMapper {
     @Update("update sy_emp set empname=#{empname},empno=#{empno},pwd=#{pwd},querypwd=#{querypwd},roleid=#{roleid},empunit=#{empunit},remark=#{remark},disabled=#{disabled} where id=#{id}")
     public int updateSyEmpLx(SyEmp syEmp);
     /*删除*/
-    @Delete("delete from SyEmp where id=#{id}")
+    @Delete("delete from Sy_Emp where id=#{id}")
     public int deleteSyEmpLx(int id);
 
 

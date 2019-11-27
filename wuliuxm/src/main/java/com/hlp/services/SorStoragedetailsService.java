@@ -12,9 +12,9 @@ public interface SorStoragedetailsService {
 
 
     /*更新编号查详情*/
-    public List<SorStoragedetails> FillSorStoragedetailsByidLx(int id);
+    public List<SorStoragedetails> FillSorStoragedetailsByidLx(String id);
     /*更新编号删详情*/
-    public int deleteSorStoragedetailsByidLx(int id);
+    public int deleteSorStoragedetailsByidLx(String id);
     /*新增详情*/
     public int insertStoragedetailsByidLx(SorStoragedetails sorStoragedetails);
     /*修改详情*/
