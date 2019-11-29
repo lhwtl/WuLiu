@@ -12,4 +12,8 @@ public interface DisWorkordersignService {
 
     //取消签收确认
     public List<DisWorkordersign> selectDisWorkordersignQSslrHlp(int pages, int rows,String worksheetno);
+   //添加签收录入
+    public int addDisWorkordersignHlp(DisWorkordersign disWorkordersign);
+    //修改签收录入
+    public int updateDisWorkordersignHlp(DisWorkordersign disWorkordersign);
 }

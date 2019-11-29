@@ -1,5 +1,8 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class IaeLineresource {
@@ -18,10 +21,13 @@ public class IaeLineresource {
     private Short waybillid;
 
     private String carrier;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date expectarrivaldate;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date expectdeparturedate;
+
+    private String expectarrivaldates;
+    private String expectdeparturedates;
 
     private Short ticket;
 
@@ -32,18 +38,21 @@ public class IaeLineresource {
     private Short volume;
 
     private String handleperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date handledate;
+    private String handledates;
 
     private Short enterperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date enterdate;
+    private String  enterdates;
 
     private String entercompany;
 
     private Short acceptperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date acceptdate;
+    private String acceptdates;
 
     private String acceptcompany;
 
@@ -58,8 +67,9 @@ public class IaeLineresource {
     private String warename;
 
     private Short actualvolume;
-
+   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date timelimit;
+   private String timelimits;
 
     private String ask;
 
@@ -75,7 +85,9 @@ public class IaeLineresource {
 
     private String importanthints;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date surplustime;
+    private String surplustimes;
 
     public String getId() {
         return id;
@@ -91,6 +103,62 @@ public class IaeLineresource {
 
     public void setResourcetype(String resourcetype) {
         this.resourcetype = resourcetype == null ? null : resourcetype.trim();
+    }
+
+    public void setAcceptdates(String acceptdates) {
+        this.acceptdates = acceptdates;
+    }
+
+    public String getAcceptdates() {
+        return acceptdates;
+    }
+
+    public void setEnterdates(String enterdates) {
+        this.enterdates = enterdates;
+    }
+
+    public String getEnterdates() {
+        return enterdates;
+    }
+
+    public void setExpectarrivaldates(String expectarrivaldates) {
+        this.expectarrivaldates = expectarrivaldates;
+    }
+
+    public String getExpectarrivaldates() {
+        return expectarrivaldates;
+    }
+
+    public void setExpectdeparturedates(String expectdeparturedates) {
+        this.expectdeparturedates = expectdeparturedates;
+    }
+
+    public String getExpectdeparturedates() {
+        return expectdeparturedates;
+    }
+
+    public String getHandledates() {
+        return handledates;
+    }
+
+    public void setHandledates(String handledates) {
+        this.handledates = handledates;
+    }
+
+    public String getSurplustimes() {
+        return surplustimes;
+    }
+
+    public void setSurplustimes(String surplustimes) {
+        this.surplustimes = surplustimes;
+    }
+
+    public String getTimelimits() {
+        return timelimits;
+    }
+
+    public void setTimelimits(String timelimits) {
+        this.timelimits = timelimits;
     }
 
     public String getPort() {

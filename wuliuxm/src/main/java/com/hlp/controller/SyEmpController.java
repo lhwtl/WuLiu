@@ -111,4 +111,23 @@ public class SyEmpController {
         return syEmp;
     }
 
+    //查询所有员工
+    @RequestMapping("selectSyEmpAllHlp")
+    public List<SyEmp> selectSyEmpAllHlp(){
+        List<SyEmp> list=syEmpService.selectSyEmpAllHlp();
+        return list;
+    }
+    //根据编码查询员工
+    @RequestMapping("selectSyEmpByempnoHlp")
+    public SyEmp selectSyEmpByempnoHlp(String empno){
+       SyEmp syEmp=syEmpService.selectSyEmpByempnoHlp(empno);
+        return syEmp;
+    }
+//根据id查询
+    @RequestMapping("selectSyEmpByIdHlp")
+    public SyEmp selectSyEmpByIdHlp(int id){
+        SyEmp syEmp=syEmpService.selectSyEmpByIdHlp(id);
+        return syEmp;
+    }
+
 }

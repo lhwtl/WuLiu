@@ -13,15 +13,12 @@ public interface LogLogisticsMapper {
             @Result(property = "id",column = "id",id = true),
             @Result(property = "id",column = "id"),
             @Result(property = "logisticsint",column = "logisticsint"),
-            @Result(property = "carint",column = "carint"),
             @Result(property = "logTrack",column = "id",one=@One(select = "com.hlp.mapper.LogTrackMapper.selectLogTrackByidHLP")),
             @Result(property = "logLogisticsdetails",column = "logisticsint",one=@One(select = "com.hlp.mapper.LogLogisticsdetailsMapper.selectLogLogisticsdetailsByLogisticsIntHlp")),
-            @Result(property = "iaeLineresource",column = "carint",many=@Many(select = "com.hlp.mapper.IaeLineresourceMapper.selectIaeLineresourceByVehicleIntHlp")),
-
-
     })
     public List<LogLogistics> selectLogLogisticsHLP(int pages,int rows,String logisticsint,String linename);
     //最大值
     @Select("select count(*) from log_logistics")
     public int selectLogLogisticsByMaxHLP();
+
 }

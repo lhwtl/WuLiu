@@ -11,7 +11,7 @@ public class DisDispatchhistoryServiceImpl implements DisDispatchhistoryService 
     @Autowired
     private DisDispatchhistoryMapper disDispatchhistoryMapper;
     @Override
-    public DisDispatchhistory selectDisDispatchhistoryByidHlp(short dispatchsequence) {
-        return disDispatchhistoryMapper.selectDisDispatchhistoryByidHlp(dispatchsequence);
+    public DisDispatchhistory selectDisDispatchhistoryByidHlp(short id) {
+        return disDispatchhistoryMapper.selectDisDispatchhistoryByidHlp(id);
     }
 }

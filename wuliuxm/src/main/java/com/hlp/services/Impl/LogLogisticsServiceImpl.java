@@ -22,4 +22,6 @@ public class LogLogisticsServiceImpl implements LogLogisticsService {
     public int selectLogLogisticsByMaxHLP() {
         return logLogisticsMapper.selectLogLogisticsByMaxHLP();
     }
+
+
 }

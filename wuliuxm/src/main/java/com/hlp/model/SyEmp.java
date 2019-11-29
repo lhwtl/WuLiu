@@ -35,6 +35,13 @@ public class SyEmp {
 
     private BasShuttlebus basShuttlebus;//班车设置表一对一
 
+    public void setSyUnits(SyUnits syUnits) {
+        this.syUnits = syUnits;
+    }
+
+    public SyUnits getSyUnits() {
+        return syUnits;
+    }
 
     public BasShuttlebus getBasShuttlebus() {
         return basShuttlebus;

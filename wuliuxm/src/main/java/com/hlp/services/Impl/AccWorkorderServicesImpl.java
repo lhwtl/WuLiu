@@ -24,4 +24,9 @@ public class AccWorkorderServicesImpl implements AccWorkorderServices {
         return accWorkorderMapper.selectAllAccWorkorderHlp();
     }
 
+    @Override
+    public AccWorkorder selectAccWorkorderByJonNo(String jobno) {
+        return accWorkorderMapper.selectAccWorkorderByJonNo(jobno);
+    }
+
 }
