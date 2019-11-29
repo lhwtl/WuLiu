@@ -1,9 +1,11 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class SorOutbound {
-    private Short id;
+    private Integer id;
 
     private Short handovertype;
 
@@ -16,20 +18,61 @@ public class SorOutbound {
     private Short carriers;
 
     private Short deliveryperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date deliverydate;
 
     private String deliverycompany;
 
     private Short enterperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date enterdate;
 
-    public Short getId() {
+    private  SyEmp syEmp;
+
+    private  SyEmp syEmps;
+
+    private  SyEmp syEmpss;
+
+    //定义一个string类型的
+    private String list;
+
+    public String getList() {
+        return list;
+    }
+
+    public void setList(String list) {
+        this.list = list;
+    }
+
+    public SyEmp getSyEmp() {
+        return syEmp;
+    }
+
+    public void setSyEmp(SyEmp syEmp) {
+        this.syEmp = syEmp;
+    }
+
+    public SyEmp getSyEmps() {
+        return syEmps;
+    }
+
+    public void setSyEmps(SyEmp syEmps) {
+        this.syEmps = syEmps;
+    }
+
+    public SyEmp getSyEmpss() {
+        return syEmpss;
+    }
+
+    public void setSyEmpss(SyEmp syEmpss) {
+        this.syEmpss = syEmpss;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Short id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -111,5 +154,27 @@ public class SorOutbound {
 
     public void setEnterdate(Date enterdate) {
         this.enterdate = enterdate;
+    }
+
+
+    @Override
+    public String toString() {
+        return "SorOutbound{" +
+                "id=" + id +
+                ", handovertype=" + handovertype +
+                ", line='" + line + '\'' +
+                ", direction=" + direction +
+                ", acceptperson=" + acceptperson +
+                ", carriers=" + carriers +
+                ", deliveryperson=" + deliveryperson +
+                ", deliverydate=" + deliverydate +
+                ", deliverycompany='" + deliverycompany + '\'' +
+                ", enterperson=" + enterperson +
+                ", enterdate=" + enterdate +
+                ", syEmp=" + syEmp +
+                ", syEmps=" + syEmps +
+                ", syEmpss=" + syEmpss +
+                ", list='" + list + '\'' +
+                '}';
     }
 }
