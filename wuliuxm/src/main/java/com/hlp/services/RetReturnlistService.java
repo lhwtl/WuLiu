@@ -14,4 +14,6 @@ public interface RetReturnlistService {
     public int selectRetReturnlistMaxHlp();
     //生成返货单
     public List<RetReturnlist> selectRetReturnlistScfhdHlp(int pages, int rows,String worksheetno);
+    //删除
+    public void deleteRetReturnlistByIdHlp(int id);
 }

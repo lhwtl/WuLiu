@@ -14,12 +14,21 @@ public class DisDispatchhistory {
     private Short operationunitid;
 
     private Date operationtime;
+    private String operationtimes;
 
     private String remark;
 
     private Short status;
 
     private String reason;
+
+    public void setOperationtimes(String operationtimes) {
+        this.operationtimes = operationtimes;
+    }
+
+    public String getOperationtimes() {
+        return operationtimes;
+    }
 
     public Short getId() {
         return id;

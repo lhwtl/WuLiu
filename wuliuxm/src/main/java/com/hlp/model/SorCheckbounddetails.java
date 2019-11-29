@@ -1,9 +1,11 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class SorCheckbounddetails {
-    private Short id;
+    private Integer id;
 
     private String packageid;
 
@@ -18,14 +20,14 @@ public class SorCheckbounddetails {
     private String direction;
 
     private Short storageperson;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date storagedate;
 
-    public Short getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Short id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -91,5 +93,20 @@ public class SorCheckbounddetails {
 
     public void setStoragedate(Date storagedate) {
         this.storagedate = storagedate;
+    }
+
+    @Override
+    public String toString() {
+        return "SorCheckbounddetails{" +
+                "id=" + id +
+                ", packageid='" + packageid + '\'' +
+                ", cargocount=" + cargocount +
+                ", weight=" + weight +
+                ", volume=" + volume +
+                ", cargotype=" + cargotype +
+                ", direction='" + direction + '\'' +
+                ", storageperson=" + storageperson +
+                ", storagedate=" + storagedate +
+                '}';
     }
 }

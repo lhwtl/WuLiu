@@ -23,4 +23,9 @@ public class LogTrackServiceImpl implements LogTrackService {
     public int selectLogTrackByMaxHlp() {
         return logTrackMapper.selectLogTrackByMaxHlp();
     }
+
+    @Override
+    public void delectLogTrackByidHlp(int id) {
+        logTrackMapper.delectLogTrackByidHlp(id);
+    }
 }

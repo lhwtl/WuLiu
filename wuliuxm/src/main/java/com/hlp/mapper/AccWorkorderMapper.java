@@ -15,6 +15,7 @@ public interface AccWorkorderMapper {
     //查询所有业务通知单同时查询工单，员工以及单位||查台转单
     @Select("select * from acc_workorder where businessnoticeno=#{businessnoticeno}")
     public AccWorkorder selectAccWorkorderBybusinessnoticeno(String businessnoticeno);
+
     //查询所有的分拣编码
     @Select("select * from acc_workorder")
     public List<AccWorkorder> selectAllAccWorkorderHlp();
@@ -22,20 +23,6 @@ public interface AccWorkorderMapper {
     /*根据businessnoticeno(业务通知单号) 查询工单表*/
     @Select("select * from acc_workorder where businessnoticeno=#{businessnoticeno}")
     public AccWorkorder selectAccWorkorderBusinessnoticenots(String businessnoticeno);
-
-    //查询工单表
-    @Select("select * from acc_workorder")
-    @Results({
-            @Result(property = "id",column = "id",id = true),
-            @Result(property = "jobno",column = "jobno"),
-            @Result(property = "jobno",column = "jobno"),
-            @Result(property = "businessnoticeno",column = "businessnoticeno"),
-            @Result(property = "accBusinessadmissibility",column = "businessnoticeno",one=@One(select = "com.hlp.mapper.AccBusinessadmissibilityMapper.selectAccBusinessadmissibilityBusinessnoticenots")),
-            @Result(property = "disWorkordersign",column = "jobno",one=@One(select = "com.hlp.mapper.DisWorkordersignMapper.selectDisWorkordersignByworksheetno")),
-            @Result(property = "accWorksheet",column = "jobno",one=@One(select = "com.hlp.mapper.AccWorksheetMapper.selectAccWorksheetts"))
-
-    })
-    public List<AccWorkorder> selectAccWorkorderts();
 
 
 

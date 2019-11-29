@@ -33,4 +33,9 @@ public class RetReturnlistServiceImpl implements RetReturnlistService {
     public List<RetReturnlist> selectRetReturnlistScfhdHlp(int pages, int rows,String worksheetno) {
         return retReturnlistMapper.selectRetReturnlistScfhdHlp(pages, rows,worksheetno);
     }
+
+    @Override
+    public void deleteRetReturnlistByIdHlp(int id) {
+        retReturnlistMapper.deleteRetReturnlistByIdHlp(id);
+    }
 }

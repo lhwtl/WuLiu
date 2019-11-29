@@ -25,6 +25,8 @@ public class AccbusinessAdmissibilityController {
         for (AccBusinessadmissibility accBusinessadmissibility : list) {
            String time= sdf.format(accBusinessadmissibility.getAccWorkorder().getWorkgenerationtime());
            accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
+           String time1=sdf.format(accBusinessadmissibility.getReservationtime());
+           accBusinessadmissibility.setReservationtimes(time1);
         }
         int max=accBusinessadmissibilityServices.selectCountHlp();
         map.put("total",max);
@@ -69,6 +71,7 @@ public class AccbusinessAdmissibilityController {
             accBusinessadmissibility.getAccWorkorder().setWorkgenerationtimes(time);
            String times= sdf.format(accBusinessadmissibility.getReservationtime());
            accBusinessadmissibility.setReservationtimes(times);
+           //accBusinessadmissibility.getDisDispatchhistory().setOperationtimes(sdf.format(accBusinessadmissibility.getDisDispatchhistory().getOperationtime()));
         }
         System.out.println(list);
 

@@ -24,10 +24,4 @@ public class AccWorkorderServicesImpl implements AccWorkorderServices {
         return accWorkorderMapper.selectAllAccWorkorderHlp();
     }
 
-    @Override
-    public List<AccWorkorder> selectAccWorkorderts() {
-
-        return accWorkorderMapper.selectAccWorkorderts();
-    }
-
 }
