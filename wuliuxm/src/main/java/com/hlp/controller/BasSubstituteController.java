@@ -30,4 +30,20 @@ public class BasSubstituteController {
     public int delete_BasSubstitute(Short id){
       return basSubstituteService.deleteBasSubstitutets(id);
     }
+
+    @RequestMapping("insert_BasSubstitute")
+    public int insert_BasSubstitute(BasSubstitute basSubstitute){
+        System.out.println("添加");
+        System.out.println(basSubstitute);
+        return basSubstituteService.insertBasSubstitutets(basSubstitute);
+
+    }
+
+    @RequestMapping("update_BasSubstitute")
+    public int update_BasSubstitute(BasSubstitute basSubstitute){
+        System.out.println("修改");
+        System.out.println(basSubstitute);
+        return basSubstituteService.updateBasSubstitutets(basSubstitute);
+
+    }
 }

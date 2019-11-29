@@ -3,17 +3,17 @@ package com.hlp.model;
 public class AccWorksheet {
     private Short id;
 
-    private String worksheetno;
+    private String worksheetno;//工作单号
 
-    private String destination;
+    private String destination;//到达地
 
-    private String producttime;
+    private String producttime;//产品时限
 
-    private Short total;
+    private Short total;//总件数
 
-    private Short weight;
+    private Short weight;//重量
 
-    private String stowagerequirements;
+    private String stowagerequirements;//配载要求
 
     public Short getId() {
         return id;
@@ -69,5 +69,18 @@ public class AccWorksheet {
 
     public void setStowagerequirements(String stowagerequirements) {
         this.stowagerequirements = stowagerequirements == null ? null : stowagerequirements.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "AccWorksheet{" +
+                "id=" + id +
+                ", worksheetno='" + worksheetno + '\'' +
+                ", destination='" + destination + '\'' +
+                ", producttime='" + producttime + '\'' +
+                ", total=" + total +
+                ", weight=" + weight +
+                ", stowagerequirements='" + stowagerequirements + '\'' +
+                '}';
     }
 }

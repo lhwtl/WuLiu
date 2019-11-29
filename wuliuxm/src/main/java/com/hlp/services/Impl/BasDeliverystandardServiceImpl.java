@@ -28,4 +28,15 @@ public class BasDeliverystandardServiceImpl implements BasDeliverystandardServic
     public int deleteBasDeliverystandardts(short id) {
         return basDeliverystandardMapper.deleteBasDeliverystandardts(id);
     }
+
+    @Override
+    public BasDeliverystandard selectBasDeliverystandardByidts(short id) {
+        return basDeliverystandardMapper.selectBasDeliverystandardByidts(id
+        );
+    }
+
+    @Override
+    public int updateBasDeliverystandardts(BasDeliverystandard basDeliverystandard) {
+        return basDeliverystandardMapper.updateBasDeliverystandardts(basDeliverystandard);
+    }
 }

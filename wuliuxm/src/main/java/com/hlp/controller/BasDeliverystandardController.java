@@ -36,9 +36,7 @@ public class BasDeliverystandardController {
     public int insert_BasDeliverystandard(BasDeliverystandard bd, Short cancal ){
         System.out.println(cancal);
         System.out.println("000");
-       // System.out.println(aa);
         bd.setOperationtime(new Date());
-        //bd.setCancel(cancal);
         System.out.println(bd);
         return basDeliverystandardService.insertBasDeliverystandardts(bd);
     }
@@ -47,6 +45,26 @@ public class BasDeliverystandardController {
     public int delete_BasDeliverystandard(Short id){
         System.out.println("AA");
        return basDeliverystandardService.deleteBasDeliverystandardts(id);
+    }
+    //byid
+    @RequestMapping("byid_BasDeliverystandard")
+    public BasDeliverystandard byid_BasDeliverystandard(Short id){
+        System.out.println("byid");
+        BasDeliverystandard basDeliverystandard = basDeliverystandardService.selectBasDeliverystandardByidts(id);
+        System.out.println(basDeliverystandard.getId());
+        return basDeliverystandard;
+    }
+
+    //修改
+    @RequestMapping("update_BasDeliverystandard")
+    public int update_BasDeliverystandard(BasDeliverystandard basDeliverystandard){
+        basDeliverystandard.setOperationtime(new Date());
+        System.out.println(basDeliverystandard.getCancel());
+        System.out.println(basDeliverystandard);
+        int i = basDeliverystandardService.updateBasDeliverystandardts(basDeliverystandard);
+
+        System.out.println("修改："+i);
+        return i;
     }
 
 }

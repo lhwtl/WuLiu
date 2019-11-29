@@ -11,4 +11,8 @@ public class AccWorksheetServiceImpl implements AccWorksheetService {
     @Autowired
     private AccWorksheetMapper accWorksheetMapper;
 
+    @Override
+    public int insertAccWorksheetts(AccWorksheet accWorksheet) {
+        return accWorksheetMapper.insertAccWorksheetts(accWorksheet);
+    }
 }

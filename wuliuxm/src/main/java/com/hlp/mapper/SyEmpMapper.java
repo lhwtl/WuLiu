@@ -11,6 +11,7 @@ public interface SyEmpMapper {
 
     /*根据id查询*/
     @Select("select * from sy_emp where id=#{id}")
+
     public SyEmp selectSyEmpIdts(Short id);
 
 
@@ -79,6 +80,12 @@ public interface SyEmpMapper {
 
     //根据工号查询
     @Select("select * from sy_emp where empno=#{empno}")
+
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "empunit",column = "empunit"),
+            @Result(property = "syUnits",column = "empunit",one=@One(select="com.hlp.mapper.SyUnitsMapper.selectSyUnitsIdts"))
+    })
     public SyEmp FillAllSyEmpEmpToLx(String empno);
 
     @Select("select * from sy_emp where empname=#{empname}")

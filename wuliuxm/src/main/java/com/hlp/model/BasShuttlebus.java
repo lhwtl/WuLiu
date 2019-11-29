@@ -1,5 +1,6 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -8,29 +9,30 @@ import java.util.List;
 public class BasShuttlebus {
     private Short id;
 
-    private Short linetype;
+    private Short linetype;//线路类型
 
-    private Short lineid;
+    private Short lineid;//线路
 
-    private String licenseplateint;
+    private String licenseplateint;//车牌号
 
-    private String carrier;
+    private String carrier;//承运商
 
-    private String models;
+    private String models;//车型
 
-    private String driver;
+    private String driver;//司机
 
-    private String telephone;
+    private String telephone;//电话
 
-    private Short ton;
+    private Short ton;//吨控
 
-    private String remarks;
+    private String remarks;//备注
 
-    private Short operatorid;
+    private Short operatorid;//操作人员
 
-    private Short operationunitid;
+    private Short operationunitid;//操作单位
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private Date operationtime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date operationtime;//操作时间
 
     private String time;
     private List<LogTrack> logTracks;
@@ -173,5 +175,50 @@ public class BasShuttlebus {
 
     public void setOperationtime(Date operationtime) {
         this.operationtime = operationtime;
+    }
+
+    @Override
+    public String toString() {
+        return "BasShuttlebus{" +
+                "id=" + id +
+                ", linetype=" + linetype +
+                ", lineid=" + lineid +
+                ", licenseplateint='" + licenseplateint + '\'' +
+                ", carrier='" + carrier + '\'' +
+                ", models='" + models + '\'' +
+                ", driver='" + driver + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", ton=" + ton +
+                ", remarks='" + remarks + '\'' +
+                ", operatorid=" + operatorid +
+                ", operationunitid=" + operationunitid +
+                ", operationtime=" + operationtime +
+                ", time='" + time + '\'' +
+                ", logTracks=" + logTracks +
+                ", syEmp=" + syEmp +
+                ", syUnits=" + syUnits +
+                '}';
+    }
+
+    public BasShuttlebus() {
+    }
+
+    public BasShuttlebus(Short linetype, Short lineid, String licenseplateint, String carrier, String models, String driver, String telephone, Short ton, String remarks, Short operatorid, Short operationunitid, Date operationtime, String time, List<LogTrack> logTracks, SyEmp syEmp, SyUnits syUnits) {
+        this.linetype = linetype;
+        this.lineid = lineid;
+        this.licenseplateint = licenseplateint;
+        this.carrier = carrier;
+        this.models = models;
+        this.driver = driver;
+        this.telephone = telephone;
+        this.ton = ton;
+        this.remarks = remarks;
+        this.operatorid = operatorid;
+        this.operationunitid = operationunitid;
+        this.operationtime = operationtime;
+        this.time = time;
+        this.logTracks = logTracks;
+        this.syEmp = syEmp;
+        this.syUnits = syUnits;
     }
 }

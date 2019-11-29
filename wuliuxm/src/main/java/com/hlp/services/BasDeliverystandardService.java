@@ -12,4 +12,8 @@ public interface BasDeliverystandardService {
    public int insertBasDeliverystandardts(BasDeliverystandard bd);
    //删除
    public int deleteBasDeliverystandardts(short id);
+   //byid
+   public BasDeliverystandard selectBasDeliverystandardByidts(short id);
+
+   public int updateBasDeliverystandardts(BasDeliverystandard basDeliverystandard);
 }

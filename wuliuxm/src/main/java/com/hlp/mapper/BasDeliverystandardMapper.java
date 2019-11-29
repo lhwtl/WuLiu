@@ -24,6 +24,13 @@ public interface BasDeliverystandardMapper {
     @Insert("insert into Bas_Deliverystandard values(Bas_Deliverystandard_id.nextval,#{name},#{minweight},#{maxweight},#{operatorid},#{operationunitid},#{operationtime},#{cancel}) ")
     public int insertBasDeliverystandardts(BasDeliverystandard bd);
     //删除
-    @RequestMapping("delete from BAS_DELIVERYSTANDARD where id=#{id}")
+    @Delete("delete from BAS_DELIVERYSTANDARD where id=#{id}")
     public int deleteBasDeliverystandardts(short id);
+    //byid
+    @Select("select * from Bas_Deliverystandard where id=#{id}")
+    public BasDeliverystandard selectBasDeliverystandardByidts(short id);
+    //修改
+    @Update("update Bas_Deliverystandard set  name=#{name},minweight=#{minweight},maxweight=#{maxweight},operatorid=#{operatorid},operationunitid=#{operationunitid},operationtime=#{operationtime},cancel=#{cancel} where id=#{id}")
+    public int updateBasDeliverystandardts(BasDeliverystandard basDeliverystandard);
+
 }

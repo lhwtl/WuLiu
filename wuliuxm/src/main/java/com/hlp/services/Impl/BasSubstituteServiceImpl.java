@@ -20,4 +20,14 @@ public class BasSubstituteServiceImpl implements BasSubstituteService {
     public int deleteBasSubstitutets(short id) {
         return basSubstituteMapper.deleteBasSubstitutets(id);
     }
+
+    @Override
+    public int insertBasSubstitutets(BasSubstitute basSubstitute) {
+        return basSubstituteMapper.insertBasSubstitutets(basSubstitute);
+    }
+
+    @Override
+    public int updateBasSubstitutets(BasSubstitute basSubstitute) {
+        return basSubstituteMapper.updateBasSubstitutets(basSubstitute);
+    }
 }

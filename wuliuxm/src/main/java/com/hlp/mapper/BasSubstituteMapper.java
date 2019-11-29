@@ -23,4 +23,11 @@ public interface BasSubstituteMapper {
     @Delete("delete from Bas_Substitute where id =#{id}")
     public int deleteBasSubstitutets(short id);
 
+    //添加
+    @Insert("insert into Bas_Substitute values(bas_substitute_id.nextval,#{empno},#{empname},#{mobileno},#{type},#{pda},#{standardkg},#{standardlength},#{models},#{plateint},#{invalidatemark},#{subordinateunit})")
+    public int insertBasSubstitutets(BasSubstitute basSubstitute);
+    //修改
+    @Update("update Bas_Substitute set empno=#{empno},empname=#{empname},mobileno=#{mobileno},type=#{type},pda=#{pda},standardkg=#{standardkg},standardlength=#{standardlength},models=#{models},plateint=#{plateint},invalidatemark=#{invalidatemark},subordinateunit=#{subordinateunit} where id=#{id}")
+    public int updateBasSubstitutets(BasSubstitute basSubstitute);
+
 }

@@ -42,9 +42,15 @@ public List<BasShuttlebus> selectBasShuttlebus();
     @Select("select count(*) from bas_shuttlebus")
     public  int selectBasShuttlebusByMax();
 
-
+    //查询
     @Select("select * from bas_shuttlebus where licenseplateint=#{licenseplateint}")
     public BasShuttlebus selectBasShuttlebusBylicenseplateintHlp(String licenseplateint);
+    //添加
+    @Insert("insert into bas_shuttlebus(id,linetype,lineid,Licenseplateint,Carrier,Models,Driver,Telephone,Ton,Remarks,operatorid,operationunitid,operationtime) values(Bas_Shuttlebus_id.nextval,#{linetype},#{lineid},#{licenseplateint},#{carrier},#{models},#{driver},#{telephone},#{ton},#{remarks},#{operatorid},#{operationunitid},#{operationtime})")
+    public int insertBasShuttlebusts(BasShuttlebus basShuttlebus);
+    //修改
+    @Update("update bas_shuttlebus set  linetype=#{linetype},lineid=#{lineid},licenseplateint=#{licenseplateint},carrier=#{carrier},models=#{models},driver=#{driver},telephone=#{telephone},ton=#{ton},remarks=#{remarks} where id=#{id} ")
+    public int updateBasShuttlebus(BasShuttlebus basShuttlebus);
 
 
 }

@@ -53,11 +53,7 @@
 
         <!-- 指定数据库表 -->
         <!-- <table tableName="sy_emp" schema="" enableCountByExample="false"-->
-<<<<<<< Updated upstream
         <table tableName="sy_menus" schema="" enableCountByExample="false"
-=======
-        <table tableName="pac_stockitem" schema="" enableCountByExample="false"
->>>>>>> Stashed changes
                enableDeleteByExample="false" enableUpdateByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>

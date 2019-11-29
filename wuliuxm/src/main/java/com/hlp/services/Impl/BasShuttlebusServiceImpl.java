@@ -22,6 +22,16 @@ public class BasShuttlebusServiceImpl implements BasShuttlebusService {
     }
 
     @Override
+    public int insertBasShuttlebusts(BasShuttlebus basShuttlebus) {
+        return basShuttlebusMapper.insertBasShuttlebusts(basShuttlebus);
+    }
+
+    @Override
+    public int updateBasShuttlebus(BasShuttlebus basShuttlebus) {
+        return basShuttlebusMapper.updateBasShuttlebus(basShuttlebus);
+    }
+
+    @Override
     public List<BasShuttlebus> selectBasShuttlebusHLP(int pages, int rows) {
         return basShuttlebusMapper.selectBasShuttlebusHLP(pages,rows);
     }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
@@ -21,6 +22,12 @@ public class AccWorkorderController {
     @RequestMapping("select_AccWorkorder")
     public List<AccWorkorder> select_AccWorkorder(){
         List<AccWorkorder> list=accWorkorderServices.selectAccWorkorderts();
+        for(AccWorkorder aa:list){
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String format = sdf.format(aa.getAccBusinessadmissibility().getReservationtime());
+            aa.getAccBusinessadmissibility().setReservationtimes(format);
+
+        }
         return list;
 
     }
