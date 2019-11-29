@@ -24,6 +24,10 @@ public interface AccWorkorderMapper {
     @Select("select * from acc_workorder where businessnoticeno=#{businessnoticeno}")
     public AccWorkorder selectAccWorkorderBusinessnoticenots(String businessnoticeno);
 
+    //根据工作单号查询
+    @Select("select * from acc_workorder where jobno=#{jobno}")
+    public AccWorkorder selectAccWorkorderByJonNo(String jobno);
+
 
 
 

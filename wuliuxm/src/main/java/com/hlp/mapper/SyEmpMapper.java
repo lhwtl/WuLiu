@@ -89,5 +89,23 @@ public interface SyEmpMapper {
     })*/
     public SyEmp SelectSyEmpByempnameHlp(String empname);
 
+    //查询所有用户
+    @Select("select * from sy_emp")
+    public List<SyEmp> selectSyEmpAllHlp();
+
+    //根据员工编码查询员工
+    @Select("select * from sy_emp where empno=#{empno}")
+    @Results({
+            @Result(property = "id",column = "id",id = true),
+            @Result(property = "empunit",column = "empunit"),
+            @Result(property = "syUnits",column = "empunit",one=@One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsByProcessingUnit"))
+    })
+    public SyEmp selectSyEmpByempnoHlp(String empno);
+
+
+    //根据id查询名称
+    @Select("select * from sy_emp where id=#{id}")
+    public SyEmp selectSyEmpByIdHlp(int id);
+
 
 }

@@ -1,21 +1,22 @@
 package com.hlp.controller;
 
 import com.hlp.model.DisWorkordersign;
+import com.hlp.model.SyEmp;
 import com.hlp.services.DisWorkordersignService;
+import com.hlp.services.SyEmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class DisWorkordersignController {
     @Autowired
     private DisWorkordersignService disWorkordersignService;
+    @Autowired
+    private SyEmpService syEmpService;
 
     //签收录入
     @RequestMapping("selectDisWorkordersignHlp")
@@ -42,7 +43,22 @@ public class DisWorkordersignController {
         return map;
 
     }
+//添加签收录入
 
+    @RequestMapping("addDisWorkordersignHlp")
+    public int addDisWorkordersignHlp(DisWorkordersign disWorkordersign){
+        disWorkordersign.setInputtime(new Date());
+        disWorkordersign.setSigntime(new Date());
+        disWorkordersign.setInvalidatemark((short)1);
+        int i= disWorkordersignService.addDisWorkordersignHlp(disWorkordersign);
+        return i;
+    }
+    //修改签收录入
+    @RequestMapping("updateDisWorkordersignHlp")
+    public int updateDisWorkordersignHlp(DisWorkordersign disWorkordersign){
+        int i=disWorkordersignService.updateDisWorkordersignHlp(disWorkordersign);
+        return i;
+    }
 
 
 }

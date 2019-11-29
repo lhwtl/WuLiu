@@ -30,13 +30,6 @@ public interface SyUnitsMapper {
     /*删除*/
     @Delete("delete from sy_units where id=#{id}")
     public int deleteSyUnitsLx(int id);
-
-
-    int deleteByPrimaryKey(Short id);
-
-    int insert(SyUnits record);
-
-    int insertSelective(SyUnits record);
     /* 根据id查询*/
     @Select("select * from Sy_Units where id=#{id}")
     public SyUnits selectSyUnitsIdts(Short id);
@@ -49,10 +42,6 @@ public interface SyUnitsMapper {
             @Result(property =  "syEmp",column = "operatorid",one = @One(select ="com.hlp.mapper.SyEmpMapper.selectSyEmpIdts"))
     })
     public SyUnits selectSyUnitsOperatoridts(Short operatorid);
-
-    int updateByPrimaryKeySelective(SyUnits record);
-
-    int updateByPrimaryKey(SyUnits record);
 
     //查询所有业务通知单同时查询工单，员工以及单位||查台转单
     @Select("select * from sy_units where id=#{id}")
