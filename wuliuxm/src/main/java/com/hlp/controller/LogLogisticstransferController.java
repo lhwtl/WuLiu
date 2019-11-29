@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,10 @@ public class LogLogisticstransferController {
     public Map<String,Object> selectLogLogisticstransferHlp(int pages,int rows,String transferint,String driver){
         Map<String,Object> map=new HashMap<>();
         List<LogLogisticstransfer> list=logLogisticstransferService.selectLogLogisticstransferHlp(pages, rows,transferint,driver);
+    SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        for (LogLogisticstransfer logLogisticstransfer : list) {
+        logLogisticstransfer.setDeliverydates(sdf.format(logLogisticstransfer.getDeliverydate()));
+    }
         int max=logLogisticstransferService.selectLogLogisticstransferByMaxHlp();
         map.put("total",max);
         map.put("rows",list);

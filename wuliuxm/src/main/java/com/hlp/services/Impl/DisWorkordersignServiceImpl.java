@@ -25,4 +25,14 @@ public class DisWorkordersignServiceImpl implements DisWorkordersignService {
     public List<DisWorkordersign> selectDisWorkordersignQSslrHlp(int pages, int rows,String worksheetno){
         return disWorkordersignMapper.selectDisWorkordersignQSslrHlp(pages, rows,worksheetno);
     }
+
+    @Override
+    public int addDisWorkordersignHlp(DisWorkordersign disWorkordersign) {
+        return disWorkordersignMapper.addDisWorkordersignHlp(disWorkordersign);
+    }
+
+    @Override
+    public int updateDisWorkordersignHlp(DisWorkordersign disWorkordersign){
+        return disWorkordersignMapper.updateDisWorkordersignHlp(disWorkordersign);
+    }
 }

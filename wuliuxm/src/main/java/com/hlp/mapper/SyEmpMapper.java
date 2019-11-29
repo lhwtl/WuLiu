@@ -89,4 +89,5 @@ public interface SyEmpMapper {
     })*/
     public SyEmp SelectSyEmpByempnameHlp(String empname);
 
+
 }

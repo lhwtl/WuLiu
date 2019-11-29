@@ -16,8 +16,10 @@ public class  LogTrack {
     private String nodename;
 
     private Date starttime;
+    private String starttimes;
 
     private Date arrivaltime;
+    private String arrivaltimes;
 
     private String carint;
 
@@ -25,6 +27,22 @@ public class  LogTrack {
 
     private String describe;
     private BasShuttlebus basShuttlebus;
+
+    public void setArrivaltimes(String arrivaltimes) {
+        this.arrivaltimes = arrivaltimes;
+    }
+
+    public String getArrivaltimes() {
+        return arrivaltimes;
+    }
+
+    public void setStarttimes(String starttimes) {
+        this.starttimes = starttimes;
+    }
+
+    public String getStarttimes() {
+        return starttimes;
+    }
 
     public void setBasShuttlebus(BasShuttlebus basShuttlebus) {
         this.basShuttlebus = basShuttlebus;

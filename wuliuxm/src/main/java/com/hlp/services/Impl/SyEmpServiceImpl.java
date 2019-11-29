@@ -67,4 +67,19 @@ public class SyEmpServiceImpl implements SyEmpService {
     public SyEmp FillAllSyEmpEmpToLx(String empno) {
         return sm.FillAllSyEmpEmpToLx(empno);
     }
+
+    @Override
+    public List<SyEmp> selectSyEmpAllHlp() {
+        return sm.selectSyEmpAllHlp();
+    }
+
+    @Override
+    public SyEmp selectSyEmpByempnoHlp(String empno) {
+        return sm.selectSyEmpByempnoHlp(empno);
+    }
+
+    @Override
+    public SyEmp selectSyEmpByIdHlp(int id) {
+        return sm.selectSyEmpByIdHlp(id);
+    }
 }

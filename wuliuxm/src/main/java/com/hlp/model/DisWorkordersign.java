@@ -1,5 +1,8 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class DisWorkordersign {
@@ -20,7 +23,8 @@ public class DisWorkordersign {
     private String recipient;
 
     private Short signunit;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date signtime;
 
     private Short invalidatemark;
@@ -32,7 +36,8 @@ public class DisWorkordersign {
     private Short inputpersonid;
 
     private Short inputid;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date inputtime;
 
     private SyUnits syUnits;//与单位一对一
@@ -207,6 +212,28 @@ public class DisWorkordersign {
 
     public void setInputtime(Date inputtime) {
         this.inputtime = inputtime;
+    }
+
+    public DisWorkordersign(Short id, Short workorderid, String worksheetno, Short workordertype, Short signtype, Short courierint, String couriername, String recipient, Short signunit, Date signtime, Short invalidatemark, String abnormalmark, Short inputpersoncode, Short inputpersonid, Short inputid, Date inputtime) {
+        this.id = id;
+        this.workorderid = workorderid;
+        this.worksheetno = worksheetno;
+        this.workordertype = workordertype;
+        this.signtype = signtype;
+        this.courierint = courierint;
+        this.couriername = couriername;
+        this.recipient = recipient;
+        this.signunit = signunit;
+        this.signtime = signtime;
+        this.invalidatemark = invalidatemark;
+        this.abnormalmark = abnormalmark;
+        this.inputpersoncode = inputpersoncode;
+        this.inputpersonid = inputpersonid;
+        this.inputid = inputid;
+        this.inputtime = inputtime;
+    }
+
+    public DisWorkordersign() {
     }
 
     @Override

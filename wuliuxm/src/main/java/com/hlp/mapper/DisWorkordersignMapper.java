@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.DisWorkordersign;
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,5 +49,12 @@ public interface DisWorkordersignMapper {
     //申请返货
     @Select("select * from dis_workordersign where worksheetno=#{worksheetno}")
     public DisWorkordersign selectDisWorkordersignByworksheetno(String worksheetno);
+
+    //添加签收录入
+    @Insert("insert into dis_workordersign(id,workorderid,worksheetno,workordertype,signtype,courierint,couriername,recipient,signunit,signtime,invalidatemark,inputpersonid,inputid,inputtime)values(dis_workordersign_id.nextval,#{workorderid},#{worksheetno},#{workordertype},#{signtype},#{courierint},#{couriername},#{recipient},1,#{signtime},#{invalidatemark},#{inputpersonid},#{inputid},#{inputtime})")
+    public int addDisWorkordersignHlp(DisWorkordersign disWorkordersign);
+    //修改签收录入
+    @Update("update dis_workordersign set workorderid=#{workorderid},worksheetno=#{worksheetno},workordertype=#{workordertype},signtype=#{signtype},courierint=#{courierint},couriername=#{couriername},recipient=#{recipient},inputpersonid=#{inputpersonid},inputid=#{inputid} where id=#{id}")
+    public int updateDisWorkordersignHlp(DisWorkordersign disWorkordersign);
 
 }

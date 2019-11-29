@@ -1,6 +1,7 @@
 package com.hlp.controller;
 
 import com.hlp.model.BasShuttlebus;
+import com.hlp.model.LogTrack;
 import com.hlp.services.BasShuttlebusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ public class BasShuttlebusController  {
             SimpleDateFormat sdf = new SimpleDateFormat();
             String format = sdf.format(bb.getOperationtime());
             bb.setTime(format);
+
             System.out.println(bb.getId());
         }
         return list;

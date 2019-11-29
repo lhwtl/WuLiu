@@ -1,16 +1,18 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class SorOutbounddetails {
-    private Short id;
+    private Integer id;
 
     private String packageid;
 
     private Short weight;
 
     private Short volume;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date scandate;
 
     private Short isscan;
@@ -19,11 +21,11 @@ public class SorOutbounddetails {
 
     private Short isdoublestorage;
 
-    public Short getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Short id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -81,5 +83,19 @@ public class SorOutbounddetails {
 
     public void setIsdoublestorage(Short isdoublestorage) {
         this.isdoublestorage = isdoublestorage;
+    }
+
+    @Override
+    public String toString() {
+        return "SorOutbounddetails{" +
+                "id=" + id +
+                ", packageid='" + packageid + '\'' +
+                ", weight=" + weight +
+                ", volume=" + volume +
+                ", scandate=" + scandate +
+                ", isscan=" + isscan +
+                ", isnextstorage=" + isnextstorage +
+                ", isdoublestorage=" + isdoublestorage +
+                '}';
     }
 }

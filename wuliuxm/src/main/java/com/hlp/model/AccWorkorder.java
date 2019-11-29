@@ -25,12 +25,29 @@ public class AccWorkorder {
     private Short pickupunit;
 
     private Date pickuptime;
+    private String pickuptimes;
 
     private String sortingcode;
 
 
 
     private AccBusinessadmissibility accBusinessadmissibility;/*业务受理表一对一*/
+
+    public void setPickuptimes(String pickuptimes) {
+        this.pickuptimes = pickuptimes;
+    }
+
+    public String getPickuptimes() {
+        return pickuptimes;
+    }
+
+    public void setAccBusinessadmissibility(AccBusinessadmissibility accBusinessadmissibility) {
+        this.accBusinessadmissibility = accBusinessadmissibility;
+    }
+
+    public AccBusinessadmissibility getAccBusinessadmissibility() {
+        return accBusinessadmissibility;
+    }
 
     public void setBusinessnoticeno(String businessnoticeno) {
         this.businessnoticeno = businessnoticeno;

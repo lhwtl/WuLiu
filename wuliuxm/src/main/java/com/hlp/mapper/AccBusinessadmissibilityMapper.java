@@ -47,11 +47,11 @@ public interface AccBusinessadmissibilityMapper {
             @Result(property = "businessnoticeno",column = "businessnoticeno"),
             @Result(property = "processingunit",column = "processingunit"),
             @Result(property = "pickerinfo",column = "pickerinfo"),
-            @Result(property = "dispatchsequence",column = "dispatchsequence"),
+            @Result(property = "id",column = "id"),
             @Result(property = "accWorkorder",column ="businessnoticeno",one=@One(select = "com.hlp.mapper.AccWorkorderMapper.selectAccWorkorderBybusinessnoticeno")),
             @Result(property = "syEmp",column = "pickerinfo",one=@One(select = "com.hlp.mapper.SyEmpMapper.selectSysEmpByPickerInfo")),
             @Result(property = "syUnits",column = "processingunit",one=@One(select = "com.hlp.mapper.SyUnitsMapper.selectSyUnitsByProcessingUnit")),
-            @Result(property = "disDispatchhistory",column = "dispatchsequence",one=@One(select = "com.hlp.mapper.DisDispatchhistoryMapper.selectDisDispatchhistoryByidHlp"))
+            @Result(property = "disDispatchhistory",column = "id",one=@One(select = "com.hlp.mapper.DisDispatchhistoryMapper.selectDisDispatchhistoryByidHlp"))
 
     })
     public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityRgddfy(int pages,int rows);

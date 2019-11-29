@@ -27,6 +27,15 @@ public class LogLogisticstransfer {
     }
 
     private Date deliverydate;
+    private String deliverydates;
+
+    public void setDeliverydates(String deliverydates) {
+        this.deliverydates = deliverydates;
+    }
+
+    public String getDeliverydates() {
+        return deliverydates;
+    }
 
     public Short getId() {
         return id;
