@@ -89,11 +89,7 @@ public interface SyEmpMapper {
     })*/
     public SyEmp SelectSyEmpByempnameHlp(String empname);
 
-<<<<<<< Updated upstream
 
-=======
-<<<<<<< HEAD
-=======
     //查询所有用户
     @Select("select * from sy_emp")
     public List<SyEmp> selectSyEmpAllHlp();
@@ -113,6 +109,5 @@ public interface SyEmpMapper {
     public SyEmp selectSyEmpByIdHlp(int id);
 
 
->>>>>>> origin/master
->>>>>>> Stashed changes
+
 }
