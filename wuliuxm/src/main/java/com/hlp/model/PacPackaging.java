@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class PacPackaging {
@@ -20,13 +22,13 @@ public class PacPackaging {
     private Short status;
 
     private Short operatorid;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date operationtime;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date invalidatejobint;
 
     private Short invalidatename;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date invalidatetime;
 
     public Short getId() {

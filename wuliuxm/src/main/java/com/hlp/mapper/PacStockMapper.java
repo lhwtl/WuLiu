@@ -32,4 +32,7 @@ public interface PacStockMapper {
 
     @Select("select * from pac_stock where warehouseno=#{warehouseno}")
     PacStock selectPacStockwarehouseno(String warehouseno);
+
+
+
 }

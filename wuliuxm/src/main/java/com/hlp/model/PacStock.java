@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class PacStock {
     private Short drawerno;
 
     private String drawername;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date drawertime;
 
     private String remark;
