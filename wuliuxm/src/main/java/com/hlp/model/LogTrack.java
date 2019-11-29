@@ -2,7 +2,7 @@ package com.hlp.model;
 
 import java.util.Date;
 
-public class LogTrack {
+public class  LogTrack {
     private Short id;
 
     private String linetype;

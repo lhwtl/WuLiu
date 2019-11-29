@@ -1,7 +1,7 @@
 package com.hlp.mapper;
 
 
-import com.hlp.model.PacPackaging;
+
 import com.hlp.model.PacStockitem;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
