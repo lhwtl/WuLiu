@@ -2,10 +2,7 @@ package com.hlp.mapper;
 
 import com.hlp.model.PacPackaging;
 import com.hlp.model.PacStock;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,6 +29,18 @@ public interface PacStockMapper {
 
     @Select("select * from pac_stock where warehouseno=#{warehouseno}")
     PacStock selectPacStockwarehouseno(String warehouseno);
+
+    @Select({"select * from pac_stock where warehouseno like '%' || 'warehouseno' || '%'and subordinateunit like  '%' || 'subordinateunit' || '%'"})
+    @Results({
+            @Result(property = "id" , column = "id" ,id=true),
+            @Result(property = "warehouseno", column = "warehouseno"),
+            @Result(property = "pacStockitem", column = "warehouseno" ,one = @One(select = "com.hlp.mapper.PacStockitemMapper.selectPacStockwarehouseno"))
+    })
+
+    public List<PacStock> selectPacStockXH(@Param("warehouseno") String warehouseno,@Param("subordinateunit") String subordinateunit);
+
+    @Select("select * from pac_stock where warehouseno like '%'||'R'||'%' and subordinateunit like '%'||'分'||'%' ")
+   public List<PacStock> selectPacStockXHs();
 
 
 

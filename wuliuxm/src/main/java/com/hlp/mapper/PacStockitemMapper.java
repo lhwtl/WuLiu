@@ -2,6 +2,7 @@ package com.hlp.mapper;
 
 
 
+import com.hlp.model.PacStock;
 import com.hlp.model.PacStockitem;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
@@ -27,4 +28,25 @@ public interface PacStockitemMapper {
             @Result(property = "pacStock", column = "warehouseno" ,one = @One(select = "com.hlp.mapper.PacStockMapper.selectPacStockwarehouseno"))
     })
     List<PacStockitem>selectPacStockitemkc();
+
+    @Select("select u.*,P.SUBORDINATEUNIT from PAC_StockItem u " +
+            "inner join Pac_Stock P " +
+            "ON u.warehouseno=p.warehouseno " +
+            "where goodscode like '%'||#{goodscode}||'%' and P.subordinateunit like '%'||#{goodsname}||'%'")
+    @Results({
+            @Result(column ="id",property = "id",id = true),
+            @Result(column ="GOODSCODE",property = "goodscode"),
+            @Result(column ="GOODSNAME",property = "goodsname"),
+            @Result(column ="STORAGENUM",property = "storagenum"),
+            @Result(column ="PLANNEDPRICE",property = "plannedprice"),
+            @Result(column ="SPECIFICATIONS",property = "specifications"),
+            @Result(column ="TYPE",property = "type"),
+            @Result(column ="SUBORDINATEUNIT",property = "pacStock.subordinateunit"),
+    })
+    List<PacStockitem>selectPacStockitemhc(PacStockitem P);
+
+    @Select("select * from pac_stockitem where warehouseno=#{warehouseno}")
+    public PacStockitem selectPacStockitemXH(String warehouseno);
+
+
 }

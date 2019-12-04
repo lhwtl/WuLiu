@@ -13,4 +13,6 @@ public interface PacStockService {
     int updatePacStock(PacStock record);
     List<PacStock> selectPacStockname(PacStock record);
     PacStock selectPacStockwarehouseno(String warehouseno);
+    public List<PacStock> selectPacStockXH(String s,String o);
+    public List<PacStock> selectPacStockXHs();
 }

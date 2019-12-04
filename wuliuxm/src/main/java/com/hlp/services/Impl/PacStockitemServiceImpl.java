@@ -36,4 +36,14 @@ public class PacStockitemServiceImpl implements PacStockitemService {
     public List<PacStockitem> selectPacStockitemkc() {
         return mapper.selectPacStockitemkc();
     }
+
+    @Override
+    public List<PacStockitem> selectPacStockitemhc( PacStockitem P) {
+        return mapper.selectPacStockitemhc(P);
+    }
+
+    @Override
+    public PacStockitem selectPacStockitemXH(String warehouseno) {
+        return mapper.selectPacStockitemXH(warehouseno);
+    }
 }
