@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.SorCheckbounddetails;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,5 +24,9 @@ public interface SorCheckbounddetailsMapper {
     public int updateSorCheckbounddetailsLx(SorCheckbounddetails sorCheckbounddetails);
 
 
+
+    /*正在的库存*/
+    @Select("select * from Sor_Checkbounddetails")
+    public List<SorCheckbounddetails> FillKCSorCheckbounddetailslx();
 
 }

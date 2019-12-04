@@ -81,8 +81,14 @@ public class SyEmpController {
     }
     /*修改*/
     @RequestMapping("updateSyEmpLx")
-    public int updateSyEmpLx(SyEmp syEmp){
+    public int updateSyEmpLx(SyEmp syEmp,String disabled){
+        System.out.println(disabled);
         System.out.println(syEmp);
+/*        if (disabled.equals('是')){
+            syEmp.setDisabled((short)1);
+        }else {
+            syEmp.setDisabled((short)0);
+        }*/
         int i = syEmpService.updateSyEmpLx(syEmp);
         System.out.println("修改"+i);
         return i;
@@ -91,6 +97,7 @@ public class SyEmpController {
     @RequestMapping("insertSyEmpLx")
     public int insertSyEmpLx(SyEmp syEmp){
         System.out.println(syEmp);
+        syEmp.setEmpno("TO"+(1020+syEmp.getId()));
         int i = syEmpService.insertSyEmpLx(syEmp);
         System.out.println("新增"+i);
         return i;
@@ -103,6 +110,15 @@ public class SyEmpController {
         System.out.println("删除"+i);
         return i;
     }
+        @RequestMapping("FillSyEmpByidLx")
+        public SyEmp FillSyEmpByidLx(int unid){
+            SyEmp syEmp = syEmpService.FillSyEmpByidLx(unid);
+            System.out.println(syEmp);
+            System.out.println(syEmp.getSyUnits());
+            return syEmp;
+        }
+
+
 
     /*根据工号查询*/
     @RequestMapping("FillAllSyEmpEmpToLx")

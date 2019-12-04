@@ -47,8 +47,9 @@ public class SorOutboundController {
         //设置入库交接单号
         sorOutbound.setId(-rs);
         //设置当前时间
-        sorOutbound.setDeliverydate(date);
-        sorOutbound.setEnterdate(date);
+        sorOutbound.setDeliverydate(new Date());
+        sorOutbound.setEnterdate(new Date());
+        System.out.println("新增:"+sorOutbound);
         List<SorOutbounddetails> list = new ArrayList<>();
         // contantUser 需要转的字符串，DoVendorCon   tantEntity.class 需要转换成的实体类对象
         list =  JSONObject.parseArray(sorOutbound.getList(), SorOutbounddetails.class);
@@ -77,6 +78,7 @@ public class SorOutboundController {
         System.out.println("进方法"+sorOutbound);
         sorOutbound.setDeliverydate(new Date());
         sorOutbound.setEnterdate(new Date());
+        System.out.println("修改"+sorOutbound);
         List<SorOutbounddetails> list = new ArrayList<>();
         // contantUser 需要转的字符串，DoVendorCon   tantEntity.class 需要转换成的实体类对象
         list =  JSONObject.parseArray(sorOutbound.getList(), SorOutbounddetails.class);

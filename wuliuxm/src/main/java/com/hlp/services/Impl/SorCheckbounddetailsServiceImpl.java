@@ -2,6 +2,7 @@ package com.hlp.services.Impl;
 
 import com.hlp.mapper.SorCheckbounddetailsMapper;
 import com.hlp.model.SorCheckbounddetails;
+import com.hlp.model.SorPackagedetails;
 import com.hlp.services.SorCheckbounddetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,4 +43,11 @@ public class SorCheckbounddetailsServiceImpl implements SorCheckbounddetailsServ
     public int updateSorCheckbounddetailsLx(SorCheckbounddetails sorCheckbounddetails) {
         return scm.updateSorCheckbounddetailsLx(sorCheckbounddetails);
     }
+
+    @Override
+    public List<SorCheckbounddetails> FillKCSorCheckbounddetailslx() {
+        return scm.FillKCSorCheckbounddetailslx();
+    }
+
+
 }

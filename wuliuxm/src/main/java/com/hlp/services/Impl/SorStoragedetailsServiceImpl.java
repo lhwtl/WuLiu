@@ -33,4 +33,14 @@ private SorStoragedetailsMapper ssm;
     public int updateStoragedetailsByidLx(SorStoragedetails sorStoragedetails) {
         return ssm.updateStoragedetailsByidLx(sorStoragedetails);
     }
+
+    @Override
+    public List<SorStoragedetails> FillSorStoragedetailsKCLx(String id) {
+        return ssm.FillSorStoragedetailsKCLx(id);
+    }
+
+    @Override
+    public List<SorStoragedetails> FilSorStoragedetailsKcLX() {
+        return ssm.FilSorStoragedetailsKcLX();
+    }
 }

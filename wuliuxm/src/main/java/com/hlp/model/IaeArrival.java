@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class IaeArrival {
@@ -10,18 +12,18 @@ public class IaeArrival {
     private String cargoaddress;
 
     private String issueperson;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date issuedate;
 
     private String workaddress;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date storagedate;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date outbounddate;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date timelimit;
-
-    private Short batch;
+    //@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    private short batch;
 
     public String getId() {
         return id;
@@ -95,11 +97,27 @@ public class IaeArrival {
         this.timelimit = timelimit;
     }
 
-    public Short getBatch() {
+    public short getBatch() {
         return batch;
     }
 
-    public void setBatch(Short batch) {
+    public void setBatch(short batch) {
         this.batch = batch;
+    }
+
+    @Override
+    public String toString() {
+        return "IaeArrival{" +
+                "id='" + id + '\'' +
+                ", sendcompany='" + sendcompany + '\'' +
+                ", cargoaddress='" + cargoaddress + '\'' +
+                ", issueperson='" + issueperson + '\'' +
+                ", issuedate=" + issuedate +
+                ", workaddress='" + workaddress + '\'' +
+                ", storagedate=" + storagedate +
+                ", outbounddate=" + outbounddate +
+                ", timelimit=" + timelimit +
+                ", batch=" + batch +
+                '}';
     }
 }

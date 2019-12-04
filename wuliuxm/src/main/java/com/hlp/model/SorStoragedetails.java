@@ -11,6 +11,16 @@ public class SorStoragedetails {
 
     private Short state;
 
+    private  SorStorage sorStorage;
+
+    public SorStorage getSorStorage() {
+        return sorStorage;
+    }
+
+    public void setSorStorage(SorStorage sorStorage) {
+        this.sorStorage = sorStorage;
+    }
+
     //定义一个string类型的
     private String list;
 
@@ -89,6 +99,7 @@ public class SorStoragedetails {
                 ", weight=" + weight +
                 ", outboundid='" + outboundid + '\'' +
                 ", state=" + state +
+                ", sorStorage=" + sorStorage +
                 ", list='" + list + '\'' +
                 '}';
     }

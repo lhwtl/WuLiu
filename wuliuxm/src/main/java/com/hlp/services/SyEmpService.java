@@ -30,4 +30,6 @@ public interface SyEmpService {
     public SyEmp selectSyEmpByempnoHlp(String empno);
     //根据id查询
     public SyEmp selectSyEmpByIdHlp(int id);
+
+
 }

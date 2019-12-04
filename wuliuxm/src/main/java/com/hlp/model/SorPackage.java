@@ -1,9 +1,11 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class SorPackage {
-    private Short id;
+    private Integer id;
 
     private Short packageperson;
 
@@ -12,7 +14,7 @@ public class SorPackage {
     private String destination;
 
     private String reckondes;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date timelimit;
 
     private Short ticketsum;
@@ -27,11 +29,11 @@ public class SorPackage {
 
     private Short ask;
 
-    public Short getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Short id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -121,5 +123,23 @@ public class SorPackage {
 
     public void setAsk(Short ask) {
         this.ask = ask;
+    }
+
+    @Override
+    public String toString() {
+        return "SorPackage{" +
+                "id=" + id +
+                ", packageperson=" + packageperson +
+                ", sealint='" + sealint + '\'' +
+                ", destination='" + destination + '\'' +
+                ", reckondes='" + reckondes + '\'' +
+                ", timelimit=" + timelimit +
+                ", ticketsum=" + ticketsum +
+                ", cargosum=" + cargosum +
+                ", weightsum=" + weightsum +
+                ", volumesum=" + volumesum +
+                ", state=" + state +
+                ", ask=" + ask +
+                '}';
     }
 }

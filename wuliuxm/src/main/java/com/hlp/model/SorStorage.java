@@ -3,6 +3,7 @@ package com.hlp.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class SorStorage {
     private int id;
@@ -23,6 +24,16 @@ public class SorStorage {
     private SyEmp syEmps;/*与员工一对一*/
     //定义一个string类型的
     private String list;
+
+    private List<SorStoragedetails> sorStoragedetails;/*库存查询用一对多*/
+
+    public List<SorStoragedetails> getSorStoragedetails() {
+        return sorStoragedetails;
+    }
+
+    public void setSorStoragedetails(List<SorStoragedetails> sorStoragedetails) {
+        this.sorStoragedetails = sorStoragedetails;
+    }
 
     public String getList() {
         return list;
@@ -132,6 +143,7 @@ public class SorStorage {
                 ", syEmp=" + syEmp +
                 ", syEmps=" + syEmps +
                 ", list='" + list + '\'' +
+                ", sorStoragedetails=" + sorStoragedetails +
                 '}';
     }
 }

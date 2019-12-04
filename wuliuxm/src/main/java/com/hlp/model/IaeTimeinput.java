@@ -160,4 +160,25 @@ public class IaeTimeinput {
     public void setInputdate(Date inputdate) {
         this.inputdate = inputdate;
     }
+
+    @Override
+    public String toString() {
+        return "IaeTimeinput{" +
+                "id=" + id +
+                ", inputtype='" + inputtype + '\'' +
+                ", port='" + port + '\'' +
+                ", demand=" + demand +
+                ", vehicleint='" + vehicleint + '\'' +
+                ", waybillid='" + waybillid + '\'' +
+                ", expectarrivaldate=" + expectarrivaldate +
+                ", expectdeparturedate=" + expectdeparturedate +
+                ", actualarrivaldate=" + actualarrivaldate +
+                ", actualdeparturedate=" + actualdeparturedate +
+                ", start='" + start + '\'' +
+                ", carriers=" + carriers +
+                ", remarks='" + remarks + '\'' +
+                ", inputperson=" + inputperson +
+                ", inputdate=" + inputdate +
+                '}';
+    }
 }

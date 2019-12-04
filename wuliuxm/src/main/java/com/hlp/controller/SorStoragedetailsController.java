@@ -5,6 +5,7 @@ import com.hlp.model.SorStorage;
 import com.hlp.model.SorStoragedetails;
 import com.hlp.services.SorStorageService;
 import com.hlp.services.SorStoragedetailsService;
+import com.sun.org.apache.xpath.internal.functions.FuncSubstring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ public class SorStoragedetailsController {
     /*超级新增*/
     @RequestMapping("insertStoragedetailsByidLx")
     public int insertStoragedetailsByidLx(SorStorage sorStorage ){
+        System.out.println("op"+sorStorage);
         System.out.println("进方法");
         //生成入库交接单号
         Date date=new Date();
@@ -40,7 +42,8 @@ public class SorStoragedetailsController {
         //设置入库交接单号
         sorStorage.setId(-rs);
         //设置当前时间
-        sorStorage.setAcceptdate(date);
+        sorStorage.setAcceptdate(new Date());
+        System.out.println("op"+sorStorage);
         List<SorStoragedetails> list = new ArrayList<>();
         // contantUser 需要转的字符串，DoVendorCon   tantEntity.class 需要转换成的实体类对象
         list =  JSONObject.parseArray(sorStorage.getList(), SorStoragedetails.class);
@@ -100,6 +103,28 @@ public class SorStoragedetailsController {
         String ck="CK"+id;
         int aa = sorStoragedetailsService.deleteSorStoragedetailsByidLx(ck);
 
+    }
+
+
+
+
+    /*库存*/
+    @RequestMapping("FilSorStoragedetailsKcLX")
+    public List<SorStoragedetails> FilSorStoragedetailsKcLX(){
+        List<SorStoragedetails> sorStoragedetails = sorStoragedetailsService.FilSorStoragedetailsKcLX();
+        for (SorStoragedetails sorStoragedetail : sorStoragedetails) {
+            String pid = sorStoragedetail.getOutboundid().substring(3);
+            System.out.println("截取"+pid);
+            int id = Integer.parseInt(pid);
+            /*查出全部详情  截取CK-  在吧截取后的值  放入查询单个入库
+            * 在吧当个入库的值  放入详情的入库关系中形成一对一*/
+            /*SorStorage sorStorage = sorStorageService.FillSorStorageKCLX(id);
+            System.out.println("??"+sorStorage);*/
+            sorStoragedetail.setSorStorage(sorStorageService.FillSorStorageKCLX(id));
+            System.out.println(sorStoragedetail);
+        }
+        /*FillSorStorageByidLX*/
+        return sorStoragedetails;
     }
 
 }

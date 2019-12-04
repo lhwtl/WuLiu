@@ -1,7 +1,7 @@
 package com.hlp.model;
 
 public class SorPackagedetails {
-    private Short id;
+    private Integer id;
 
     private Short warename;
 
@@ -25,11 +25,11 @@ public class SorPackagedetails {
 
     private String inputtype;
 
-    public Short getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Short id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -119,5 +119,23 @@ public class SorPackagedetails {
 
     public void setInputtype(String inputtype) {
         this.inputtype = inputtype == null ? null : inputtype.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "SorPackagedetails{" +
+                "id=" + id +
+                ", warename=" + warename +
+                ", destination='" + destination + '\'' +
+                ", ticket=" + ticket +
+                ", actualcargoint=" + actualcargoint +
+                ", cargoint=" + cargoint +
+                ", weight=" + weight +
+                ", volume=" + volume +
+                ", service=" + service +
+                ", importanthints='" + importanthints + '\'' +
+                ", ask='" + ask + '\'' +
+                ", inputtype='" + inputtype + '\'' +
+                '}';
     }
 }

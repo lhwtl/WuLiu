@@ -1,6 +1,7 @@
 package com.hlp.services;
 
 import com.hlp.model.SorCheckbounddetails;
+import com.hlp.model.SorPackagedetails;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -18,6 +19,9 @@ public interface SorCheckbounddetailsService {
     public int deleteSorCheckbounddetailsLx(String packageid);
     public int insertSorCheckbounddetailsLx(SorCheckbounddetails sorCheckbounddetails);
     public int updateSorCheckbounddetailsLx(SorCheckbounddetails sorCheckbounddetails);
+    public List<SorCheckbounddetails> FillKCSorCheckbounddetailslx();
+
+
 
 }
 

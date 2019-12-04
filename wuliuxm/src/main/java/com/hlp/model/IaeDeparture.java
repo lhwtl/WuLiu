@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class IaeDeparture {
@@ -23,6 +25,7 @@ public class IaeDeparture {
 
     private Short actualvolume;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date timelimit;
 
     private String ask;
@@ -34,7 +37,7 @@ public class IaeDeparture {
     private Short payment;
 
     private String importanthints;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date surplustime;
 
     private String entrustcompany;
@@ -181,5 +184,29 @@ public class IaeDeparture {
 
     public void setEntrustcompany(String entrustcompany) {
         this.entrustcompany = entrustcompany == null ? null : entrustcompany.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "IaeDeparture{" +
+                "id='" + id + '\'' +
+                ", packingid='" + packingid + '\'' +
+                ", transfer=" + transfer +
+                ", actualcount=" + actualcount +
+                ", destination='" + destination + '\'' +
+                ", warename=" + warename +
+                ", cargocount=" + cargocount +
+                ", weight=" + weight +
+                ", volume=" + volume +
+                ", actualvolume=" + actualvolume +
+                ", timelimit=" + timelimit +
+                ", ask='" + ask + '\'' +
+                ", takecargoperson='" + takecargoperson + '\'' +
+                ", tackcargoaddress='" + tackcargoaddress + '\'' +
+                ", payment=" + payment +
+                ", importanthints='" + importanthints + '\'' +
+                ", surplustime=" + surplustime +
+                ", entrustcompany='" + entrustcompany + '\'' +
+                '}';
     }
 }

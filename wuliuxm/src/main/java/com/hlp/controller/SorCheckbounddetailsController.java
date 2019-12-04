@@ -1,6 +1,7 @@
 package com.hlp.controller;
 
 import com.hlp.model.SorCheckbounddetails;
+import com.hlp.services.SorCheckboundService;
 import com.hlp.services.SorCheckbounddetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ import java.util.List;
 public class SorCheckbounddetailsController {
     @Autowired
     private SorCheckbounddetailsService sorCheckbounddetailsService;
+    @Autowired
+    private SorCheckboundService sorCheckboundService;
+
     /*查询详情*/
     @RequestMapping("FillSSorCheckbounddetailspackagesByidLx")
     public List<SorCheckbounddetails> FillSSorCheckbounddetailspackageByidLx(String packageid){
@@ -30,7 +34,9 @@ public class SorCheckbounddetailsController {
     /*id查询单个*/
     @RequestMapping("FillSSorCheckbounddetailsByidLx")
     public SorCheckbounddetails FillSSorCheckbounddetailsByidLx(int id){
+        System.out.println(id);
         SorCheckbounddetails sorCheckbounddetails = sorCheckbounddetailsService.FillSSorCheckbounddetailsByidLx(id);
+        System.out.println(sorCheckbounddetails);
         return sorCheckbounddetails;
     }
    /*删除单个*/
@@ -49,6 +55,7 @@ public class SorCheckbounddetailsController {
         Date date=new Date();
         int rs=(int) date.getTime();
         sorCheckbounddetails.setId(-rs);
+        System.out.println(sorCheckbounddetails.getPackageid());
         sorCheckbounddetails.setPackageid("PK"+sorCheckbounddetails.getPackageid());
         sorCheckbounddetails.setStoragedate(date);
         System.out.println("zhiA:"+sorCheckbounddetails);
@@ -61,6 +68,25 @@ public class SorCheckbounddetailsController {
         sorCheckbounddetails.setStoragedate(new Date());
         sorCheckbounddetailsService.updateSorCheckbounddetailsLx(sorCheckbounddetails);
     }
+
+/*库存*/
+    @RequestMapping("FillKCSorCheckbounddetailslx")
+    public List<SorCheckbounddetails> FillKCSorCheckbounddetailslx(){
+        List<SorCheckbounddetails> sorCheckbounddetails = sorCheckbounddetailsService.FillKCSorCheckbounddetailslx();
+        for (SorCheckbounddetails sorCheckbounddetail : sorCheckbounddetails) {
+            String pid = sorCheckbounddetail.getPackageid().substring(2);
+            int id = Integer.parseInt(pid);
+            System.out.println("截取"+id);
+            sorCheckbounddetail.setCheckbound(sorCheckboundService.FillKCSorCheckboundByidLx(id));
+            System.out.println(sorCheckbounddetail);
+        }
+
+
+        return sorCheckbounddetails;
+    }
+
+
+
 
 
 }
