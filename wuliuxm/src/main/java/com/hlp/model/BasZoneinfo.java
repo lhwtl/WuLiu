@@ -1,17 +1,19 @@
 package com.hlp.model;
 
+import java.util.List;
+
 public class BasZoneinfo {
     private Short id;
 
-    private String zonecode;
+    private String zonecode;//定区编码
 
-    private String zonename;
+    private String zonename;//定区名称
 
-    private Short zonepeople;
+    private Short zonepeople;//定区负责人
 
-    private String telphone;
+    private String telphone;//联系电话
 
-    private Short subordinateunit;
+    private Short subordinateunit;//所属单位
 
     private SyEmp syEmp;//员工表一对一
 
@@ -20,6 +22,15 @@ public class BasZoneinfo {
     private BasPartition basPartition;//分区表一对一
 
     private BasZonecustominfo basZonecustominfo;//定区客户信息表一对一
+    private List<BasZonecustominfo> basZonecustominfos;//定区客户信息表一对多
+
+    public List<BasZonecustominfo> getBasZonecustominfos() {
+        return basZonecustominfos;
+    }
+
+    public void setBasZonecustominfos(List<BasZonecustominfo> basZonecustominfos) {
+        this.basZonecustominfos = basZonecustominfos;
+    }
 
     public BasZonecustominfo getBasZonecustominfo() {
         return basZonecustominfo;
@@ -99,5 +110,36 @@ public class BasZoneinfo {
 
     public void setSubordinateunit(Short subordinateunit) {
         this.subordinateunit = subordinateunit;
+    }
+
+    @Override
+    public String toString() {
+        return "BasZoneinfo{" +
+                "id=" + id +
+                ", zonecode='" + zonecode + '\'' +
+                ", zonename='" + zonename + '\'' +
+                ", zonepeople=" + zonepeople +
+                ", telphone='" + telphone + '\'' +
+                ", subordinateunit=" + subordinateunit +
+                ", syEmp=" + syEmp +
+                ", syUnits=" + syUnits +
+                ", basPartition=" + basPartition +
+                ", basZonecustominfo=" + basZonecustominfo +
+                '}';
+    }
+
+    public BasZoneinfo() {
+    }
+
+    public BasZoneinfo(String zonecode, String zonename, Short zonepeople, String telphone, Short subordinateunit, SyEmp syEmp, SyUnits syUnits, BasPartition basPartition, BasZonecustominfo basZonecustominfo) {
+        this.zonecode = zonecode;
+        this.zonename = zonename;
+        this.zonepeople = zonepeople;
+        this.telphone = telphone;
+        this.subordinateunit = subordinateunit;
+        this.syEmp = syEmp;
+        this.syUnits = syUnits;
+        this.basPartition = basPartition;
+        this.basZonecustominfo = basZonecustominfo;
     }
 }

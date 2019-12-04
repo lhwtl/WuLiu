@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class SyUnits {
@@ -10,7 +12,7 @@ public class SyUnits {
     private String remarks;
 
     private Short operatorid;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date operationtime;
 
     private SyEmp syEmp;//与用户一对一

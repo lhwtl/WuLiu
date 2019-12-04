@@ -10,10 +10,12 @@ public interface AccWorkorderServices {
 
     //查询所有的分拣编码
     public List<AccWorkorder> selectAllAccWorkorderHlp();
-//根据查询
-    public AccWorkorder selectAccWorkorderByJonNo(String jobno);
+
 
     //查询工单表
     public List<AccWorkorder> selectAccWorkorderts();
+
+    //结果集查分拣编码
+    public List<AccWorkorder> selectAccWorkorderJgjByts();
 
 }

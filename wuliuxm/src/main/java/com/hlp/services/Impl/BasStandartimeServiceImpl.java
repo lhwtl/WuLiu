@@ -20,4 +20,14 @@ public class BasStandartimeServiceImpl implements BasStandartimeService {
     public int deleteBasStandartimets(Short id) {
         return basStandartimeMapper.deleteBasStandartimets(id);
     }
+
+    @Override
+    public int insertBasStandartimets(BasStandartime basStandartime) {
+        return basStandartimeMapper.insertBasStandartimets(basStandartime);
+    }
+
+    @Override
+    public int updateBasStandartimets(BasStandartime basStandartime) {
+        return basStandartimeMapper.updateBasStandartimets(basStandartime);
+    }
 }

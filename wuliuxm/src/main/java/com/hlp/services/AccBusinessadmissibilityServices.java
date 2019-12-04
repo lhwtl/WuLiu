@@ -16,4 +16,11 @@ public interface AccBusinessadmissibilityServices {
     public List<AccBusinessadmissibility> selectHlpAccBusinessadmissibilityRgddfy(int pages,int rows);
 
     public List<AccBusinessadmissibility> selectAccBusinessadmissibilityts();
+
+    //添加
+    public int insertAccBusinessadmissibilityBusinessnoticenots(AccBusinessadmissibility accBusinessadmissibility);
+    //修改
+    public int updateAccBusinessadmissibilityBusinessnoticenots(AccBusinessadmissibility accBusinessadmissibility);
+    //删除
+    public int deleteAccBusinessadmissibilityBusinessnoticenots(Short id);
 }

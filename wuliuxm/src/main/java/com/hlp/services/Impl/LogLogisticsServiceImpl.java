@@ -23,5 +23,10 @@ public class LogLogisticsServiceImpl implements LogLogisticsService {
         return logLogisticsMapper.selectLogLogisticsByMaxHLP();
     }
 
+    @Override
+    public List<LogLogistics> selectLogLogisticsts() {
+        return logLogisticsMapper.selectLogLogisticsts();
+    }
+
 
 }

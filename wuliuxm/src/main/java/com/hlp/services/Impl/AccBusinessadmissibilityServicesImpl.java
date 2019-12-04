@@ -41,4 +41,19 @@ public class AccBusinessadmissibilityServicesImpl implements AccBusinessadmissib
         return accBusinessadmissibilityMapper.selectAccBusinessadmissibilityts();
     }
 
+    @Override
+    public int insertAccBusinessadmissibilityBusinessnoticenots(AccBusinessadmissibility accBusinessadmissibility) {
+        return accBusinessadmissibilityMapper.insertAccBusinessadmissibilityBusinessnoticenots(accBusinessadmissibility);
+    }
+
+    @Override
+    public int updateAccBusinessadmissibilityBusinessnoticenots(AccBusinessadmissibility accBusinessadmissibility) {
+        return accBusinessadmissibilityMapper.updateAccBusinessadmissibilityBusinessnoticenots(accBusinessadmissibility);
+    }
+
+    @Override
+    public int deleteAccBusinessadmissibilityBusinessnoticenots(Short id) {
+        return accBusinessadmissibilityMapper.deleteAccBusinessadmissibilityBusinessnoticenots(id);
+    }
+
 }

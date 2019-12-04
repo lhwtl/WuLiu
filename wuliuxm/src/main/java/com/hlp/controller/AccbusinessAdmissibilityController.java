@@ -85,15 +85,42 @@ public class AccbusinessAdmissibilityController {
     @RequestMapping("select_AccBusinessadmissibility")
     public List<AccBusinessadmissibility> select_AccBusinessadmissibility(){
         List<AccBusinessadmissibility> list = accBusinessadmissibilityServices.selectAccBusinessadmissibilityts();
-        for (AccBusinessadmissibility aa:list){
+       /* for (AccBusinessadmissibility aa:list){
             SimpleDateFormat adf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String format = adf.format(aa.getReservationtime());
             aa.setReservationtimes(format);
             System.out.println(format);
             System.out.println(aa.getReservationtime());
-        }
+        }*/
         return list;
     }
+
+    //添加
+    @RequestMapping("insert_AccBusinessadmissibilityts")
+    public int insert_AccBusinessadmissibilityts(AccBusinessadmissibility accBusinessadmissibility){
+        System.out.println("添加");
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        String ywd=sdf.format(new Date());
+        String kh =sdf.format(new Date());
+        accBusinessadmissibility.setBusinessnoticeno("YWD"+ywd);
+        accBusinessadmissibility.setCustomcode("KH"+kh);
+        System.out.println(accBusinessadmissibility);
+        return accBusinessadmissibilityServices.insertAccBusinessadmissibilityBusinessnoticenots(accBusinessadmissibility);
+    }
+
+    //修改
+    @RequestMapping("update_AccBusinessadmissibilityts")
+    public int update_AccBusinessadmissibilityts(AccBusinessadmissibility accBusinessadmissibility){
+        System.out.println("修改");
+        System.out.println(accBusinessadmissibility);
+        return accBusinessadmissibilityServices.updateAccBusinessadmissibilityBusinessnoticenots(accBusinessadmissibility);
+    }
+    //删除
+    @RequestMapping("delete_AccBusinessadmissibilityts")
+    public int delete_AccBusinessadmissibilityts(Short id){
+        return accBusinessadmissibilityServices.deleteAccBusinessadmissibilityBusinessnoticenots(id);
+    }
+
 
 
 

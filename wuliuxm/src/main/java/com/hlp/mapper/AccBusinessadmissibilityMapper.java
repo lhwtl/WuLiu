@@ -78,5 +78,15 @@ public interface AccBusinessadmissibilityMapper {
             @Result(property = "syEmp",column ="pickerinfo",one=@One(select = "com.hlp.mapper.SyEmpMapper.FillSyEmpByidLx")),
     })
     public AccBusinessadmissibility selectAccBusinessadmissibilityBusinessnoticenots(String businessnoticeno);
+    @Insert("insert into acc_businessadmissibility(id,businessnoticeno,reservationtime,customname,pickupaddress,customcode,linkman,telphone,weight,volume,importanthints,arrivecity,sendaddress) values(acc_businessadmissibility_id.nextval,#{businessnoticeno},#{reservationtime},#{customname},#{pickupaddress},#{customcode},#{linkman},#{telphone},#{weight},#{volume},#{importanthints},#{arrivecity},#{sendaddress})")
+    public int insertAccBusinessadmissibilityBusinessnoticenots(AccBusinessadmissibility accBusinessadmissibility);
+
+    //修改
+    @Update("update acc_businessadmissibility set businessnoticeno=#{businessnoticeno},reservationtime=#{reservationtime},customname=#{customname},pickupaddress=#{pickupaddress},customcode=#{customcode},linkman=#{linkman},telphone=#{telphone},weight=#{weight},volume=#{volume},importanthints=#{importanthints},arrivecity=#{arrivecity},sendaddress=#{sendaddress} where id=#{id}")
+    public int updateAccBusinessadmissibilityBusinessnoticenots(AccBusinessadmissibility accBusinessadmissibility);
+
+    //删除
+    @Delete("delete from acc_businessadmissibility where id=#{id}")
+    public int deleteAccBusinessadmissibilityBusinessnoticenots(Short id);
 
 }

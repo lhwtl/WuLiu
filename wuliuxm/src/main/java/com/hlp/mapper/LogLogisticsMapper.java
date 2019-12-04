@@ -21,4 +21,10 @@ public interface LogLogisticsMapper {
     @Select("select count(*) from log_logistics")
     public int selectLogLogisticsByMaxHLP();
 
+    @Select("select * from log_logistics where id=#{id}")
+    public LogLogistics selectLogLogisticsIdts(Short id);
+
+    @Select("select * from log_logistics")
+    public List<LogLogistics> selectLogLogisticsts();
+
 }

@@ -10,4 +10,6 @@ public interface LogLogisticsService {
     public List<LogLogistics> selectLogLogisticsHLP(int pages,int rows,String logisticsint,String linename);
    //查询最大值
     public int selectLogLogisticsByMaxHLP();
+    //查询
+    public List<LogLogistics> selectLogLogisticsts();
 }

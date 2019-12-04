@@ -19,4 +19,11 @@ public interface BasStandartimeMapper {
     //删除
     @Delete("delete from bas_standartime where id =#{id}")
     public int deleteBasStandartimets(Short id);
+
+    //添加
+    @Insert("insert into bas_standartime values(bas_standartime_id.nextval,#{timename},#{subordinateunit},#{workingtime},#{closingtime},#{saturdayworkingtime},#{saturdayclosingtime},#{sundayworkingtime},#{sundayclosingtime})")
+    public int insertBasStandartimets(BasStandartime basStandartime);
+    //修改
+    @Update("update bas_standartime set timename=#{timename},subordinateunit=#{subordinateunit},workingtime=#{workingtime},closingtime=#{closingtime},saturdayworkingtime=#{saturdayworkingtime},saturdayclosingtime=#{saturdayclosingtime},sundayworkingtime=#{sundayworkingtime},sundayclosingtime=#{sundayclosingtime} where id=#{id}")
+    public int updateBasStandartimets(BasStandartime basStandartime);
 }

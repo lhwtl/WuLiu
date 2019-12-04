@@ -16,37 +16,29 @@ public class BasStandartimeController {
     @RequestMapping("select_BasStandartime")
     public List<BasStandartime> select_BasStandartime(){
         List<BasStandartime> list = basStandartimeService.selectBasStandartime();
-        for (BasStandartime bb:list){
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-            //平时上班时间
-            String format = sdf.format(bb.getWorkingtime());
-            //平时下班时间
-            String format2 =sdf.format(bb.getClosingtime());
-            //周六上班时间
-            String format3 =sdf.format(bb.getSaturdayworkingtime());
-            //周六下班时间
-            String format4 =sdf.format(bb.getSaturdayclosingtime());
-            //周日上班时间
-            String format5 =sdf.format(bb.getSundayworkingtime());
-            //周日下班时间
-            String format6 =sdf.format(bb.getSundayclosingtime());
 
-            bb.setWorkingtime1(format);
-            bb.setClosingtime1(format2);
-            bb.setSaturdayworkingtime1(format3);
-            bb.setSaturdayclosingtime1(format4);
-            bb.setSundayworkingtime1(format5);
-            bb.setSundayclosingtime1(format6);
 
-            System.out.println(bb.getSyUnits().getName());
 
-        }
         return list;
     }
 
     @RequestMapping("delete_BasStandartime")
     public int delete_BasStandartime(short id){
         return basStandartimeService.deleteBasStandartimets(id);
+    }
+
+    @RequestMapping("insert_BasStandartimets")
+    public int insert_BasStandartimets(BasStandartime basStandartime){
+        System.out.println("添加");
+        System.out.println(basStandartime);
+        return basStandartimeService.insertBasStandartimets(basStandartime);
+    }
+
+    @RequestMapping("update_BasStandartimets")
+    public int update_BasStandartimets(BasStandartime basStandartime){
+        System.out.println("修改");
+        System.out.println(basStandartime);
+        return basStandartimeService.updateBasStandartimets(basStandartime);
     }
 
 }

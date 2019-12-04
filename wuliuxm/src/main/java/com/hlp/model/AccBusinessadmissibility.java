@@ -1,5 +1,8 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 import java.util.EmptyStackException;
 import java.util.List;
@@ -7,50 +10,51 @@ import java.util.List;
 public class AccBusinessadmissibility {
     private Short id;
 
-    private String businessnoticeno;
-
+    private String businessnoticeno;//业务通知单号
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date reservationtime;//预约收件时间
     private String reservationtimes;
 
     private String customname;//客户姓名
 
-    private String pickupaddress;
+    private String pickupaddress;//取件地址
 
     private String customcode;//客户编号
 
-    private String linkman;
+    private String linkman;//联系人
 
-    private String telphone;
+    private String telphone;//电话
 
-    private Short weight;
+    private Short weight;//重量
 
-    private Short volume;
+    private Short volume;//体积
 
-    private String importanthints;
+    private String importanthints;//重要提示
 
-    private String arrivecity;
+    private String arrivecity;//到达城市
 
-    private Short pickerinfo;
+    private Short pickerinfo;//取货人员信息
 
-    private String sendaddress;
+    private String sendaddress;//派送地址
 
-    private Short processingunit;
+    private Short processingunit;//处理单位
 
-    private Short notificationsource;
+    private Short notificationsource;//通知单来源
 
-    private Short customnomodifyflag;
+    private Short customnomodifyflag;//客户单号修改标志
 
-    private String singletype;
+    private String singletype;//分单类型
 
-    private Short packagesnum;
+    private Short packagesnum;//件数
 
-    private Short actualweight;
+    private Short actualweight;//实际重量
 
-    private Short billingweight;
+    private Short billingweight;//计费重量
 
-    private Short packingfee;
+    private Short packingfee;//包装费
 
-    private Short actualpacking;
+    private Short actualpacking;//实际包装
 
     private BasZonecustominfo basZonecustominfo;/* 定区客户信息表一对一*/
 

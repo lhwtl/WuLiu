@@ -57,6 +57,16 @@ public class BasShuttlebus {
 
     private SyUnits syUnits;//单位表
 
+    private LogLogistics logLogistics;//物流表
+
+    public LogLogistics getLogLogistics() {
+        return logLogistics;
+    }
+
+    public void setLogLogistics(LogLogistics logLogistics) {
+        this.logLogistics = logLogistics;
+    }
+
     public SyEmp getSyEmp() {
         return syEmp;
     }

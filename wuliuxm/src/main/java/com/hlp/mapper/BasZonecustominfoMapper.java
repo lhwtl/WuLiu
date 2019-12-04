@@ -18,5 +18,8 @@ public interface BasZonecustominfoMapper {
             @Result(property = "accBusinessadmissibility", column = "customname", one = @One(select = "com.hlp.mapper.AccBusinessadmissibilityMapper.selectAccBusinessadmissibilityCustomnamets"))
     })
     public BasZonecustominfo selectBasZonecustominfoZoneinfoidts(Short zoneinfoid);
+    //定区查询个人客户
+    @Select("select * from Bas_Zonecustominfo where zoneinfoid=#{zoneinfoid}")
+    public List<BasZonecustominfo> selectBasZonecustominfoKHts(Short zoneinfoid);
 
 }

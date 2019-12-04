@@ -8,37 +8,37 @@ import java.util.Date;
 public class DisWorkordersign {
     private Short id;
 
-    private Short workorderid;
+    private Short workorderid;//工作单ID
 
-    private String worksheetno;
+    private String worksheetno;//工作单号
 
-    private Short workordertype;
+    private Short workordertype;//工作单类型
 
-    private Short signtype;
+    private Short signtype;//签收类型
 
-    private Short courierint;
+    private Short courierint;//派送员工号
 
-    private String couriername;
+    private String couriername;//派送员工姓名
 
-    private String recipient;
+    private String recipient;//签收人
 
-    private Short signunit;
+    private Short signunit;//签收单位
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-    private Date signtime;
+    private Date signtime;//签收时间
 
-    private Short invalidatemark;
+    private Short invalidatemark;//作废标记
 
-    private String abnormalmark;
+    private String abnormalmark;//异常备注
 
-    private Short inputpersoncode;
+    private Short inputpersoncode;//录入人编码
 
-    private Short inputpersonid;
+    private Short inputpersonid;//录入人
 
-    private Short inputid;
+    private Short inputid;//录入单位
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-    private Date inputtime;
+    private Date inputtime;//录入时间
 
     private SyUnits syUnits;//与单位一对一
     private SyEmp syEmp;//与用户一对一

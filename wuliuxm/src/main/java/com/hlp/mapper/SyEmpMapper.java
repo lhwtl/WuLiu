@@ -11,7 +11,6 @@ public interface SyEmpMapper {
 
     /*根据id查询*/
     @Select("select * from sy_emp where id=#{id}")
-
     public SyEmp selectSyEmpIdts(Short id);
 
 
@@ -96,11 +95,6 @@ public interface SyEmpMapper {
     })*/
     public SyEmp SelectSyEmpByempnameHlp(String empname);
 
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< HEAD
-=======
     //查询所有用户
     @Select("select * from sy_emp")
     public List<SyEmp> selectSyEmpAllHlp();
@@ -120,6 +114,4 @@ public interface SyEmpMapper {
     public SyEmp selectSyEmpByIdHlp(int id);
 
 
->>>>>>> origin/master
->>>>>>> Stashed changes
 }

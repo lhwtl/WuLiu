@@ -28,4 +28,9 @@ public class LogLogisticsController {
        map.put("rows",list);
        return map;
     }
+    @RequestMapping("select_LogLogisticsts")
+    public List<LogLogistics> select_LogLogisticsts(){
+        List<LogLogistics> list = logLogisticsService.selectLogLogisticsts();
+        return list;
+    }
 }

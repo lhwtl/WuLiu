@@ -20,4 +20,12 @@ public interface BasPartitionMapper {
     //删除
     @Delete("delete from Bas_Partition where id=#{id}")
     public int deleteBasPartitionts(Short id);
+
+    //添加
+    @Insert("insert into Bas_Partition values(Bas_Partition_id.nextval,#{province},#{city},#{county},#{zonecode},#{keyword},#{startint},#{terminateint},#{sdint},#{sortingcode})")
+    public int insertBasPartitionts(BasPartition basPartition);
+
+    //修改
+    @Update("update Bas_Partition set province=#{province},city=#{city},county=#{county},zonecode=#{zonecode},keyword=#{keyword},startint=#{startint},terminateint=#{terminateint},sdint=#{sdint},sortingcode=#{sortingcode} where id =#{id}")
+    public int updateBasPartitionts(BasPartition basPartition);
 }

@@ -3,23 +3,33 @@ package com.hlp.model;
 public class BasPartition {
     private Short id;
 
-    private String province;
+    private String province;//省
 
-    private String city;
+    private String city;//城市
 
-    private String county;
+    private String county;//区（县）
 
-    private String zonecode;
+    private String zonecode;//定区编码
 
-    private String keyword;
+    private String keyword;//关键字
 
-    private Short startint;
+    private Short startint;//起始号
 
-    private Short terminateint;
+    private Short terminateint;//终止号
 
-    private Short sdint;
+    private Short sdint;//单双号
+
+    private String sortingcode;
 
     private BasZoneinfo basZoneinfo;/*定区信息表一对一*/
+
+    public void setSortingcode(String sortingcode) {
+        this.sortingcode = sortingcode;
+    }
+
+    public String getSortingcode() {
+        return sortingcode;
+    }
 
     public BasZoneinfo getBasZoneinfo() {
         return basZoneinfo;
@@ -99,5 +109,38 @@ public class BasPartition {
 
     public void setSdint(Short sdint) {
         this.sdint = sdint;
+    }
+
+    public BasPartition(Short id, String province, String city, String county, String zonecode, String keyword, Short startint, Short terminateint, Short sdint, String sortingcode) {
+        this.id = id;
+        this.province = province;
+        this.city = city;
+        this.county = county;
+        this.zonecode = zonecode;
+        this.keyword = keyword;
+        this.startint = startint;
+        this.terminateint = terminateint;
+        this.sdint = sdint;
+        this.sortingcode = sortingcode;
+    }
+
+    public BasPartition() {
+    }
+
+    @Override
+    public String toString() {
+        return "BasPartition{" +
+                "id=" + id +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", county='" + county + '\'' +
+                ", zonecode='" + zonecode + '\'' +
+                ", keyword='" + keyword + '\'' +
+                ", startint=" + startint +
+                ", terminateint=" + terminateint +
+                ", sdint=" + sdint +
+                ", basZoneinfo=" + basZoneinfo +
+                ", sortingcode=" + sortingcode +
+                '}';
     }
 }

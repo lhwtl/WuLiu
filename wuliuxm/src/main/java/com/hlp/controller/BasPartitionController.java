@@ -16,17 +16,20 @@ public class BasPartitionController {
     @RequestMapping("select_BasPartition")
     public List<BasPartition> select_BasPartition(){
         List<BasPartition> list = basPartitionService.selectBasPartition();
-        for(BasPartition bb:list){
-            System.out.println(bb.getBasZoneinfo().getZonecode());
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String format = sdf.format(bb.getBasZoneinfo().getSyUnits().getOperationtime());
-            bb.getBasZoneinfo().getSyUnits().setTime(format);
-            System.out.println(format);
-        }
         return list;
     }
     @RequestMapping("delete_BasPartition")
     public int delete_BasPartition(Short id){
         return basPartitionService.deleteBasPartitionts(id);
+    }
+
+    @RequestMapping("insert_BasPartition")
+    public int insert_BasPartition(BasPartition basPartition){
+        return basPartitionService.insertBasPartitionts(basPartition);
+    }
+
+    @RequestMapping("update_BasPartition")
+    public int update_BasPartition(BasPartition basPartition){
+        return basPartitionService.updateBasPartitionts(basPartition);
     }
 }

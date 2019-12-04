@@ -21,4 +21,19 @@ public class BasZoneinfoServiceImpl implements BasZoneinfoService {
     public int deleteBasZoneinfoZonecodets(short id) {
         return basZoneinfoMapper.deleteBasZoneinfoZonecodets(id);
     }
+
+    @Override
+    public int insertBasZoneinfoZonecodets(BasZoneinfo basZoneinfo) {
+        return basZoneinfoMapper.insertBasZoneinfoZonecodets(basZoneinfo);
+    }
+
+    @Override
+    public int updateBasZoneinfoZonecodets(BasZoneinfo basZoneinfo) {
+        return basZoneinfoMapper.updateBasZoneinfoZonecodets(basZoneinfo);
+    }
+
+    @Override
+    public List<BasZoneinfo> selectBasZoninfoJgjByts() {
+        return basZoneinfoMapper.selectBasZoninfoJgjByts();
+    }
 }

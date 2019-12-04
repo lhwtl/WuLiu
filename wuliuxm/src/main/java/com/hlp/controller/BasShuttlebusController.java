@@ -20,13 +20,6 @@ public class BasShuttlebusController  {
     @RequestMapping("select_BasShuttlebus")
     public List<BasShuttlebus> select_BasShuttlebus(){
         List<BasShuttlebus> list=basShuttlebusService.selectBasShuttlebus();
-  /*      for (BasShuttlebus bb:list){
-            SimpleDateFormat sdf = new SimpleDateFormat();
-            String format = sdf.format(bb.getOperationtime());
-            bb.setTime(format);
-
-            System.out.println(bb.getId());
-        }*/
         return list;
     }
 

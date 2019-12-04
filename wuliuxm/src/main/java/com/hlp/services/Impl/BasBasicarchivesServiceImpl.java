@@ -22,4 +22,14 @@ private BasBasicarchivesMapper basBasicarchivesMapper;
     public int deleteBasBasicarchivesIdts(Short id) {
         return basBasicarchivesMapper.deleteBasBasicarchivesIdts(id);
     }
+
+    @Override
+    public int insertBasBasicarchivesIdts(BasBasicarchives basBasicarchives) {
+        return basBasicarchivesMapper.insertBasBasicarchivesIdts(basBasicarchives);
+    }
+
+    @Override
+    public int updateBasBasicarchivesIdts(BasBasicarchives basBasicarchives) {
+        return basBasicarchivesMapper.updateBasBasicarchivesIdts(basBasicarchives);
+    }
 }

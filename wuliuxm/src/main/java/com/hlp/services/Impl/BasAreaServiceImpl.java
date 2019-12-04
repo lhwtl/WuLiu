@@ -20,4 +20,14 @@ public class BasAreaServiceImpl implements BasAreaService {
     public int deleteBasAreats(Short id) {
         return basAreaMapper.deleteBasAreats(id);
     }
+
+    @Override
+    public int inserteBasAreats(BasArea basArea) {
+        return basAreaMapper.inserteBasAreats(basArea);
+    }
+
+    @Override
+    public int updateBasAreats(BasArea basArea) {
+        return basAreaMapper.updateBasAreats(basArea);
+    }
 }

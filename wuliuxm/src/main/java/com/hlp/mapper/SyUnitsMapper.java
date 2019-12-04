@@ -35,14 +35,22 @@ public interface SyUnitsMapper {
     public SyUnits selectSyUnitsIdts(Short id);
 
     /*根据operatorid查询负责人*/
-    @Select("select * from Sy_Units where operatorid=#{operatorid}")
+    @Select("select * from Sy_Units where id=#{id}")
     @Results({
-            @Result(property = "operatorid",column = "operatorid",id=true),
+            @Result(property = "id",column = "id",id=true),
             @Result(property = "operatorid",column = "operatorid"),
             @Result(property =  "syEmp",column = "operatorid",one = @One(select ="com.hlp.mapper.SyEmpMapper.selectSyEmpIdts"))
     })
-    public SyUnits selectSyUnitsOperatoridts(Short operatorid);
 
+    public SyUnits selectSyUnitsOperatoridts(Short operatorid);
+    /* 根据 name 查询负责人*/
+    @Select("select * from Sy_Units where name=#{name}")
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "operatorid",column = "operatorid"),
+            @Result(property =  "syEmp",column = "operatorid",one = @One(select ="com.hlp.mapper.SyEmpMapper.selectSyEmpIdts"))
+    })
+    public SyUnits selectSyUnitsNamets(String name);
     //查询所有业务通知单同时查询工单，员工以及单位||查台转单
     @Select("select * from sy_units where id=#{id}")
     public SyUnits selectSyUnitsByProcessingUnit(short id);

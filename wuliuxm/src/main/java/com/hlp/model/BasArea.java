@@ -3,25 +3,25 @@ package com.hlp.model;
 public class BasArea {
     private Short id;
 
-    private String province;
+    private String province;//省
 
-    private String city;
+    private String city;//城市
 
-    private String county;
+    private String county;//区（县）
 
-    private Short postalcode;
+    private Short postalcode;//邮政编码
 
-    private String simplecode;
+    private String simplecode;//简码
 
-    private Short citycode;
+    private Short citycode;//城市编码
 
-    private String entryunitid;
+    private String entryunitid;//进港单位
 
-    private String complementunitid;
+    private String complementunitid;//出港单位
 
-    private Short nature;
+    private Short nature;//性质
 
-    private Short thearea;
+    private Short thearea;//所属区域
 
     private SyUnits syUnits;//单位表
 
@@ -120,5 +120,40 @@ public class BasArea {
 
     public void setThearea(Short thearea) {
         this.thearea = thearea;
+    }
+
+    @Override
+    public String toString() {
+        return "BasArea{" +
+                "id=" + id +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", county='" + county + '\'' +
+                ", postalcode=" + postalcode +
+                ", simplecode='" + simplecode + '\'' +
+                ", citycode=" + citycode +
+                ", entryunitid='" + entryunitid + '\'' +
+                ", complementunitid='" + complementunitid + '\'' +
+                ", nature=" + nature +
+                ", thearea=" + thearea +
+                ", syUnits=" + syUnits +
+                '}';
+    }
+
+    public BasArea() {
+    }
+
+    public BasArea(String province, String city, String county, Short postalcode, String simplecode, Short citycode, String entryunitid, String complementunitid, Short nature, Short thearea, SyUnits syUnits) {
+        this.province = province;
+        this.city = city;
+        this.county = county;
+        this.postalcode = postalcode;
+        this.simplecode = simplecode;
+        this.citycode = citycode;
+        this.entryunitid = entryunitid;
+        this.complementunitid = complementunitid;
+        this.nature = nature;
+        this.thearea = thearea;
+        this.syUnits = syUnits;
     }
 }

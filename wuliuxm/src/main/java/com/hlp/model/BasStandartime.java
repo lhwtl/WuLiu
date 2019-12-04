@@ -1,5 +1,6 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -7,62 +8,18 @@ import java.util.Date;
 public class BasStandartime {
     private Short id;
 
-    private String timename;
+    private String timename;//时间名称
 
-    private Short subordinateunit;
-    @DateTimeFormat(pattern = "HH:mm:ss")
-    private Date workingtime;
-    private  String workingtime1;
-
-    private Date closingtime;
-    private  String closingtime1;
-
-    private Date saturdayworkingtime;
-
-    public String getSaturdayworkingtime1() {
-        return saturdayworkingtime1;
-    }
-
-    public String getWorkingtime1() {
-        return workingtime1;
-    }
-
-    public void setWorkingtime1(String workingtime1) {
-        this.workingtime1 = workingtime1;
-    }
-
-    public String getClosingtime1() {
-        return closingtime1;
-    }
-
-    public void setClosingtime1(String closingtime1) {
-        this.closingtime1 = closingtime1;
-    }
-
-    public String getSaturdayclosingtime1() {
-        return saturdayclosingtime1;
-    }
-
-    public void setSaturdayclosingtime1(String saturdayclosingtime1) {
-        this.saturdayclosingtime1 = saturdayclosingtime1;
-    }
-
-    public String getSundayworkingtime1() {
-        return sundayworkingtime1;
-    }
-
-    public void setSundayworkingtime1(String sundayworkingtime1) {
-        this.sundayworkingtime1 = sundayworkingtime1;
-    }
-
-    public String getSundayclosingtime1() {
-        return sundayclosingtime1;
-    }
-
-    public void setSundayclosingtime1(String sundayclosingtime1) {
-        this.sundayclosingtime1 = sundayclosingtime1;
-    }
-
+    private Short subordinateunit;//所属单位
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date workingtime;//平时上班时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date closingtime;//平时下班时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date saturdayworkingtime;//周六上班时间
     public SyUnits getSyUnits() {
         return syUnits;
     }
@@ -70,40 +27,28 @@ public class BasStandartime {
     public void setSyUnits(SyUnits syUnits) {
         this.syUnits = syUnits;
     }
-
-    public void setSaturdayworkingtime1(String saturdayworkingtime1) {
-        this.saturdayworkingtime1 = saturdayworkingtime1;
-    }
-
-    private  String saturdayworkingtime1;
-
-    private Date saturdayclosingtime;
-    private  String saturdayclosingtime1;
-
-    private Date sundayworkingtime;
-    private  String sundayworkingtime1;
-
-    private Date sundayclosingtime;
-    private  String sundayclosingtime1;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date saturdayclosingtime;//周六下班时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date sundayworkingtime;//周日上班时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date sundayclosingtime;//周日下班时间
     private SyUnits syUnits;
-
     public Short getId() {
         return id;
     }
-
     public void setId(Short id) {
         this.id = id;
     }
-
     public String getTimename() {
         return timename;
     }
-
     public void setTimename(String timename) {
         this.timename = timename == null ? null : timename.trim();
     }
-
     public Short getSubordinateunit() {
         return subordinateunit;
     }
@@ -158,5 +103,36 @@ public class BasStandartime {
 
     public void setSundayclosingtime(Date sundayclosingtime) {
         this.sundayclosingtime = sundayclosingtime;
+    }
+
+    @Override
+    public String toString() {
+        return "BasStandartime{" +
+                "id=" + id +
+                ", timename='" + timename + '\'' +
+                ", subordinateunit=" + subordinateunit +
+                ", workingtime=" + workingtime +
+                ", closingtime=" + closingtime +
+                ", saturdayworkingtime=" + saturdayworkingtime +
+                ", saturdayclosingtime=" + saturdayclosingtime +
+                ", sundayworkingtime=" + sundayworkingtime +
+                ", sundayclosingtime=" + sundayclosingtime +
+                ", syUnits=" + syUnits +
+                '}';
+    }
+
+    public BasStandartime() {
+    }
+
+    public BasStandartime(String timename, Short subordinateunit, Date workingtime, Date closingtime, Date saturdayworkingtime, Date saturdayclosingtime, Date sundayworkingtime, Date sundayclosingtime, SyUnits syUnits) {
+        this.timename = timename;
+        this.subordinateunit = subordinateunit;
+        this.workingtime = workingtime;
+        this.closingtime = closingtime;
+        this.saturdayworkingtime = saturdayworkingtime;
+        this.saturdayclosingtime = saturdayclosingtime;
+        this.sundayworkingtime = sundayworkingtime;
+        this.sundayclosingtime = sundayclosingtime;
+        this.syUnits = syUnits;
     }
 }

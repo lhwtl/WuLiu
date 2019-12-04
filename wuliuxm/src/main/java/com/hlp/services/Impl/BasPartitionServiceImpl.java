@@ -21,4 +21,14 @@ public class BasPartitionServiceImpl implements BasPartitionService {
     public int deleteBasPartitionts(Short id) {
         return basPartitionMapper.deleteBasPartitionts(id);
     }
+
+    @Override
+    public int insertBasPartitionts(BasPartition basPartition) {
+        return basPartitionMapper.insertBasPartitionts(basPartition);
+    }
+
+    @Override
+    public int updateBasPartitionts(BasPartition basPartition) {
+        return basPartitionMapper.updateBasPartitionts(basPartition);
+    }
 }

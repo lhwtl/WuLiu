@@ -15,14 +15,8 @@ public class BasAreaController {
     private BasAreaService basAreaService;
     @RequestMapping("select_BasArea")
     public List<BasArea> select_BasArea(){
+        System.out.println("查询");
         List<BasArea> list = basAreaService.selectBasArea();
-        for(BasArea bb:list){
-            System.out.println(bb.getSyUnits().getName() + bb.getSyUnits().getOperationtime());
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String format = sdf.format(bb.getSyUnits().getOperationtime());
-            bb.getSyUnits().setTime(format);
-            System.out.println(format);
-        }
         return list;
     }
 
@@ -30,4 +24,19 @@ public class BasAreaController {
     public int delete_BasArea(Short id){
         return basAreaService.deleteBasAreats(id);
     }
+
+    @RequestMapping("insert_BasAreats")
+    public int insert_BasAreats(BasArea basArea){
+        System.out.println("添加");
+        System.out.println(basArea);
+        return basAreaService.inserteBasAreats(basArea);
+    }
+
+    @RequestMapping("update_BasAreats")
+    public int update_BasAreats(BasArea basArea){
+        System.out.println("修改");
+        System.out.println(basArea);
+        return basAreaService.updateBasAreats(basArea);
+    }
+
 }

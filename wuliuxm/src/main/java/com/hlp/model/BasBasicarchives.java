@@ -1,5 +1,6 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -7,7 +8,7 @@ import java.util.Date;
 public class BasBasicarchives {
     private Short id;
 
-    private String nameid;
+    private String nameid;//基本档案编号
 
     public String getNameid() {
         return nameid;
@@ -17,17 +18,18 @@ public class BasBasicarchives {
         this.nameid = nameid;
     }
 
-    private String name;
+    private String name;//基本档案名称
 
-    private Short grade;
+    private Short grade;//档案是否分级
 
-    private String remarks;
+    private String remarks;//备注
 
-    private Short operatorid;
+    private Short operatorid;//操作人员
 
-    private Short operationunitid;
+    private Short operationunitid;//操作单位
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private Date operationtime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date operationtime;//操作时间
 
     private String time;
 

@@ -25,4 +25,11 @@ public interface BasBasicarchivesMapper {
 
     @Delete("delete from Bas_Basicarchives where id=#{id}")
     public int deleteBasBasicarchivesIdts(Short id);
+
+    //添加
+    @Insert("insert into Bas_Basicarchives values(Bas_Basicarchives_id.nextval,#{name},#{grade},#{remarks},#{operatorid},#{operationunitid},#{operationtime})")
+    public int insertBasBasicarchivesIdts(BasBasicarchives basBasicarchives);
+    //修改
+    @Update("update Bas_Basicarchives set name=#{name},grade=#{grade},remarks=#{remarks},operatorid=#{operatorid},operationunitid=#{operationunitid},operationtime=#{operationtime} where id=#{id}")
+    public int updateBasBasicarchivesIdts(BasBasicarchives basBasicarchives);
 }

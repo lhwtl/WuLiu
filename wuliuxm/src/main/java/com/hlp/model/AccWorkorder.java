@@ -28,7 +28,33 @@ public class AccWorkorder {
 
     private String sortingcode;
 
+    private DisWorkordersign disWorkordersign;//工作单签收表
 
+    private AccWorksheet accWorksheet;//工作单表
+
+    public DisWorkordersign getDisWorkordersign() {
+        return disWorkordersign;
+    }
+
+    public void setDisWorkordersign(DisWorkordersign disWorkordersign) {
+        this.disWorkordersign = disWorkordersign;
+    }
+
+    public AccWorksheet getAccWorksheet() {
+        return accWorksheet;
+    }
+
+    public void setAccWorksheet(AccWorksheet accWorksheet) {
+        this.accWorksheet = accWorksheet;
+    }
+
+    public AccBusinessadmissibility getAccBusinessadmissibility() {
+        return accBusinessadmissibility;
+    }
+
+    public void setAccBusinessadmissibility(AccBusinessadmissibility accBusinessadmissibility) {
+        this.accBusinessadmissibility = accBusinessadmissibility;
+    }
 
     private AccBusinessadmissibility accBusinessadmissibility;/*业务受理表一对一*/
 
