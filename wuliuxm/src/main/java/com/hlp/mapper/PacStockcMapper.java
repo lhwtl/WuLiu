@@ -28,5 +28,6 @@ public interface PacStockcMapper {
             "drawername=#{drawername},drawertime=sysdate where id=#{id}")
     int updatePacStockc(PacStockc record);
 
-
+    @Select("select * from pac_stockc where outboundno like '%'|| #{outboundno} ||'%' and outboundtype like '%'|| #{outboundtype} || '%'")
+    List<PacStockc> selectPacStockcmhc(PacStockc P);
 }

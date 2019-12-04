@@ -25,4 +25,13 @@ public class PacStockcController {
     public int updatePacStockc(PacStockc record){
         return service.updatePacStockc(record);
     }
+
+    @RequestMapping("selectPacStockcmhc")
+    public List<PacStockc> selectPacStockcmhc(PacStockc P){
+        List<PacStockc> list=service.selectPacStockcmhc(P);
+        for (PacStockc stockc : list) {
+            System.out.println(stockc);
+        }
+        return list;
+    }
 }
