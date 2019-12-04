@@ -22,6 +22,7 @@ public interface SyUnitsService {
     public List<SyUnits> selectSyUnitsHlp();
 
     public SyUnits FillSyUnitsByidLx(int id);
+    public SyUnits selectSyUnitsIdts(Short id);
 
 
 }

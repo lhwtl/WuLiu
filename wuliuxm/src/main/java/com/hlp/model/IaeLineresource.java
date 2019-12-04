@@ -440,4 +440,54 @@ public class IaeLineresource {
     public void setSurplustime(Date surplustime) {
         this.surplustime = surplustime;
     }
+
+    @Override
+    public String toString() {
+        return "IaeLineresource{" +
+                "id='" + id + '\'' +
+                ", resourcetype='" + resourcetype + '\'' +
+                ", port='" + port + '\'' +
+                ", demand=" + demand +
+                ", vehicleint='" + vehicleint + '\'' +
+                ", capacity='" + capacity + '\'' +
+                ", waybillid=" + waybillid +
+                ", carrier='" + carrier + '\'' +
+                ", expectarrivaldate=" + expectarrivaldate +
+                ", expectdeparturedate=" + expectdeparturedate +
+                ", expectarrivaldates='" + expectarrivaldates + '\'' +
+                ", expectdeparturedates='" + expectdeparturedates + '\'' +
+                ", ticket=" + ticket +
+                ", cargo=" + cargo +
+                ", weight=" + weight +
+                ", volume=" + volume +
+                ", handleperson='" + handleperson + '\'' +
+                ", handledate=" + handledate +
+                ", handledates='" + handledates + '\'' +
+                ", enterperson=" + enterperson +
+                ", enterdate=" + enterdate +
+                ", enterdates='" + enterdates + '\'' +
+                ", entercompany='" + entercompany + '\'' +
+                ", acceptperson=" + acceptperson +
+                ", acceptdate=" + acceptdate +
+                ", acceptdates='" + acceptdates + '\'' +
+                ", acceptcompany='" + acceptcompany + '\'' +
+                ", abnormalremarks='" + abnormalremarks + '\'' +
+                ", workint='" + workint + '\'' +
+                ", actualcount=" + actualcount +
+                ", destination='" + destination + '\'' +
+                ", warename='" + warename + '\'' +
+                ", actualvolume=" + actualvolume +
+                ", timelimit=" + timelimit +
+                ", timelimits='" + timelimits + '\'' +
+                ", ask='" + ask + '\'' +
+                ", takecargoperson='" + takecargoperson + '\'' +
+                ", tackcargoaddress='" + tackcargoaddress + '\'' +
+                ", payment=" + payment +
+                ", specialensure='" + specialensure + '\'' +
+                ", deliverytype=" + deliverytype +
+                ", importanthints='" + importanthints + '\'' +
+                ", surplustime=" + surplustime +
+                ", surplustimes='" + surplustimes + '\'' +
+                '}';
+    }
 }

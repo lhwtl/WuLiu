@@ -14,4 +14,5 @@ public interface SorCheckboundService {
     public int deleteSorCheckbound(int id);
     public int insertSorCheckboundLx(SorCheckbound sorCheckbound);
     public int updateSorCheckboundLx(SorCheckbound sorCheckbound );
+    public SorCheckbound FillKCSorCheckboundByidLx(int id);/*库存*/
 }

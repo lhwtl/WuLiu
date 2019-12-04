@@ -21,7 +21,8 @@ public interface SorStoragedetailsService {
     public int updateStoragedetailsByidLx(SorStoragedetails sorStoragedetails);
 
 
-
+    public List<SorStoragedetails> FillSorStoragedetailsKCLx(String id);
+    public List<SorStoragedetails> FilSorStoragedetailsKcLX();
 }
 
 

@@ -38,4 +38,9 @@ public class SorCheckboundServiceImpl implements SorCheckboundService {
     public int updateSorCheckboundLx(SorCheckbound sorCheckbound) {
         return scm.updateSorCheckboundLx(sorCheckbound);
     }
+
+    @Override
+    public SorCheckbound FillKCSorCheckboundByidLx(int id) {
+        return scm.FillKCSorCheckboundByidLx(id);
+    }
 }

@@ -12,4 +12,6 @@ public interface SorStorageService {
     public int deleteSorStorageLx(int id);
     public int updateSorStorageLx(SorStorage sorStorage);
     public List<SorStorage> FillSorStorageByidLX(int id );
+    public List<SorStorage> FillKuChunSorStorageLx();
+    public SorStorage FillSorStorageKCLX(int id);
 }

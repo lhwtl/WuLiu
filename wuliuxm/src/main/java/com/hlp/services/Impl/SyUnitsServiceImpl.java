@@ -53,4 +53,9 @@ public class SyUnitsServiceImpl implements SyUnitsService {
         return sum.FillSyUnitsByidLx(id);
     }
 
+    @Override
+    public SyUnits selectSyUnitsIdts(Short id) {
+        return sum.selectSyUnitsIdts(id);
+    }
+
 }

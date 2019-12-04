@@ -28,4 +28,17 @@ public interface SorStorageMapper {
     @Select("select * from Sor_Storage where id=#{id}")
     public List<SorStorage> FillSorStorageByidLX(int id );
 
+    /*一对多*/
+    @Select("select * from sor_storage ")
+    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "sorStoragedetails",column = "id",many=@Many(select="com.hlp.mapper.SorStoragedetailsMapper.FillSorStoragedetailsKCLx")),
+    })
+    public List<SorStorage> FillKuChunSorStorageLx();
+
+    /*详情传id查入库  传过来you Ck-所有采用模糊查*/
+   /* @Select("select * from sor_storage where id=substring(#{id},4)")*/
+    @Select("select * from Sor_Storage where id=#{id} ")
+    public SorStorage FillSorStorageKCLX(int id);
+
 }

@@ -23,4 +23,7 @@ public interface SorCheckboundMapper {
     @Update("update Sor_Checkbound set scanid=#{scanid},cargosum=#{cargosum},checkperson=#{checkperson},checkdate=#{checkdate},checkcompany=#{checkcompany} where id=#{id}")
     public int updateSorCheckboundLx(SorCheckbound sorCheckbound );
 
+    @Select("select * from Sor_Checkbound where id=#{id}")
+    public SorCheckbound FillKCSorCheckboundByidLx(int id);
+
 }

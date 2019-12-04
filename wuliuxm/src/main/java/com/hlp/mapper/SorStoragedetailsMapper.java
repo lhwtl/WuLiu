@@ -1,10 +1,7 @@
 package com.hlp.mapper;
 
 import com.hlp.model.SorStoragedetails;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,5 +20,17 @@ public interface SorStoragedetailsMapper {
     /*修改详情*/
     @Update("update sor_storagedetails set packageid=#{packageid},weight=#{weight},outboundid=#{outboundid},state=#{state} where id=#{id}")
     public int updateStoragedetailsByidLx(SorStoragedetails sorStoragedetails);
+    @Select("select * from sor_storagedetails where outboundid='CK-'||#{id}")
+    public List<SorStoragedetails> FillSorStoragedetailsKCLx(String id);
+
+    /*一对一入库详情和入库*/
+    @Select("select * from sor_storagedetails")
+/*    @Results({
+            @Result(property = "id",column = "id",id=true),
+            @Result(property = "packageid",column = "packageid"),
+            @Result(property = "sorStorage",column = "packageid",one=@One(select="com.hlp.mapper.SorStorageMapper.FillSorStorageKCLX")),
+    })*/
+    public List<SorStoragedetails> FilSorStoragedetailsKcLX();
+
 
 }

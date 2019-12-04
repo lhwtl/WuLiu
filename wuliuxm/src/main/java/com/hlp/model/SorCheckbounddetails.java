@@ -23,6 +23,17 @@ public class SorCheckbounddetails {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date storagedate;
 
+    /*一对一*/
+    private SorCheckbound checkbound;
+
+    public SorCheckbound getCheckbound() {
+        return checkbound;
+    }
+
+    public void setCheckbound(SorCheckbound checkbound) {
+        this.checkbound = checkbound;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -107,6 +118,7 @@ public class SorCheckbounddetails {
                 ", direction='" + direction + '\'' +
                 ", storageperson=" + storageperson +
                 ", storagedate=" + storagedate +
+                ", checkbound=" + checkbound +
                 '}';
     }
 }

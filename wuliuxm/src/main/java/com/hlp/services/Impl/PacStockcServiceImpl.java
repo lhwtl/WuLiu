@@ -26,4 +26,9 @@ public class PacStockcServiceImpl implements PacStockcService {
     public int updatePacStockc(PacStockc record) {
         return mapper.updatePacStockc(record);
     }
+
+    @Override
+    public List<PacStockc> selectPacStockcmhc(PacStockc P) {
+        return mapper.selectPacStockcmhc(P);
+    }
 }

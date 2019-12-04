@@ -1,5 +1,7 @@
 package com.hlp.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class IaeExtract {
@@ -10,7 +12,7 @@ public class IaeExtract {
     private String transportway;
 
     private String waybillid;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date estimatedate;
 
     private Short cargon;
@@ -71,5 +73,18 @@ public class IaeExtract {
 
     public void setImportanthints(String importanthints) {
         this.importanthints = importanthints == null ? null : importanthints.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "IaeExtract{" +
+                "id='" + id + '\'' +
+                ", vehicleint='" + vehicleint + '\'' +
+                ", transportway='" + transportway + '\'' +
+                ", waybillid='" + waybillid + '\'' +
+                ", estimatedate=" + estimatedate +
+                ", cargon=" + cargon +
+                ", importanthints='" + importanthints + '\'' +
+                '}';
     }
 }
